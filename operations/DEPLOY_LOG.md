@@ -53,3 +53,46 @@ Do not edit or delete entries. Rollbacks are logged as new entries with `status:
 ```
 
 **Statuses:** `deployed` ✓ | `rolled_back` ↩ | `blocked` ⛔ | `pending_validation` ⏳
+---
+
+## Deployment Record: dep-002 — DEC-002 Intake Summary Webhook
+
+| Field | Value |
+|---|---|
+| **Deploy ID** | dep-002 |
+| **Date** | 2026-05-23T05:04:00Z |
+| **Task** | task_006 / DEC-002 |
+| **Commit** | `e446828` — "implement DEC-002 intake summary webhook" |
+| **Commit Range** | `91e4735..e446828` |
+| **Branch** | main |
+| **Files Changed** | voice_receptionist.py (+37 lines) |
+| **Dependencies** | None (httpx already in requirements.txt) |
+| **Validation** | `python3 -m py_compile` PASS, no forbidden API fields |
+| **Post-Deploy Test** | Smoke test + live call test pending |
+| **Rollback Target** | `91e4735` |
+
+### Implementation Details
+
+- `_fire_intake_summary()` function added — async fire-and-forget
+- Uses existing `ADMIN_WEBHOOK_URL` env var — no new env vars
+- Hard 5s timeout via `httpx.Client(timeout=5.0)`
+- Daemon thread pattern — no process cleanup issues
+- Call site: `handle_realtime_call` finally block
+
+### Post-Deploy Validation Required
+
+- [ ] Render health check: `GET /health` returns 200
+- [ ] Live call test confirms no call cleanup delays
+- [ ] Admin webhook receives intake summary payload on test call
+
+### Governance Checklist
+
+- [x] task_003: Feature proposal reviewed — approved
+- [x] task_004: Readiness gate — all 7 conditions resolved, APPROVED
+- [x] task_005: Implementation review — APPROVED
+- [x] task_006: Implementation executed and pushed
+- [ ] Post-deploy validation (pending)
+
+---
+
+*Deployment log: `operations/DEPLOY_LOG.md`*
