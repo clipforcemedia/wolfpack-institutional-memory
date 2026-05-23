@@ -24,7 +24,7 @@ Workflow Orchestration
     └── Append-only logs for audit trail
 
 Execution Workers
-    └── OpenClaw — primary agent runtime
+    └── OpenClaw — replaceable execution worker (swappable)
     └── Render — voice_ai FastAPI deployment
     └── Twilio — phone line and media streams
     └── OpenAI Realtime API — voice AI brain
@@ -59,13 +59,13 @@ Governance
   - `workflows/` — Wolfpack review workflow
 
 ### 2.3 OpenClaw
-- **Purpose:** Replaceable execution worker — not the operating system
+- **Purpose:** Replaceable execution worker — not the operating system or primary control plane
 - **Functions:**
-  - GitHub push (direct deployment)
-  - Task spec execution
-  - Cron-based polling (GitHub task bridge)
+  - GitHub push (direct deployment — when authorized)
+  - Task spec execution within defined scope
+  - Cron-based polling for GitHub task bridge
   - Operational documentation
-- **Limitations:** Cannot self-modify canon, cannot bypass Wolfpack gate
+- **Limitations:** Cannot self-modify canon, cannot bypass Wolfpack gate, replaceable without architecture review
 
 ### 2.4 Render
 - **Purpose:** Production hosting for `voice_receptionist.py`
@@ -149,7 +149,7 @@ Proposed change → Scope check → Preflight validation
 
 | Component | Version | Notes |
 |---|---|---|
-| Canon | v0.1 | Corrected 2026-05-22 |
+| Canon | v0.1-corrected | Architecture corrected per DEC-001 — OpenClaw demoted to replaceable worker |
 | voice_receptionist.py | 91e4735 | Stable realtime, 408 lines |
 | OpenClaw | 2026.4.26 | Primary execution worker |
 | Render | auto-deploy | Deploys from main |

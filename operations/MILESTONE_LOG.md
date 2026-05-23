@@ -297,3 +297,81 @@ Validate runner execution against real inbox tasks. Confirm processed_registry.j
 ---
 
 *Milestone 006 — 2026-05-23*
+
+---
+
+# Milestone 007 — Architecture Correction Canonized (DEC-001)
+
+**Date:** 2026-05-23
+
+## Summary
+
+The v0.1 architecture canon was corrected per DEC-001. OpenClaw/ClawBro was demoted from "primary control plane" to "replaceable execution worker" across all canonical documentation. This brings the canon into alignment with how the system actually operates.
+
+## Verified Components
+
+- `canon/WOLFPACK_CANON.md` — section 3.1 corrected architecture diagram reflects correct roles
+- `canon/SYSTEM_ARCHITECTURE.md` — section 2.3 updated, version bumped to v0.1-corrected
+- `status/CURRENT_STATE.md` — OpenClaw entry corrected to "Replaceable Worker"
+- `status/NEXT_ACTIONS.md` — Milestone 007 added, task_002 marked complete
+- `operations/MILESTONE_LOG.md` — This milestone appended
+
+## Corrected Architecture (DEC-001)
+
+| Component | Corrected Role | Replaceable |
+|---|---|---|
+| ChatGPT/Eterna | Cognitive orchestration layer | No (core identity) |
+| GitHub | Institutional memory, task bus, canonical state | No (canonical source) |
+| Deterministic workflows / GitHub Actions / n8n | Preferred orchestration layer | Low (portable) |
+| OpenClaw/ClawBro | Replaceable execution worker | Yes (swappable) |
+| Human API | Governance gate, exception handling | N/A |
+
+## Decision Record
+
+- **Decision:** DEC-001 — Approve architecture correction
+- **Task:** task_002 (first real wolfpack_review task)
+- **Wolfpack Review:** All 4 roles approved (Opportunity Radar, Red Team, Deployment Governor, Memory Keeper)
+- **Eterna Synthesis:** Convergent approval — proceed with correction
+- **Deployment Governor Decision:** `approve`
+
+## Files Modified
+
+| File | Change |
+|---|---|
+| `canon/WOLFPACK_CANON.md` | Already corrected in v0.1 |
+| `canon/SYSTEM_ARCHITECTURE.md` | Section 2.3 updated, version v0.1-corrected |
+| `status/CURRENT_STATE.md` | OpenClaw entry corrected |
+| `status/NEXT_ACTIONS.md` | Milestone 007 added, task_002 complete |
+| `operations/MILESTONE_LOG.md` | This milestone appended |
+
+## Governance Properties
+
+| Property | Status |
+|---|---|
+| Wolfpack review completed | ✓ All 4 roles |
+| Deployment Governor approved | ✓ |
+| Rollback trivial | ✓ Revert commit `7b3a1e4` |
+| No production code affected | ✓ Documentation only |
+| Institutional memory preserved | ✓ Git history intact |
+
+## Architectural Significance
+
+The canon now accurately reflects the Wolfpack architecture:
+- OpenClaw is correctly positioned as a replaceable execution worker, not a central OS
+- ChatGPT/Eterna owns cognitive orchestration
+- GitHub owns institutional memory and canonical state
+- Deterministic workflows own orchestration scheduling
+
+This correction eliminates the risk of future architectural decisions being made on incorrect premises.
+
+## Current State
+
+Wolfpack v0.1-corrected is authoritative. The machine-executable workflow layer (Milestone 006) and the architecture correction (Milestone 007) complete the foundational documentation and governance infrastructure for the Wolfpack system.
+
+## Next Strategic Objective
+
+Exercise the wolfpack_review workflow against a real production code change. The first task (task_002) was a documentation correction. The next task should be a genuine production proposal for the voice_ai system that exercises the full preflight validation → Wolfpack review → Deployment Governor → implementation pipeline.
+
+---
+
+*Milestone 007 — 2026-05-23*

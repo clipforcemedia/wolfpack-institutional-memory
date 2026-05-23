@@ -15,6 +15,7 @@
 | 004 — OpenClaw Direct GitHub Deployment | ✓ Complete | 2026-05-22 |
 | 005 — Canonical Initialization Audit | ✓ Complete | 2026-05-20 |
 | 006 — Machine-Executable Workflow Layer | ✓ Complete | 2026-05-23 |
+| 007 — Architecture Correction Canonized (DEC-001) | ✓ Complete | 2026-05-23 |
 
 ---
 
@@ -22,27 +23,29 @@
 
 | # | Action | Owner | Priority | Status |
 |---|---|---|---|---|
-| 1 | Create first real (non-example) wolfpack_review task | Eterna / Wolfpack | high | pending |
+| 1 | Create first real (non-example) wolfpack_review task | Eterna / Wolfpack | high | ✓ Completed (task_002) |
 
 ---
 
 ## Implementation Notes
 
-### First Real Wolfpack Review Task
+### DEC-001 Architecture Correction — Implemented
 
-The runner has been validated against `task_001.md` (example task). The next step is to create a real production task that exercises the full wolfpack review pipeline with actual reviewer inputs.
+task_002 was the first real wolfpack_review task. All 4 Wolfpack roles (Opportunity Radar, Red Team, Deployment Governor, Memory Keeper) approved the architecture correction. Decision: `approve`.
 
-**Requirements for first real task:**
-- Must be a genuine production proposal (not an example)
-- Must include all required fields per `workflows/WOLFPACK_REVIEW.md`
-- Must have a valid rollback target commit
-- Must have validation commands that execute cleanly
-- Will be routed through: Opportunity Radar → Red Team → Deployment Governor → Memory Keeper → Eterna synthesis
+**Corrected architecture (DEC-001):**
+- OpenClaw/ClawBro: Replaceable execution worker (not primary control plane)
+- ChatGPT/Eterna: Cognitive orchestration layer
+- GitHub: Institutional memory and task bus
+- Deterministic workflows/GitHub Actions/n8n: Preferred orchestration layer
 
-**Candidate scope:**
-- Actual voice_ai feature request or bug fix
-- Validated against preflight commands
-- Approved by Deployment Governor before implementation
+**DEC-001 Status:** ✓ Implemented — canon files updated per Definition of Done.
+
+### First Real Wolfpack Review Task (task_002)
+
+**Status:** ✓ Complete — DEC-001 approved and implemented
+
+The first real wolfpack_review task (task_002) was the architecture correction itself. It was validated, reviewed by all 4 Wolfpack roles, approved by Deployment Governor, and the correction was implemented across the canon files.
 
 ---
 

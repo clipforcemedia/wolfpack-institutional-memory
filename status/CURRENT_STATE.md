@@ -13,7 +13,7 @@
 | Render deployment | ✓ Active | Auto-deploys from `main` |
 | Twilio phone line | ✓ Active | Media stream functional |
 | OpenAI Realtime | ✓ GA | gpt-4o-realtime-preview |
-| OpenClaw | ✓ Active | 2026.4.26, primary execution worker |
+| OpenClaw | ✓ Replaceable Worker | 2026.4.26 — not primary control plane, execute defined tasks only |
 | GitHub PAT | ✓ Valid | Scoped to `voice-ai` repo only |
 
 ---
@@ -58,7 +58,7 @@
 | Limitation | Impact | Mitigation |
 |---|---|---|
 | GitHub PAT write access blocked | Cannot create new repos via API | PAT scope fixed — repo creation now works |
-| OpenClaw is replaceable worker | Not central OS | Architecture documented in canon |
+| OpenClaw is replaceable | Execution worker, not central OS or control plane | Corrected in canon (DEC-001) |
 | GitHub is canonical source | Requires git operations | PAT auth validated and working |
 
 ---
