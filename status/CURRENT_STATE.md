@@ -45,7 +45,7 @@
 
 | Item | Status |
 |---|---|
-| **wolfpack-institutional-memory repo** | ✓ Local created, GitHub creation blocked |
+| **wolfpack-institutional-memory repo** | ✓ Synced to GitHub |
 | **Canon files** | ✓ Created |
 | **Operations docs** | ✓ Synced from workspace |
 | **Agent roles** | ✓ Defined |
@@ -57,7 +57,7 @@
 
 | Limitation | Impact | Mitigation |
 |---|---|---|
-| GitHub PAT write access blocked | Cannot create new repos via API | Local repo created; manual repo creation needed |
+| GitHub PAT write access blocked | Cannot create new repos via API | PAT scope fixed — repo creation now works |
 | OpenClaw is replaceable worker | Not central OS | Architecture documented in canon |
 | GitHub is canonical source | Requires git operations | PAT auth validated and working |
 

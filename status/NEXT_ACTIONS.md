@@ -9,9 +9,15 @@
 
 | # | Action | Priority | Owner | Status |
 |---|---|---|---|---|
-| 1 | Rotate GitHub PAT (90-day window) | high | Human | pending |
-| 2 | Manual GitHub repo creation: `wolfpack-institutional-memory` | high | Human | needed |
-| 3 | Push local wolfpack repo to newly created GitHub repo | high | OpenClaw | blocked by #2 |
+| 1 | ~~Manual GitHub repo creation: `wolfpack-institutional-memory`~~ | ~~high~~ | ~~Human~~ | ✓ **done** |
+| 2 | ~~Wolfpack repo push~~ | ~~high~~ | ~~OpenClaw~~ | ✓ **done** |
+| 3 | Rotate GitHub PAT (90-day window) | high | Human | pending |
+| 4 | Validate Render health endpoint | medium | OpenClaw | pending |
+| 5 | Test live call — verify Alice responds correctly | medium | OpenClaw | pending |
+| 6 | Create Wolfpack review workflow task runner | medium | OpenClaw | pending |
+| 7 | Sync wolfpack-institutional-memory canonical docs to workspace | medium | OpenClaw | pending |
+| 8 | Migrate GitHub PAT to OpenClaw native secrets management | medium | OpenClaw | blocked by vault |
+| 9 | Add OpenClaw deployment validation cron (health + log check) | low | OpenClaw | pending |
 
 ---
 
