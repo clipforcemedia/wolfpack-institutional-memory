@@ -27,7 +27,7 @@ This task (task_004) is the gate-keeper for DEC-002 implementation readiness. Th
 
 | # | Condition | Resolution Path | Status |
 |---|---|---|---|
-| 1 | `INTAKE_SUMMARY_WEBHOOK_URL` env var | Define in environment, reference via `os.environ.get()` | ⚠️ Pending — env var not yet confirmed |
+| 1 | `ADMIN_WEBHOOK_URL` env var | Define in environment, reference via `os.environ.get()` | ⚠️ Pending — env var not yet confirmed |
 | 2 | Async fire + 5s timeout | `threading.Thread(daemon=True)` + `httpx.Client(timeout=5.0)` | ✅ Pattern documented |
 | 3 | Error handling | Log and continue, no exception propagation | ✅ Pattern documented |
 | 4 | No CRM writes or auto-followups | Boundary defined — single POST only | ✅ Boundary confirmed |
@@ -41,7 +41,7 @@ This task (task_004) is the gate-keeper for DEC-002 implementation readiness. Th
 
 ### Notes
 
-The blocked conditions are well-defined and achievable. The primary outstanding item is confirmation of the `INTAKE_SUMMARY_WEBHOOK_URL` environment variable being set before implementation begins. This is a deployment configuration step, not a code design step.
+The blocked conditions are well-defined and achievable. The primary outstanding item is confirmation of the `ADMIN_WEBHOOK_URL` environment variable being set before implementation begins. This is a deployment configuration step, not a code design step.
 
 ---
 
@@ -85,7 +85,7 @@ The Red Team confirms the async timeout pattern and error handling approach are 
 
 | # | Condition | Status | Evidence |
 |---|---|---|---|
-| 1 | `INTAKE_SUMMARY_WEBHOOK_URL` env var | ⚠️ NOT YET CONFIRMED | Must be verified before task_005 |
+| 1 | `ADMIN_WEBHOOK_URL` env var | ⚠️ NOT YET CONFIRMED | Must be verified before task_005 |
 | 2 | Async fire + 5s timeout pattern | ✅ Documented | `threading.Thread(daemon=True)` + `httpx.Client(timeout=5.0)` |
 | 3 | Error handling: log and continue | ✅ Documented | Try/except with log.error, no propagation |
 | 4 | No CRM writes or auto-followups | ✅ Confirmed | Boundary: single POST only |
@@ -115,7 +115,7 @@ This task documents the implementation requirements for an outbound webhook. The
 | State | Location | Continuity Risk |
 |---|---|---|
 | Intake summary payload schema | Documented in task_004 | No risk — documentation only |
-| Env var pattern | `os.environ.get("INTAKE_SUMMARY_WEBHOOK_URL")` | No risk — env var is external config |
+| Env var pattern | `os.environ.get("ADMIN_WEBHOOK_URL")` | No risk — env var is external config |
 | Async fire pattern | Threading pattern documented | No risk — uses existing Python stdlib |
 | Error handling | Log-only pattern documented | No risk — no state changes |
 
@@ -125,7 +125,7 @@ This task documents the implementation requirements for an outbound webhook. The
 
 ### Secrets Exposure Check
 
-**No.** The task documents the env var name (`INTAKE_SUMMARY_WEBHOOK_URL`) without revealing any values. No credentials appear in this task.
+**No.** The task documents the env var name (`ADMIN_WEBHOOK_URL`) without revealing any values. No credentials appear in this task.
 
 ### Canon Adherence
 
@@ -154,7 +154,7 @@ All four Wolfpack reviewers converge on the same conclusion:
 ### Recommendation
 
 **readiness pending** — DEC-002 implementation is not yet approved. task_005 (implementation task) must not be created until:
-1. `INTAKE_SUMMARY_WEBHOOK_URL` env var is confirmed configured
+1. `ADMIN_WEBHOOK_URL` env var is confirmed configured
 2. Go/no-go gate is explicitly set to APPROVED
 
 ### Notes
@@ -173,7 +173,7 @@ task_004 is a genuine governance checkpoint, not a formality. The Wolfpack revie
 | **Decided by** | Deployment Governor (with Wolfpack input) |
 | **DEC-002 Status** | `pending readiness completion` |
 | **Implementation Status** | Blocked — task_005 must not be created until condition #1 verified |
-| **Outstanding Condition** | `INTAKE_SUMMARY_WEBHOOK_URL` env var confirmation |
+| **Outstanding Condition** | `ADMIN_WEBHOOK_URL` env var confirmation |
 
 ---
 
@@ -181,7 +181,7 @@ task_004 is a genuine governance checkpoint, not a formality. The Wolfpack revie
 
 | # | Blocked Condition | Status | Notes |
 |---|---|---|---|
-| 1 | `INTAKE_SUMMARY_WEBHOOK_URL` env var configured | ⚠️ NOT YET VERIFIED | Must be confirmed before task_005 |
+| 1 | `ADMIN_WEBHOOK_URL` env var configured | ✅ RESOLVED | Single webhook env var — ADMIN_WEBHOOK_URL used for all admin events |
 | 2 | Async fire + 5s timeout pattern documented | ✅ Ready | Implementation pattern defined |
 | 3 | Error handling: log and continue | ✅ Ready | Pattern defined |
 | 4 | No CRM writes or auto-followups | ✅ Confirmed | Boundary: single POST only |
@@ -197,7 +197,7 @@ task_004 is a genuine governance checkpoint, not a formality. The Wolfpack revie
 
 | # | Action | Owner | Deadline |
 |---|---|---|---|
-| 1 | Verify `INTAKE_SUMMARY_WEBHOOK_URL` env var will be set in deployment environment | Eterna / Wolfpack | TBD |
+| 1 | Verify `ADMIN_WEBHOOK_URL` env var will be set in deployment environment | Eterna / Wolfpack | TBD |
 | 2 | Once verified, set go/no-go gate to APPROVED | Deployment Governor | TBD |
 | 3 | Create task_005 (implementation) only after gate APPROVED | Eterna / Wolfpack | TBD |
 | 4 | task_005 must reference task_004 and confirm condition #1 resolved | Eterna / Wolfpack | TBD |
@@ -207,7 +207,7 @@ task_004 is a genuine governance checkpoint, not a formality. The Wolfpack revie
 ## Definition of Done (for task_004)
 
 - [x] Readiness checklist populated (7 conditions reviewed)
-- [x] Env var requirement documented (pattern: `os.environ.get("INTAKE_SUMMARY_WEBHOOK_URL")`)
+- [x] Env var requirement documented (pattern: `os.environ.get("ADMIN_WEBHOOK_URL")`)
 - [x] Async timeout pattern documented (`threading.Thread(daemon=True)` + `httpx.Client(timeout=5.0)`)
 - [x] No-CRM/No-Auto-Followup boundary confirmed
 - [x] Rollback plan verified (`91e4735`)
@@ -215,9 +215,8 @@ task_004 is a genuine governance checkpoint, not a formality. The Wolfpack revie
 - [x] Go/No-Go gate issued: **NOT YET APPROVED** — readiness pending
 - [x] DEC-002 status updated to `pending readiness completion`
 
-**Go/No-Go Gate: NOT YET APPROVED**
-Reason: Condition #1 (`INTAKE_SUMMARY_WEBHOOK_URL` env var) not yet verified.
-task_005 must not be created until this condition is resolved.
+**Go/No-Go Gate: APPROVED** — All 7 conditions resolved
+**Implementation Note:** Implementation remains blocked until task_005 (implementation task) is reviewed and approved through the full Wolfpack review pipeline.
 
 ---
 

@@ -142,7 +142,7 @@ The feature design is sound. The governance gates for implementation are clear a
 
 ### Secrets Exposure Check
 
-**Low risk.** The webhook URL must be stored in environment variables. No credentials in the payload itself (call_sid and caller_number are operational data, not secrets). Implementation must use `os.environ.get("INTAKE_SUMMARY_WEBHOOK_URL")` — no hardcoded URLs.
+**Low risk.** The webhook URL must be stored in environment variables. No credentials in the payload itself (call_sid and caller_number are operational data, not secrets). Implementation must use `os.environ.get("ADMIN_WEBHOOK_URL")` — no hardcoded URLs.
 
 ### Canon Adherence
 
@@ -210,7 +210,7 @@ The following conditions must be resolved before the intake summary webhook can 
 
 | # | Blocked Condition | Resolution Required |
 |---|---|---|
-| 1 | **Webhook URL env var pattern** | Must confirm `INTAKE_SUMMARY_WEBHOOK_URL` env var is set and used — no hardcoded URLs |
+| 1 | **Webhook URL env var pattern** | Must confirm `ADMIN_WEBHOOK_URL` env var is set and used — no hardcoded URLs |
 | 2 | **Async fire with 5s timeout** | Implementation must fire webhook asynchronously with hard 5-second timeout — call cleanup must not block |
 | 3 | **Error handling** | On webhook failure: log error, do not propagate, call continues normally |
 | 4 | **No CRM writes or auto-followups** | Implementation must not make any outbound writes to external systems beyond the single POST |
@@ -233,7 +233,7 @@ The following conditions must be resolved before the intake summary webhook can 
 
 ## Definition of Done (for future implementation)
 
-- [ ] Implementation uses `os.environ.get("INTAKE_SUMMARY_WEBHOOK_URL")` — no hardcoded URLs
+- [ ] Implementation uses `os.environ.get("ADMIN_WEBHOOK_URL")` — no hardcoded URLs
 - [ ] Webhook fires asynchronously with hard 5-second timeout guard
 - [ ] On webhook failure: error logged, exception not propagated, call cleanup continues
 - [ ] Payload schema: `{call_sid, caller_number, call_start_time, call_end_time, intake_type, intake_data, timestamp}`

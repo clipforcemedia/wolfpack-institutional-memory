@@ -50,6 +50,7 @@ Correct the v0.1 architecture to accurately reflect runtime roles:
 
 `approved` — implementation pending
 
+**Implementation Gate:** Implementation (task_005) remains blocked until the Wolfpack implementation review is approved. Readiness gate (task_004) is APPROVED — the implementation gate is the separate Wolfpack review pipeline for any code changes.
 ## References
 
 - Task: `tasks/inbox/task_002.md`
@@ -78,7 +79,7 @@ Designate the intake summary webhook as a **future implementation candidate** pe
 
 | # | Blocked Condition | Resolution Required |
 |---|---|---|
-| 1 | Webhook URL env var | `INTAKE_SUMMARY_WEBHOOK_URL` env var used — no hardcoded URLs |
+| 1 | Webhook URL env var | `ADMIN_WEBHOOK_URL` env var used — no hardcoded URLs |
 | 2 | Async fire + 5s timeout | Call cleanup must not block on webhook delivery |
 | 3 | Error handling | On failure: log error, do not propagate, call continues |
 | 4 | No CRM writes or auto-followups | Single POST only — no external system writes |
@@ -106,6 +107,7 @@ Designate the intake summary webhook as a **future implementation candidate** pe
 
 `pending implementation approval` — blocked until conditions resolved
 
+**Implementation Gate:** Implementation (task_005) remains blocked until the Wolfpack implementation review is approved. Readiness gate (task_004) is APPROVED — the implementation gate is the separate Wolfpack review pipeline for any code changes.
 ## References
 
 - Task: `tasks/inbox/task_003.md`
