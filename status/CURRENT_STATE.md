@@ -72,3 +72,27 @@
 ---
 
 *File maintained in `status/CURRENT_STATE.md`*
+---
+
+## Institutional Memory Infrastructure
+
+| Item | Status | Notes |
+|---|---|---|
+| **wolfpack_review_runner.py** | ✓ Active | Deterministic workflow state processor |
+| **processed_registry.json** | ✓ Active | Append-only registry, UTF-8 safe |
+| **Machine execution layer** | ✓ Operational | Reduces Human API for workflow processing |
+
+---
+
+## Execution Capabilities
+
+| Capability | Status |
+|---|---|
+| Deterministic task processing | ✓ Active |
+| No external API calls | ✓ Enforced |
+| No network access | ✓ Enforced |
+| Append-only registry | ✓ Enforced |
+| Observable logging | ✓ Active |
+| Safe failure behavior | ✓ Active |
+
+*Current state updated 2026-05-23*

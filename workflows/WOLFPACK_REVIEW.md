@@ -210,3 +210,128 @@ revise_and_resubmit → task revised, re-enters workflow
 ---
 
 *Workflow defined in `workflows/WOLFPACK_REVIEW.md` — version 0.1, 2026-05-23*
+---
+
+## 10. Machine Execution Layer
+
+**Effective:** 2026-05-23
+
+The Wolfpack Review Workflow supports a machine-executable deterministic processing layer via `tasks/wolfpack_review_runner.py`.
+
+### Runner Purpose
+
+The runner is a deterministic workflow state processor — **NOT an autonomous intelligence system**.
+
+The runner exists to:
+- reduce Human API
+- standardize workflow execution
+- preserve observability
+- preserve governance
+- preserve auditability
+- preserve institutional continuity
+
+The runner must NOT:
+- perform autonomous reasoning
+- generate hidden chain-of-thought
+- autonomously deploy
+- autonomously modify doctrine
+- call external APIs
+- self-modify
+- bypass governance
+- create hidden state
+
+### Runner Capabilities
+
+- Read tasks from `tasks/inbox/*.md`
+- Validate required task structure (task id, workflow type, proposal, requested outputs)
+- Extract structured metadata
+- Validate workflow type is `wolfpack_review`
+- Validate required sections exist
+- Validate append-only rules are documented
+- Validate rollback/reference fields exist
+- Generate result files from task metadata
+- Append deterministic timestamps
+- Update task processing status
+- Update `tasks/processed_registry.json` (append-only)
+- Generate observable console logs (timestamped, workflow id, task id, validation result, result path)
+- Deterministic behavior only — same input always produces same output
+
+### Runner Constraints
+
+- Python standard library only — no third-party dependencies
+- No network access
+- No subprocess execution
+- No GitHub API calls
+- No deployment capability
+- Syntax-clean, fully readable code
+- Operationally boring and reliable
+- Safe failure behavior — no partial corruption, no registry overwrite
+
+### Workflow Stages (Machine Execution)
+
+```
+Stage 1 — Task Discovery
+    Scan tasks/inbox/*.md for pending tasks
+    ↓
+Stage 2 — Task Validation
+    Validate required fields, workflow type, section presence
+    ↓ [valid]
+Stage 3 — Metadata Extraction
+    Extract task_id, workflow_type, timestamps, status
+    ↓
+Stage 4 — Template Loading
+    Locate existing result template if present
+    ↓
+Stage 5 — Result Generation
+    Generate result file with extracted metadata
+    ↓
+Stage 6 — Registry Update
+    Append entry to tasks/processed_registry.json
+    ↓
+Stage 7 — Completion Logging
+    Emit timestamped completion log
+```
+
+### Failure Behavior
+
+- Failed validation → task logged as `failed`, reason recorded, registry updated
+- No partial corruption of registry
+- No registry overwrite — append-only
+- Failed tasks logged explicitly with deterministic failure messaging
+- Runner continues to next task on failure (does not halt on single task failure)
+
+### Processed Registry
+
+File: `tasks/processed_registry.json`
+
+Structure:
+```json
+{
+  "entries": [
+    {
+      "task_id": "task_001",
+      "workflow_type": "wolfpack_review",
+      "created_timestamp": "2026-05-23T03:47:00Z",
+      "processed_timestamp": "2026-05-23T04:30:00Z",
+      "status": "validated",
+      "result_path": "tasks/results/task_001_RESULT_validated_20260523T043000Z.md",
+      "validation_result": "valid"
+    }
+  ]
+}
+```
+
+Rules:
+- Append-only — never delete or overwrite existing entries
+- Valid JSON structure
+- UTF-8 safe
+- Entries ordered by processed_timestamp
+
+### Governance Contract
+
+The processed registry is **institutional operational state**. It preserves:
+- Auditability: every workflow execution is logged
+- Replayability: registry allows reconstruction of processing history
+- Workflow lineage: task_id → workflow_type → result_path chain is preserved
+
+*Machine execution layer documented in `workflows/WOLFPACK_REVIEW.md` — section 10, 2026-05-23*

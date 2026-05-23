@@ -4,6 +4,8 @@
 **Timestamp:** 2026-05-23T03:47:00Z
 **Status:** pending_review
 **Proposed by:** Eterna
+**Workflow Type:** wolfpack_review
+**Requested Outputs:** Wolfpack Red Team Review, Memory Keeper Continuity Review, Deployment Governor Decision, Eterna Final Recommendation, Next Action, Definition of Done
 **Linked repo:** clipforcemedia/voice-ai
 
 ---

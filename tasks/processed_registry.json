@@ -1,0 +1,44 @@
+{
+  "entries": [
+    {
+      "task_id": "unknown",
+      "workflow_type": "unknown",
+      "created_timestamp": "unknown",
+      "processed_timestamp": "2026-05-23T04:25:06Z",
+      "status": "failed",
+      "result_path": null,
+      "validation_result": "missing:task_id,workflow_type,requested_outputs,workflow_type_validation",
+      "failure_reason": "validation_failed:missing:task_id,workflow_type,requested_outputs,workflow_type_validation"
+    },
+    {
+      "task_id": "task_001",
+      "workflow_type": "wolfpack_review",
+      "created_timestamp": "2026-05-23T03:47:00Z",
+      "processed_timestamp": "2026-05-23T04:26:27Z",
+      "status": "validated",
+      "result_path": "/home/node/.openclaw/workspace/wolfpack-institutional-memory/tasks/results/task_001_RESULT_validated_20260523T042627Z.md",
+      "validation_result": "valid"
+    }
+  ],
+  "schema_version": "1.0",
+  "purpose": "Append-only deterministic workflow state registry for wolfpack_review tasks",
+  "governance_rules": [
+    "append-only — never overwrite existing entries",
+    "valid JSON structure",
+    "deterministic ordering — entries ordered by processed_timestamp",
+    "UTF-8 safe",
+    "registry is institutional operational state",
+    "preserve auditability",
+    "preserve replayability",
+    "preserve workflow lineage"
+  ],
+  "entry_schema": {
+    "task_id": "string — task identifier from inbox",
+    "workflow_type": "string — workflow type (e.g., wolfpack_review)",
+    "created_timestamp": "string — ISO-8601 timestamp from source task",
+    "processed_timestamp": "string — ISO-8601 timestamp of processing",
+    "status": "string — discovered | validated | generated | failed",
+    "result_path": "string | null — path to generated result file",
+    "validation_result": "string — validation outcome"
+  }
+}
