@@ -18,14 +18,33 @@
       "status": "validated",
       "result_path": "/home/node/.openclaw/workspace/wolfpack-institutional-memory/tasks/results/task_001_RESULT_validated_20260523T042627Z.md",
       "validation_result": "valid"
+    },
+    {
+      "task_id": "task_002",
+      "workflow_type": "wolfpack_review",
+      "created_timestamp": "2026-05-23T04:33:00Z",
+      "processed_timestamp": "2026-05-23T04:34:15Z",
+      "status": "failed",
+      "result_path": null,
+      "validation_result": "missing:workflow_type,requested_outputs,workflow_type_validation",
+      "failure_reason": "validation_failed:missing:workflow_type,requested_outputs,workflow_type_validation"
+    },
+    {
+      "task_id": "task_002",
+      "workflow_type": "wolfpack_review",
+      "created_timestamp": "2026-05-23T04:33:00Z",
+      "processed_timestamp": "2026-05-23T04:34:22Z",
+      "status": "validated",
+      "result_path": "/home/node/.openclaw/workspace/wolfpack-institutional-memory/tasks/results/task_002_RESULT_validated_20260523T043422Z.md",
+      "validation_result": "valid"
     }
   ],
   "schema_version": "1.0",
   "purpose": "Append-only deterministic workflow state registry for wolfpack_review tasks",
   "governance_rules": [
-    "append-only — never overwrite existing entries",
+    "append-only \u2014 never overwrite existing entries",
     "valid JSON structure",
-    "deterministic ordering — entries ordered by processed_timestamp",
+    "deterministic ordering \u2014 entries ordered by processed_timestamp",
     "UTF-8 safe",
     "registry is institutional operational state",
     "preserve auditability",
@@ -33,12 +52,12 @@
     "preserve workflow lineage"
   ],
   "entry_schema": {
-    "task_id": "string — task identifier from inbox",
-    "workflow_type": "string — workflow type (e.g., wolfpack_review)",
-    "created_timestamp": "string — ISO-8601 timestamp from source task",
-    "processed_timestamp": "string — ISO-8601 timestamp of processing",
-    "status": "string — discovered | validated | generated | failed",
-    "result_path": "string | null — path to generated result file",
-    "validation_result": "string — validation outcome"
+    "task_id": "string \u2014 task identifier from inbox",
+    "workflow_type": "string \u2014 workflow type (e.g., wolfpack_review)",
+    "created_timestamp": "string \u2014 ISO-8601 timestamp from source task",
+    "processed_timestamp": "string \u2014 ISO-8601 timestamp of processing",
+    "status": "string \u2014 discovered | validated | generated | failed",
+    "result_path": "string | null \u2014 path to generated result file",
+    "validation_result": "string \u2014 validation outcome"
   }
 }
