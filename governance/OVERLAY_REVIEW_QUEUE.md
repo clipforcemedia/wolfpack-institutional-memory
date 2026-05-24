@@ -82,7 +82,7 @@ Each queue entry contains:
 | **overlay_type** | `expansion` |
 | **affected_canon** | `canon/WOLFPACK_CANON.md` |
 | **overlay_risk** | `MEDIUM` |
-| **status** | `queued` |
+| **status** | `completed` |
 | **reviewer** | Wolfpack |
 | **escalation_required** | true |
 | **created** | 2026-05-24 |
@@ -120,7 +120,7 @@ Each queue entry contains:
 | **overlay_type** | `contradiction` |
 | **affected_canon** | `canon/SYSTEM_ARCHITECTURE.md`, `canon/WOLFPACK_CANON.md` |
 | **overlay_risk** | `HIGH` |
-| **status** | `queued` |
+| **status** | `completed` |
 | **reviewer** | Human Operator + DEC |
 | **escalation_required** | true — DEC entry required |
 | **created** | 2026-05-24 |

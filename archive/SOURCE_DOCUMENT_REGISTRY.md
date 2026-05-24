@@ -74,7 +74,7 @@ Each entry adheres to the following schema:
 | source_id | filename | archive_path | checksum | status | overlay_risk | canonical_targets | batch |
 |---|---|---|---|---|---|---|---|
 | `SRC-CANON-001` | `01_WOLFPACK_CANONICAL_REPOSITORY_SPEC_v1.pdf` | `canonical/01_WOLFPACK_CANONICAL_REPOSITORY_SPEC_v1.pdf` | `sha256:160189fda74b51e88e21cd321866b6dfc24c479fc39916bd75130780f8626053` | `active` | NONE | `canon/CANONICAL_REPOSITORY_SPEC.md` | `STAGE_1_BATCH_002A` |
-| `SRC-CANON-002` | `Wolfpack_Strategic_Doctrine_Expansion_v1.pdf` | `canonical/Wolfpack_Strategic_Doctrine_Expansion_v1.pdf` | `pending_upload` | `pending_upload` | MEDIUM | `canon/STRATEGIC_DOCTRINE_EXPANSION.md` | `STAGE_1_BATCH_002B` |
+| `SRC-CANON-002` | `Wolfpack_Strategic_Doctrine_Expansion_v1.pdf` | `canonical/Wolfpack_Strategic_Doctrine_Expansion_v1.pdf` | `sha256:d2774660b0eb1aa206df16fe0c64f6638e914fac8bd133d3637b689085aa4cb4` | `active` | MEDIUM | `canon/STRATEGIC_DOCTRINE_EXPANSION.md` | `STAGE_1_BATCH_002B` |
 
 ---
 
