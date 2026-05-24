@@ -96,8 +96,10 @@ All production deployments require:
 | Step | Action | Owner | Status |
 |---|---|---|---|
 | 1 | Create canonical memory ingestion plan | Eterna / Wolfpack | ✓ Complete |
-| 2 | Execute Stage 1 Batch 001 — ingest core doctrine specs | Eterna / Wolfpack | Pending |
+| 2 | Execute Stage 1 Batch 001 — ingest core doctrine specs | Eterna / Wolfpack | ✓ Complete |
+| 3 | Create Batch 002 PDF source inventory | Eterna / Wolfpack | ✓ Complete |
+| 4 | Execute Stage 1 Batch 002A — ingest core memory + governance specs | Eterna / Wolfpack | Pending |
 
-**Active Next Action:** Execute Stage 1 Batch 001 — ingest core doctrine specs
+**Active Next Action:** Execute Stage 1 Batch 002A — ingest canonical repository spec, strategic doctrine expansion, memory architecture, and agent governance
 
 *File maintained in `status/NEXT_ACTIONS.md`*
