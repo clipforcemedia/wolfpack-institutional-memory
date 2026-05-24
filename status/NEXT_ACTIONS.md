@@ -36,6 +36,7 @@ append_only: false
 | 005 — Canonical Initialization Audit | ✓ Complete | 2026-05-20 |
 | 006 — Machine-Executable Workflow Layer | ✓ Complete | 2026-05-23 |
 | 007 — Architecture Correction Canonized (DEC-001) | ✓ Complete | 2026-05-23 |
+| 011 — Runtime State Governance Layer Created | ✓ Complete | 2026-05-24 |
 
 ---
 
@@ -53,6 +54,7 @@ append_only: false
 |---|---|---|---|---|
 | 1 | Create runtime state governance layer (runtime/) | Eterna / Wolfpack | high | ✓ Complete (2026-05-24) |
 | 2 | **Create executable runtime state validator after governance approval** | Eterna / Wolfpack | high | Pending |
+| 3 | Batch 002B remaining overlays — OVL-20260524-001 (Strategic Doctrine), OVL-20260524-003 (OS Doc Pack — HIGH) | Eterna / Wolfpack | high | Pending |
 
 ---
 
@@ -115,6 +117,6 @@ All production deployments require:
 | 7 | Create doctrine overlay reconciliation governance | Eterna / Wolfpack | ✓ Complete |
 | 8 | Review MEDIUM overlay-risk doctrine before Batch 002B ingestion | Eterna / Wolfpack | Pending |
 
-**Active Next Action:** Review OVL-20260524-001 (Strategic Doctrine Expansion) and OVL-20260524-002 (Agent Governance) — both MEDIUM overlay risk, require Wolfpack review before Batch 002B extraction; OVL-20260524-003 blocked on DEC entry
+**Active Next Action:** Review OVL-20260524-001 (Strategic Doctrine Expansion — MEDIUM) and OVL-20260524-003 (Operating System Doc Pack — HIGH, requires DEC entry) — OVL-20260524-002 (Agent Governance) now canonicalized as agents/AGENT_GOVERNANCE.md
 
 *File maintained in `status/NEXT_ACTIONS.md`*

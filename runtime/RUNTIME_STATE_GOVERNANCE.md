@@ -1,194 +1,282 @@
-# RUNTIME STATE GOVERNANCE
+---
+title: "Runtime State Governance — Deterministic Worker and Task Execution Standards"
+document_type: "governance"
+status: "active"
+version: "1.0"
+created: "2026-05-24"
+updated: "2026-05-24"
+source_type: "internal"
+provenance:
+  source: "wolfpack-institutional-memory"
+  source_type: "internal"
+  ingested_by: "Eterna / Wolfpack"
+  ingest_date: "2026-05-24"
+  batch: "STAGE_1_BATCH_002B"
+tags:
+  - "runtime"
+  - "governance"
+  - "worker"
+  - "task"
+  - "deterministic"
+  - "batch-002"
+related_ids:
+  - "runtime/WORKER_LIFECYCLE.md"
+  - "runtime/TASK_STATE_MODEL.md"
+  - "canon/SYSTEM_ARCHITECTURE.md"
+  - "agents/AGENT_GOVERNANCE.md"
+  - "operations/INCIDENT_LOG.md"
+append_only: true
+---
 
-> Governs all deterministic worker execution, task ownership, leasing,
-> crash recovery, and append-only execution history.
-> Effective for all task bridges and worker processes touching the
-> wolfpack task registry.
+# Runtime State Governance — Deterministic Worker and Task Execution Standards
+
+> **Source:** Wolfpack institutional memory — runtime state governance layer  
+> **Status:** Active — Canonical Governance Doctrine  
+> **Activation Date:** 2026-05-24  
+> **Supersedes:** Ad-hoc runtime conventions (none formally documented prior)
 
 ---
 
-## 1. PURPOSE
+## Purpose
 
-Runtime state governance defines the contractual rules by which
-executable workers claim, process, complete, fail, and retire tasks
-without duplicating work, losing ownership, or corrupting shared state.
+This document establishes formal governance standards for all deterministic task execution within the Wolfpack system. It defines:
 
-It applies to every worker that reads from or writes to the shared task
-registry and execution history log.
+- How execution workers operate within the Wolfpack governance framework
+- How tasks are owned, leased, and released across worker sessions
+- How state is preserved, recovered, and audited
+- What state is prohibited from being stored outside formal channels
 
----
+The goal is to ensure that **no task execution creates hidden state**, **no worker becomes a governance authority**, and **every task outcome is traceable to a deterministic decision**.
 
-## 2. EXECUTION WORKER ROLE
-
-An **execution worker** (hereafter "worker") is any autonomous process
-that:
-
-- Polls the task registry for `pending` tasks
-- Claims a task by transitioning its state
-- Performs deterministic computation or external I/O on behalf of a task
-- Writes a completion or failure record to the append-only execution log
-- Posts a heartbeat to indicate continued health
-
-Workers are stateless with respect to each other. No inter-worker
-communication is required or assumed.
+> **See also:** [Worker Lifecycle](./WORKER_LIFECYCLE.md) — State machine for execution workers  
+> **See also:** [Task State Model](./TASK_STATE_MODEL.md) — State machine for task execution
 
 ---
 
-## 3. WORKER REPLACEABILITY DOCTRINE
+## 1. Execution Worker Role
 
-Any worker may be terminated and replaced by another at any time
-without loss of task integrity, provided:
+**Definition:** An execution worker is any automated process that performs task actions on behalf of the Wolfpack system. Within Wolfpack, the primary execution worker is OpenClaw.
 
-- The replacing worker observes the same task state machine
-- No task is ever left in a terminal state while unprocessed
-- The task registry is the single source of truth for ownership
-
-**Corollary:** a worker that crashes mid-execution does not orphan a task.
-The task remains in its last written state; a replacement worker may
-reclaim it per the leasing rules.
-
----
-
-## 4. TASK OWNERSHIP RULES
-
-A task is **owned** by the worker that most recently wrote a
-`claimed` or `in_progress` state transition to the registry.
-
-Ownership is transferred only when:
-- The current owner fails to renew its heartbeat (lease expiry)
-- The task reaches a terminal state (`completed`, `failed`, `skipped_already_processed`, `archived`)
-
-No two workers may simultaneously hold ownership of the same task.
-The registry is the authoritative ownership ledger.
-
----
-
-## 5. TASK LEASING RULES
-
-Each claim includes an explicit **lease duration** — the maximum interval
-between heartbeat updates before the claim is considered abandoned.
-
-Default lease: **300 seconds (5 minutes)**.
-
-A worker MUST renew its heartbeat before the lease expires if it is
-still executing. Failure to renew constitutes lease expiry and grants
-any waiting worker the right to reclaim the task.
-
-A task whose lease expires is treated as `abandoned` and becomes
-`pending` for re-claim by the next eligible worker.
-
----
-
-## 6. DUPLICATE-PROCESSING PREVENTION
-
-Before claiming a task, a worker MUST check the execution history log
-for a prior record of processing.
-
-If a record exists with a terminal state, the worker MUST transition
-the task to `skipped_already_processed` and emit no output.
-
-If a record exists with a non-terminal state (e.g., `in_progress` with
-no subsequent terminal record), the worker MUST verify the heartbeat
-is current before proceeding. If stale, the task MAY be reclaimed.
-
-Duplicate processing is a governance violation.
-
----
-
-## 7. CRASH RECOVERY RULES
-
-| Crash point | Recovery action |
+| Property | Requirement |
 |---|---|
-| Before claiming | No action. Task stays `pending`. |
-| After claim written, before first heartbeat | Reclaimable immediately by any worker. |
-| During execution, lease active | No action. Wait for lease expiry. |
-| After completion written | No action. Task is terminal. |
-| After failure written | No action. Task is terminal. |
-| During heartbeat write | idempotent retry; task remains `in_progress`. |
+| **Authority** | Zero autonomous authority. Workers execute only what governance gates approve |
+| **Governance position** | Subordinate to all governance systems — never above them |
+| **Permission scope** | Explicitly scoped permissions only — no blanket access to resources |
+| **Observability** | Full logging required for every action taken |
+| **Replaceability** | Must be replaceable at any time without loss of task state |
 
-A worker that restarts after a crash MUST re-inspect the registry
-before re-claiming any task.
+**See:** [System Architecture — OpenClaw as Replaceable Worker](./canon/SYSTEM_ARCHITECTURE.md)
 
 ---
 
-## 8. RETRY RULES
+## 2. Worker Replaceability Doctrine
 
-- A task in `failed` state MAY be retried at most **3 times**
-  (configurable per task class).
-- Each retry appends a new entry to the execution history log.
-- Retry count is stored in the task registry (`retry_count` field).
-- After 3 failures, the task transitions to `archived` and
-  no further automatic retries are permitted.
-- A human reviewer may manually unarchive and re-queue.
+**Principle:** Execution workers are stateless by design. All task state lives in institutional memory (GitHub), not in the worker process.
 
----
+| Doctrine | Description |
+|---|---|
+| **No local state dependency** | Worker must not require local files or process memory to resume a task |
+| **State in GitHub** | All task definitions, results, and audit records live in GitHub |
+| **Replaceable on failure** | Any worker can be terminated and replaced without losing task progress |
+| **Identical behavior guarantee** | New worker interpreting the same task file must produce the same result |
 
-## 9. HEARTBEAT REQUIREMENTS
-
-A worker MUST post a heartbeat for every task it owns at intervals
-no greater than `lease_duration / 2`.
-
-Heartbeat payload:
-```
-{
-  "task_id": "<id>",
-  "worker_id": "<id>",
-  "claimed_at": "<ISO-8601>",
-  "last_heartbeat_at": "<ISO-8601>",
-  "state": "in_progress"
-}
-```
-
-A worker that misses two consecutive heartbeat windows is considered
-**non-responsive** and its tasks become eligible for lease expiry
-and re-claim.
+**DEC-001 Alignment:** OpenClaw is the current replaceable execution worker. Any equivalent worker (Claude Code, alternative OpenClaw instance, etc.) that reads the same task files and produces identical outputs is a valid replacement.
 
 ---
 
-## 10. APPEND-ONLY EXECUTION HISTORY
+## 3. Task Ownership Rules
 
-The execution history log (`tasks/pull_history.jsonl` and any mirror)
-is **append-only**. No entry may be deleted, modified, or overwritten.
+**Definition:** Task ownership defines which worker is responsible for a task at any given time.
 
-Each line is a valid JSON record:
+| Rule | Description |
+|---|---|
+| **Claim establishes ownership** | A worker owns a task once it has claimed it and the claim is registered |
+| **Exclusive ownership** | Only the owning worker may perform actions on a claimed task |
+| **Ownership transfer prohibited** | A worker may not transfer ownership to another worker mid-execution |
+| **Ownership release** | Ownership is released upon task completion, failure, or timeout |
+| **Governance override** | Human operator or Deployment Governor may revoke ownership at any time |
 
-```json
-{"task_id":"...","worker_id":"...","state":"...","timestamp":"...","lease_expires_at":"...","notes":"..."}
-```
-
-Append-only guarantees:
-- Audit trail is never corrupted by concurrent writes
-- Crash reconstruction is always possible from the log
-- No hidden state — all transitions visible
+**Ownership does not imply authority.** Owning a task means the worker has responsibility for executing it — not that the worker has decision-making power over it.
 
 ---
 
-## 11. PROHIBITED HIDDEN STATE
+## 4. Task Leasing Rules
 
-Workers MUST NOT maintain private state that affects task routing,
-completion, or failure decisions outside the registry and execution log.
+**Definition:** Task leasing is the time-bounded claim mechanism that prevents indefinite ownership and enables crash recovery.
 
-Specifically prohibited:
-- In-memory task queues not persisted to the registry
-- Filesystem-side task state not mirrored to the registry
-- Inter-process locks or signals not reflected in the registry
-- Conditional logic that skips a task based on data not in the registry
+| Rule | Description |
+|---|---|
+| **Lease duration** | Claimed tasks have a defined lease duration (typically one task cycle) |
+| **Lease refresh** | Lease may be refreshed by the worker while actively executing |
+| **Lease expiry triggers recovery** | When lease expires without completion, task returns to `pending` |
+| **No automatic renewal** | Worker must explicitly renew the lease; automatic renewal is prohibited |
+| **Lease under governance** | Human operator or Deployment Governor may revoke a lease at any time |
 
----
-
-## 12. DEFINITION OF DONE
-
-A task is **Done** when it has a terminal state recorded in both:
-
-1. The task registry (`state` field is terminal)
-2. The append-only execution history log (last entry is terminal)
-
-Done is not recorded until both conditions are satisfied.
-A task is **Done** only once. Re-processing a Done task is a governance
-violation unless it transitions through `archived → pending`.
+**Purpose:** Leasing prevents tasks from being permanently claimed by workers that become unavailable (crash, network loss, restarts).
 
 ---
 
-*Governance authority: wolfpack-institutional-memory / runtime/*
-*Effective: 2026-05-24*
-*Supersedes: none*
+## 5. Duplicate-Processing Prevention
+
+**Definition:** Duplicate-processing prevention ensures the same task is not executed multiple times across worker sessions.
+
+| Mechanism | Implementation |
+|---|---|
+| **Processed registry** | Append-only `processed_registry.json` records completed task IDs by commit hash |
+| **Idempotency check** | Worker checks registry before processing — if task_id already recorded, skip |
+| **Append-only enforcement** | Registry entries are never deleted, only added |
+| **Commit-scoped tracking** | Registry tracks which commit produced the result, enabling rollback comparison |
+| **Race condition prevention** | Claiming a task and recording completion are atomic within the same task cycle |
+
+> **See also:** [Task State Model — `skipped_already_processed`](./TASK_STATE_MODEL.md)
+
+---
+
+## 6. Crash Recovery Rules
+
+**Definition:** Crash recovery defines what happens when a worker fails or becomes unavailable during task execution.
+
+| Rule | Description |
+|---|---|
+| **Detect via heartbeat** | Worker absence detected when two consecutive heartbeat intervals are missed |
+| **Task reverts to `pending`** | Any task with an expired lease returns to `pending` queue |
+| **Lease expiry triggers recovery** | Expired lease means task is eligible for re-claim by any worker |
+| **No rollback of partial execution** | If task wrote partial outputs before crash, those outputs remain |
+| **Incident logged** | Worker crash must produce an incident entry in the incident log |
+| **Recovered state documented** | Recovered tasks that are re-claimed must record recovery event in execution history |
+
+**See also:** [Worker Lifecycle — `recovered` and `abandoned` states](./WORKER_LIFECYCLE.md)
+
+---
+
+## 7. Retry Rules
+
+**Definition:** Retry rules govern when and how failed tasks are re-executed.
+
+| Rule | Description |
+|---|---|
+| **Retry count tracked** | Each task carries a `retry_count` — incremented on each retry |
+| **Max retries enforced** | Tasks exceeding `max_retries` move to `failed` — no further automatic retry |
+| **Recoverable vs. non-recoverable** | Failures are classified: recoverable (retry allowed) vs. non-recoverable (immediate fail) |
+| **Exponential backoff** | Retry intervals increase exponentially (base 2) for recoverable failures |
+| **Non-recoverable failures** | Governance errors, permission denied, and data corruption are non-recoverable |
+| **Human review for max retries** | Tasks reaching max retries require explicit human or Deployment Governor review |
+| **Retry count reset on re-claim** | If task is re-claimed after max retries with explicit approval, count resets |
+
+**Default retry parameters:**
+
+| Parameter | Default Value |
+|---|---|
+| `max_retries` | 3 |
+| `base_delay_seconds` | 30 |
+| `backoff_multiplier` | 2 |
+| `max_delay_seconds` | 300 |
+
+---
+
+## 8. Heartbeat Requirements
+
+**Definition:** Heartbeat is the periodic signal a worker sends to indicate it is alive and processing a task.
+
+| Requirement | Specification |
+|---|---|
+| **Heartbeat interval (polling)** | Every 5 minutes while worker is polling for tasks |
+| **Heartbeat interval (executing)** | Every 60 seconds while worker is actively executing a task |
+| **Missed heartbeat threshold** | Two consecutive missed heartbeats triggers `dead` state for worker |
+| **Heartbeat target** | Worker writes heartbeat timestamp to a heartbeat log in institutional memory |
+| **Heartbeat is not task progress** | Heartbeat only confirms worker process is alive — not that task is progressing |
+| **Task progress must be observable** | Actual task progress must be logged in execution history, not just heartbeat |
+| **Heartbeat under governance** | Heartbeat logging is read-only for workers; governed systems manage heartbeat configuration |
+
+---
+
+## 9. Append-Only Execution History
+
+**Definition:** The execution history is an immutable, append-only record of every task lifecycle event.
+
+| Property | Requirement |
+|---|---|
+| **Append-only** | Entries are only added — never modified or deleted |
+| **Timestamp precision** | Every entry includes ISO-8601 UTC timestamp |
+| **Worker identification** | Every entry includes worker/source identifier |
+| **Task identification** | Every entry includes task_id |
+| **State transitions** | Every entry records the state transition (from_state → to_state) |
+| **Result payload** | Completed or failed tasks include result artifact path and outcome summary |
+| **No personally identifiable information** | Execution history records task outcomes, not personal data |
+| **Retain indefinitely** | Execution history is permanent institutional record — never pruned |
+| **Format** | JSONL (one JSON object per line) for easy programmatic parsing |
+
+**Execution history log location:** `operations/EXECUTION_HISTORY.jsonl`
+
+> **See also:** [Incident Log](./operations/INCIDENT_LOG.md) — failures and governance events
+
+---
+
+## 10. Prohibited Hidden State
+
+**Definition:** Hidden state is any state maintained by a worker or system component that is not visible in the formal execution history or institutional memory.
+
+The following are **categorically prohibited** as hidden state:
+
+| Prohibited State | Rationale |
+|---|---|
+| **Unlogged task outcomes** | All task results must be in execution history |
+| **Worker-local caching of results** | Cached results outside institutional memory are not governed |
+| **Inter-worker communication channels** | Workers may not coordinate via channels outside institutional memory |
+| **Dynamic permission grants** | Workers may not grant themselves permissions not in the task spec |
+| **Delayed task execution** | Tasks may not be queued for later execution outside the formal task queue |
+| **State machine overrides** | Workers may not manually transition task state without going through formal channels |
+| **Privately stored credentials** | Credentials must be in institutional memory or governance secrets management |
+| **Hidden monitoring or metrics** | Any worker-side metrics collection must be declared in the task spec |
+
+**Enforcement:** Any task runner that creates hidden state is subject to governance incident response. Human operator or Deployment Governor may halt the worker immediately.
+
+---
+
+## 11. Definition of Done
+
+A task is considered **complete** when all of the following are true:
+
+| Criterion | Verification |
+|---|---|
+| Task state is `completed` | Formal state transition recorded in task state model |
+| All outputs written to designated paths | Output paths exist and contain expected content |
+| Execution history entry written | Entry with task_id, outcome, timestamp in `EXECUTION_HISTORY.jsonl` |
+| Processed registry entry recorded | `processed_registry.json` updated with task_id and commit hash |
+| No active retries | `retry_count` is 0 or task has explicitly succeeded |
+| No pending escalation | If task required human review, review decision is recorded |
+
+**Partial completion is not completion.** If a task writes some outputs but fails before completing all required actions, it is in `failed` state — not `completed`.
+
+**Rollback of completion:** If a completed task is found to have produced incorrect results, it must be:
+1. Marked `failed` (not deleted from history)
+2. An incident logged in `INCIDENT_LOG.md`
+3. A new task filed for corrective action
+
+---
+
+## 12. Relationship to Existing Wolfpack Governance
+
+| Governance File | Relationship |
+|---|---|
+| [System Architecture](./canon/SYSTEM_ARCHITECTURE.md) | Confirms OpenClaw as replaceable worker — aligned |
+| [Agent Governance](./agents/AGENT_GOVERNANCE.md) | Confirms scoped permissions and observability — aligned |
+| [Deployment Governor](./agents/DEPLOYMENT_GOVERNOR.md) | Confirms human review for failed/max-retry tasks — aligned |
+| [Incident Log](./operations/INCIDENT_LOG.md) | Confirms incident logging for crashes and failures — aligned |
+| [Wolfpack Canon](./canon/WOLFPACK_CANON.md) | Confirms no uncontrolled autonomy — aligned |
+
+---
+
+## References
+
+| Reference | Description |
+|---|---|
+| [Worker Lifecycle](./WORKER_LIFECYCLE.md) | Formal state machine for execution workers |
+| [Task State Model](./TASK_STATE_MODEL.md) | Formal state machine for task execution |
+| [System Architecture — DEC-001](./canon/SYSTEM_ARCHITECTURE.md) | OpenClaw as replaceable worker |
+| [Agent Governance](./agents/AGENT_GOVERNANCE.md) | Agent operational standards |
+| [Execution History](./operations/EXECUTION_HISTORY.jsonl) | Append-only task execution log |
+
+---
+
+*Canonical — GitHub is the source of truth.*
