@@ -53,7 +53,8 @@ append_only: false
 | # | Action | Owner | Priority | Status |
 |---|---|---|---|---|
 | 1 | Create runtime state governance layer (runtime/) | Eterna / Wolfpack | high | ✓ Complete (2026-05-24) |
-| 2 | **Create executable runtime state validator after governance approval** | Eterna / Wolfpack | high | Pending |
+| 2 | **Create executable runtime state validator after governance approval** | Eterna / Wolfpack | high | ✓ Complete (2026-05-24) |
+| 3 | Run runtime state validator after every workflow execution cycle | Eterna / Wolfpack | high | Pending |
 | 3 | Batch 002B remaining overlays — OVL-20260524-001 (Strategic Doctrine), OVL-20260524-003 (OS Doc Pack — HIGH) | Eterna / Wolfpack | high | Pending |
 
 ---
