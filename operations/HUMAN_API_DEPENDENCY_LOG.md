@@ -44,6 +44,18 @@ append_only: true
 | **created** | 2026-05-24 |
 | **resolution** | — |
 
+### Observed Recovery Behavior: OpenClaw "Complete Last Task"
+
+When OpenClaw stalls or stops responding mid-task, sending `"complete last task"` may resume the last queued execution without re-executing bootstrap. This behavior was observed on 2026-05-24 during session recovery work.
+
+| Field | Value |
+|---|---|
+| **subtype** | RUNTIME_STALL_RECOVERY |
+| **trigger** | Agent stalls or stops responding; human sends `"complete last task"` |
+| **outcome** | Resumes last queued execution without re-executing bootstrap |
+| **governance constraints** | Allowed only if immediately prior task is known and visible; prohibited after repo mutation outside stalled task; prohibited during production deployment unless rollback state verified first |
+| **required after use** | `git status` + `runtime_state_validator.py`; record in HUMAN_API_DEPENDENCY_LOG if governance/production affected |
+
 ---
 
 ## Archive — Resolved

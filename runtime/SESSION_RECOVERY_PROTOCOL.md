@@ -185,6 +185,38 @@ Recovery is complete when ALL of the following are true:
 
 ---
 
+## 13. Controlled Recovery: "Complete Last Task"
+
+When OpenClaw stalls or stops responding mid-task, the human may send `"complete last task"` to resume the last queued execution. This is a **governed recovery action**, not a general-purpose command.
+
+### Constraints
+
+| Rule | Description |
+|---|---|
+| **Allowed only if** | The immediately prior task is known and visible in session or EXECUTION_HISTORY.jsonl |
+| **Prohibited after repo mutation** | Do not use if any file outside the stalled task has been modified or created |
+| **Prohibited during production deployment** | Unless rollback state has been verified first |
+| **Required after use** | Run `git status` and `runtime_state_validator.py` immediately |
+| **Required to log** | If the recovery affects governance or production state, record in HUMAN_API_DEPENDENCY_LOG.md |
+
+### Decision Table
+
+| State of prior task | Decision |
+|---|---|
+| Known, visible, no external mutations | ✅ Allowed — proceed |
+| Known, but repo was mutated by other actions | ❌ Prohibited — HALT |
+| Unknown / not visible in history | ❌ Prohibited — run full SESSION_RECOVERY_CHECKLIST first |
+| Production deployment in progress | ❌ Prohibited — verify rollback state first |
+| Governance or production state affected | 📝 Log in HUMAN_API_DEPENDENCY_LOG.md |
+
+### Post-Recovery Requirements
+
+1. `git status` — confirm only expected files changed
+2. `python3 tasks/runtime_state_validator.py` — must return PASS
+3. If governance/production affected: append entry to HUMAN_API_DEPENDENCY_LOG.md
+
+---
+
 ## Related Files
 
 - `runtime/SESSION_RECOVERY_CHECKLIST.md` — step-by-step bootstrap checklist
