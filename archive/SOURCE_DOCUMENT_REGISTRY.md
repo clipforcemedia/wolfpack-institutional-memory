@@ -73,7 +73,7 @@ Each entry adheres to the following schema:
 
 | source_id | filename | archive_path | checksum | status | overlay_risk | canonical_targets | batch |
 |---|---|---|---|---|---|---|---|
-| `SRC-CANON-001` | `01_WOLFPACK_CANONICAL_REPOSITORY_SPEC_v1.pdf` | `canonical/01_WOLFPACK_CANONICAL_REPOSITORY_SPEC_v1.pdf` | `sha256:160189fda74b51e88e21cd321866b6dfc24c479fc39916bd75130780f8626053` | `checksum_verified` | NONE | `canon/CANONICAL_REPOSITORY_SPEC.md` | `STAGE_1_BATCH_002A` |
+| `SRC-CANON-001` | `01_WOLFPACK_CANONICAL_REPOSITORY_SPEC_v1.pdf` | `canonical/01_WOLFPACK_CANONICAL_REPOSITORY_SPEC_v1.pdf` | `sha256:160189fda74b51e88e21cd321866b6dfc24c479fc39916bd75130780f8626053` | `active` | NONE | `canon/CANONICAL_REPOSITORY_SPEC.md` | `STAGE_1_BATCH_002A` |
 | `SRC-CANON-002` | `Wolfpack_Strategic_Doctrine_Expansion_v1.pdf` | `canonical/Wolfpack_Strategic_Doctrine_Expansion_v1.pdf` | `pending_upload` | `pending_upload` | MEDIUM | `canon/STRATEGIC_DOCTRINE_EXPANSION.md` | `STAGE_1_BATCH_002B` |
 
 ---
@@ -82,7 +82,7 @@ Each entry adheres to the following schema:
 
 | source_id | filename | archive_path | checksum | status | overlay_risk | canonical_targets | batch |
 |---|---|---|---|---|---|---|---|
-| `SRC-MEMORY-001` | `WOLFPACK_MEMORY_ARCHITECTURE_v1.pdf` | `memory/WOLFPACK_MEMORY_ARCHITECTURE_v1.pdf` | `sha256:2f44065b051c51515bb8c2a700504e55229e691854122fa8c6e5815bdb10c3f6` | `checksum_verified` | NONE | `canon/MEMORY_ARCHITECTURE.md` | `STAGE_1_BATCH_002A` |
+| `SRC-MEMORY-001` | `WOLFPACK_MEMORY_ARCHITECTURE_v1.pdf` | `memory/WOLFPACK_MEMORY_ARCHITECTURE_v1.pdf` | `sha256:2f44065b051c51515bb8c2a700504e55229e691854122fa8c6e5815bdb10c3f6` | `active` | NONE | `canon/MEMORY_ARCHITECTURE.md` | `STAGE_1_BATCH_002A` |
 | `SRC-MEMORY-002` | `04_WOLFPACK_MEMORY_DATA_MODEL_v1.pdf` | `memory/04_WOLFPACK_MEMORY_DATA_MODEL_v1.pdf` | `pending_upload` | `pending_upload` | NONE | `canon/MEMORY_DATA_MODEL.md` | `STAGE_1_BATCH_002B` |
 
 ---
@@ -191,3 +191,22 @@ Each entry adheres to the following schema:
 ---
 
 *Registry maintained in `archive/SOURCE_DOCUMENT_REGISTRY.md` — append-only, governed by `archive/SOURCE_ARCHIVE_GOVERNANCE.md`*
+
+### Status Log — SRC-CANON-001 (updated)
+
+#### Transition: checksum_verified → active
+**Date:** 2026-05-24T01:27:00Z
+**Action:** Canonical markdown extracted and validated; body content populated from PDF
+**Canonical Target:** canon/CANONICAL_REPOSITORY_SPEC.md
+**Conversion Commit:** pending (to be committed with this action)
+**Verified_by:** Eterna / Wolfpack
+
+### Status Log — SRC-MEMORY-001 (updated)
+
+#### Transition: checksum_verified → active
+**Date:** 2026-05-24T01:27:00Z
+**Action:** Canonical markdown extracted and validated; body content populated from PDF
+**Canonical Target:** canon/MEMORY_ARCHITECTURE.md
+**Conversion Commit:** pending (to be committed with this action)
+**Verified_by:** Eterna / Wolfpack
+
