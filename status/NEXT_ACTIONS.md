@@ -73,4 +73,13 @@ All production deployments require:
 
 ---
 
+## Stage 1 — Canonical Memory Ingestion
+
+| Step | Action | Owner | Status |
+|---|---|---|---|
+| 1 | Create canonical memory ingestion plan | Eterna / Wolfpack | ✓ Complete |
+| 2 | Execute Stage 1 Batch 001 — ingest core doctrine specs | Eterna / Wolfpack | Pending |
+
+**Active Next Action:** Execute Stage 1 Batch 001 — ingest core doctrine specs
+
 *File maintained in `status/NEXT_ACTIONS.md`*
