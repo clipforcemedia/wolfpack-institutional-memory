@@ -97,14 +97,16 @@ Each queue entry contains:
 | **overlay_id** | `OVL-20260524-002` |
 | **source_doc** | `WOLFPACK_AGENT_GOVERNANCE_v1.pdf` |
 | **canonical_target** | `agents/AGENT_GOVERNANCE.md` |
-| **overlay_type** | `contradiction-partial` |
+| **overlay_type** | `additive` (initially: contradiction-partial) |
 | **affected_canon** | `agents/DEPLOYMENT_GOVERNOR.md`, `agents/ETERNA_COMMAND.md`, `agents/MEMORY_KEEPER.md`, `agents/OPPORTUNITY_RADAR.md`, `agents/RED_TEAM.md` |
-| **overlay_risk** | `MEDIUM` |
-| **status** | `queued` |
-| **reviewer** | Wolfpack |
-| **escalation_required** | true |
+| **overlay_risk** | `LOW` (reclassified from MEDIUM after analysis) |
+| **status** | `approved` |
+| **reviewer** | Eterna / Wolfpack |
+| **escalation_required** | false — no contradictions found; additive integration approved |
 | **created** | 2026-05-24 |
-| **concern** | May supplement or partially contradict existing agent role definitions — review against all 5 agent docs |
+| **completed** | 2026-05-24 |
+| **review_doc** | `governance/reviews/OVL-20260524-002_REVIEW.md` |
+| **concern** | Resolved — no contradictions; 6 new additive provisions identified; terminology drift noted and documented |
 
 ---
 

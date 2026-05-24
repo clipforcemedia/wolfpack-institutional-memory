@@ -49,8 +49,31 @@ Each entry contains:
 
 ## Decision Entries
 
-*(No decisions yet — Batch 002A docs had NONE overlay risk and were auto-approved without decision log entries)*
-*(Batch 002 MEDIUM/HIGH overlay docs are pending review — decision log entries will be added upon Wolfpack review completion)*
+---
+
+## OVL-20260524-002 — Decision Entry
+
+**overlay_id:** OVL-20260524-002
+**decision:** approved
+**decision_rationale:** No contradictions found. AGENT_GOVERNANCE confirms existing Wolfpack doctrine across all 5 agent files and canonical documents. 6 new additive provisions identified (kill switch, scoped permissions, timeout policies, financial restrictions, failure incident generation, functional taxonomy). Risk reclassified from MEDIUM to LOW. No DEC entry required.
+**doctrine_precedence_applied:** Precedence level 1 (active canonical) preserved. Source operates at level 3 (checksum-verified source) providing additive confirmation and new doctrine. No hierarchy conflict.
+**affected_files:** agents/AGENT_GOVERNANCE.md (new), agents/DEPLOYMENT_GOVERNOR.md (cross-linked), canon/WOLFPACK_CANON.md (cross-referenced)
+**rollback_path:** 6b9aa0d
+**approval_state:** Wolfpack review completed — Opportunity Radar (approve), Red Team (approve with note), Deployment Governor (approve), Memory Keeper (approve), Eterna (approve — additive integration)
+**conditions:** 1) Cross-link to all 5 agent files; 2) Add kill switch to DEPLOYMENT_GOVERNOR.md; 3) Add financial restriction doctrine; 4) Add terminology mapping note; 5) No existing canon overwrites
+**logged_date:** 2026-05-24
+**superseded_by:** none
+
+### Wolfpack Role Approvals
+
+| Role | Decision | Notes |
+|---|---|---|
+| Opportunity Radar | ✅ Approve | Priority 4/5; governance improvement |
+| Red Team | ✅ Approve | No new failure modes; LOW risk |
+| Deployment Governor | ✅ Approve | Confirms existing deployment authority |
+| Memory Keeper | ✅ Approve | Additive; no memory fragmentation |
+| Eterna | ✅ Approve | Functional taxonomy complements role-based system |
+
 
 ---
 
