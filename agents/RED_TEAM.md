@@ -1,3 +1,17 @@
+---
+title: "Red Team — Adversarial Review Agent"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "wolfpack"
+related_ids: []
+append_only: false
+---
 # Red Team — Adversarial Review Agent
 
 **Role:** Failure Mode Analysis

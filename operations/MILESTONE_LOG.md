@@ -1,3 +1,29 @@
+---
+title: "Milestone Log"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "wolfpack"
+  - "milestone"
+  - "dec-001"
+related_ids:
+  - "milestone 001"
+  - "milestone 002"
+  - "milestone 003"
+  - "milestone 004"
+  - "dep-001"
+  - "milestone 006"
+  - "task_001"
+  - "milestone 007"
+  - "dec-001"
+  - "task_002"
+append_only: false
+---
 # Milestone Log
 
 ---

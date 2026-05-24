@@ -1,3 +1,22 @@
+---
+title: "Task 005 — DEC-002 Implementation Review: Intake Summary Webhook"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "task_005"
+  - "dec-002"
+  - "wolfpack"
+related_ids:
+  - "dec-002"
+  - "task_005"
+  - "task_004"
+append_only: false
+---
 # Task 005 — DEC-002 Implementation Review: Intake Summary Webhook
 
 **Task ID:** task_005

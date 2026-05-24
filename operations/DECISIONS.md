@@ -1,3 +1,24 @@
+---
+title: "Initial Architectural Decisions"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "wolfpack"
+  - "dec-001"
+related_ids:
+  - "dec-001"
+  - "task_002"
+  - "task_005"
+  - "task_006"
+  - "dec-002"
+  - "task_003"
+append_only: false
+---
 # Initial Architectural Decisions
 
 - OpenClaw will act as persistent operational memory infrastructure

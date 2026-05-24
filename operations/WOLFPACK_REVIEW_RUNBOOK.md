@@ -1,3 +1,19 @@
+---
+title: "Wolfpack Review Runner — Operational Runbook"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "wolfpack"
+related_ids:
+  - "task_002"
+  - "task_001"
+append_only: false
+---
 # Wolfpack Review Runner — Operational Runbook
 
 **Effective:** 2026-05-23

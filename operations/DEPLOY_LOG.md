@@ -1,3 +1,26 @@
+---
+title: "Deploy Log — voice-ai Production Deployments"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "deployment"
+  - "dec-002"
+  - "wolfpack"
+related_ids:
+  - "dep-001"
+  - "dep-002"
+  - "dec-002"
+  - "task_006"
+  - "task_003"
+  - "task_004"
+  - "task_005"
+append_only: false
+---
 # Deploy Log — voice-ai Production Deployments
 
 **Append-only.** Each entry represents one production push to `main`.

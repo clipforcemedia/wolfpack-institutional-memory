@@ -1,3 +1,21 @@
+---
+title: "Task 006 — DEC-002 Implementation: Intake Summary Webhook Deployed"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "wolfpack"
+  - "dec-002"
+  - "task_006"
+related_ids:
+  - "dec-002"
+  - "task_006"
+append_only: false
+---
 # Task 006 — DEC-002 Implementation: Intake Summary Webhook Deployed
 
 **Task ID:** task_006

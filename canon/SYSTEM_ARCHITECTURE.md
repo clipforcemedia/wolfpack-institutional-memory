@@ -1,3 +1,19 @@
+---
+title: "System Architecture — voice-ai / Wolfpack v0.1"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "wolfpack"
+  - "dec-001"
+related_ids:
+  - "dec-001"
+append_only: false
+---
 # System Architecture — voice-ai / Wolfpack v0.1
 
 **Effective:** 2026-05-22

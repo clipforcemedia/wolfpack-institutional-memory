@@ -1,3 +1,18 @@
+---
+title: "Eterna — Cognitive Orchestration Agent"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "milestone"
+  - "wolfpack"
+related_ids: []
+append_only: false
+---
 # Eterna — Cognitive Orchestration Agent
 
 **Role:** Cognitive Orchestration Layer

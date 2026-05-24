@@ -1,3 +1,18 @@
+---
+title: "Memory Keeper — Institutional Memory Governance"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "milestone"
+  - "wolfpack"
+related_ids: []
+append_only: false
+---
 # Memory Keeper — Institutional Memory Governance
 
 **Role:** Institutional Memory Integrity

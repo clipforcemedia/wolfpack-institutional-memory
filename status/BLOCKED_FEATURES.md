@@ -1,3 +1,17 @@
+---
+title: "Blocked Features — Wolfpack"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "wolfpack"
+related_ids: []
+append_only: false
+---
 # Blocked Features — Wolfpack
 
 **Updated:** 2026-05-23

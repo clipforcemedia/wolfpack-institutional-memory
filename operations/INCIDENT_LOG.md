@@ -1,3 +1,22 @@
+---
+title: "Incident Log — voice-ai Production Incidents"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "incident"
+  - "milestone"
+  - "wolfpack"
+related_ids:
+  - "inc-001"
+  - "dep-001"
+  - "milestone 004"
+append_only: false
+---
 # Incident Log — voice-ai Production Incidents
 
 **Append-only.** Each entry represents one production incident — failure, rollback, regression, or governance violation.

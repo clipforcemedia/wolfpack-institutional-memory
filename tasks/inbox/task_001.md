@@ -1,3 +1,19 @@
+---
+title: "Task 001 — Example Operational Proposal: Add Intake Summary Webhook"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "task_001"
+  - "wolfpack"
+related_ids:
+  - "task_001"
+append_only: false
+---
 # Task 001 — Example Operational Proposal: Add Intake Summary Webhook
 
 **Task ID:** task_001

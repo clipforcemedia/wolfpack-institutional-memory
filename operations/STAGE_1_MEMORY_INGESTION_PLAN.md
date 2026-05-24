@@ -1,3 +1,21 @@
+---
+title: "Stage 1 — Canonical Memory Ingestion Plan"
+document_type: "operations"
+status: "active"
+version: "1.0"
+created: "2026-05-24"
+updated: "2026-05-24"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "governance"
+  - "doctrine"
+  - "memory"
+related_ids:
+  - "DEC-001"
+append_only: true
+---
+
 # Stage 1 — Canonical Memory Ingestion Plan
 
 **Plan Version:** 1.0

@@ -1,3 +1,20 @@
+---
+title: "Current State — Wolfpack / voice-ai"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "wolfpack"
+  - "dec-001"
+related_ids:
+  - "dep-001"
+  - "dec-001"
+append_only: false
+---
 # Current State — Wolfpack / voice-ai
 
 **Updated:** 2026-05-23

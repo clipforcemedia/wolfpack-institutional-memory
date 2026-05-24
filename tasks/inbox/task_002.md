@@ -1,3 +1,20 @@
+---
+title: "Task 002 — Architecture Correction: Demote OpenClaw/ClawBro to Replaceable Worker"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "task_002"
+  - "milestone"
+  - "wolfpack"
+related_ids:
+  - "task_002"
+append_only: false
+---
 # Task 002 — Architecture Correction: Demote OpenClaw/ClawBro to Replaceable Worker
 
 **Task ID:** task_002

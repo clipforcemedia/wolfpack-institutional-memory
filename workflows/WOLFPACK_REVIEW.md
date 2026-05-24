@@ -1,3 +1,18 @@
+---
+title: "Wolfpack Review Workflow — Deterministic Review Protocol"
+document_type: "document"
+status: "active"
+version: "0.1"
+created: "2026-05-23"
+updated: "2026-05-23"
+source_type: "internal"
+provenance: "wolfpack-institutional-memory"
+tags:
+  - "wolfpack"
+related_ids:
+  - "task_001"
+append_only: false
+---
 # Wolfpack Review Workflow — Deterministic Review Protocol
 
 **Effective:** 2026-05-23
