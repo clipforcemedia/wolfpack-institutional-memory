@@ -409,3 +409,10 @@ Exercise the wolfpack_review workflow against a real production code change. The
 *Milestone 009 — 2026-05-24*
 
 | 009 | Canonical Memory Normalization Complete | 67b80a1 | 67b80a1 | 2026-05-24 | Stage 1 Batch 001 — 33 files front matter retrofitted, all validated, cross-links corrected |
+
+---
+
+*Milestone 010 — 2026-05-24*
+
+
+| 010 | Batch 002A Foundational Doctrine Ingested | aa098fb | aa098fb | 2026-05-24 | STAGE_1_BATCH_002A — canonical stubs created (CANONICAL_REPOSITORY_SPEC, MEMORY_ARCHITECTURE); PDFs not yet uploaded; body content pending |
