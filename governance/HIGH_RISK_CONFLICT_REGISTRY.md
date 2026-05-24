@@ -68,7 +68,149 @@ This registry tracks every conflict detected during HIGH-risk overlay reviews. I
 
 ## Registry Entries
 
-*(No entries yet — registry initialized for Batch 002 HIGH-risk overlays. OVL-20260524-003 will be the first entry when its review begins.)*
+---
+
+## OVL-20260524-003 — Conflict Entries
+
+### CFG-20260524-001 — Helm as Required Infrastructure Layer
+
+| Field | Value |
+|---|---|
+| **conflict_id** | `CFG-20260524-001` |
+| **overlay_id** | `OVL-20260524-003` |
+| **affected_canon** | `canon/SYSTEM_ARCHITECTURE.md` |
+| **conflict_type** | `CD` (Direct Contradiction) |
+| **description** | OS Doc Pack §02 lists "Helm → operational infrastructure" as a core layer. Helm is a Kubernetes package manager. The existing SYSTEM_ARCHITECTURE.md makes no mention of Kubernetes, Helm, or container orchestration infrastructure. Helm is not present in any canonical document. |
+| **canonical_claim** | SYSTEM_ARCHITECTURE.md does not mention Helm, Kubernetes, or container orchestration as required infrastructure |
+| **incoming_claim** | "Core layers: ... Helm → operational infrastructure" (OS Doc Pack §02) |
+| **precedence_ruling** | Active canonical memory (level 1) prevails. OS Doc Pack (level 3) cannot add required infrastructure without DEC entry + human approval. Helm is not optional in the OS Doc Pack architecture. |
+| **blocking** | true |
+| **resolution_state** | `pending` |
+| **resolution** | null |
+| **rollback_reference** | `031fb87` (pre-overlay state) |
+| **reviewer_approvals** | { opportunity_radar: pending, red_team: pending, deployment_governor: pending, memory_keeper: pending, eterna: pending } |
+| **created** | 2026-05-24 |
+| **updated** | 2026-05-24 |
+
+### CFG-20260524-002 — Wolfpack as Architectural Layer
+
+| Field | Value |
+|---|---|
+| **conflict_id** | `CFG-20260524-002` |
+| **overlay_id** | `OVL-20260524-003` |
+| **affected_canon** | `canon/SYSTEM_ARCHITECTURE.md`, `canon/WOLFPACK_CANON.md` |
+| **conflict_type** | `CT` + `CS` (Terminology Collision + Scope Overlap) |
+| **description** | OS Doc Pack §02 lists "Wolfpack → governance/risk" as a core system layer. Existing canon defines Wolfpack as a governance review process (SYSTEM_ARCHITECTURE.md: "Wolfpack review gate (6 roles)"). The OS Doc Pack implies Wolfpack is a deployable technical component, which differs from the canonical definition. |
+| **canonical_claim** | "Governance: Wolfpack review gate (6 roles), Deployment Governor approval" — Wolfpack is a process, not a system component |
+| **incoming_claim** | "Core layers: ... Wolfpack → governance/risk" — Wolfpack is a layer in the architecture |
+| **precedence_ruling** | Canon defines Wolfpack as review process. OS Doc Pack treats Wolfpack as system layer. Requires DEC entry to clarify relationship or reject supersession claim. |
+| **blocking** | true |
+| **resolution_state** | `pending` |
+| **resolution** | null |
+| **rollback_reference** | `031fb87` |
+| **reviewer_approvals** | { opportunity_radar: pending, red_team: pending, deployment_governor: pending, memory_keeper: pending, eterna: pending } |
+| **created** | 2026-05-24 |
+| **updated** | 2026-05-24 |
+
+### CFG-20260524-003 — 6 New Roles Without Canon Definitions
+
+| Field | Value |
+|---|---|
+| **conflict_id** | `CFG-20260524-003` |
+| **overlay_id** | `OVL-20260524-003` |
+| **affected_canon** | `agents/DEPLOYMENT_GOVERNOR.md`, `agents/ETERNA_COMMAND.md`, `agents/MEMORY_KEEPER.md`, `agents/OPPORTUNITY_RADAR.md`, `agents/RED_TEAM.md` |
+| **conflict_type** | `CS` (Scope Overlap) |
+| **description** | OS Doc Pack §01 lists 11 "Core roles" (Eterna, Operator, Architect, Critic, Economist, Compliance Officer, Memory Keeper, Opportunity Analyst, Deployment Governor, UX Steward, Evolution Sentinel). Canon defines only 5 roles (Eterna, Red Team, Deployment Governor, Memory Keeper, Opportunity Radar). Six OS Doc Pack roles (Operator, Architect, Critic, Economist, Compliance Officer, UX Steward, Evolution Sentinel) have no canonical definitions. |
+| **canonical_claim** | Canon defines exactly 5 roles; no canon file exists for Operator, Architect, Critic, Economist, Compliance Officer, UX Steward, or Evolution Sentinel |
+| **incoming_claim** | "Core roles: Eterna, Operator, Architect, Critic, Economist, Compliance Officer, Memory Keeper, Opportunity Analyst, Deployment Governor, UX Steward, Evolution Sentinel" — all listed as authoritative Wolfpack roles |
+| **precedence_ruling** | Canon role definitions (level 1) govern. New roles from OS Doc Pack (level 3) cannot become canonical without DEC entry + role definition files. |
+| **blocking** | true |
+| **resolution_state** | `pending` |
+| **resolution** | null |
+| **rollback_reference** | `031fb87` |
+| **reviewer_approvals** | { opportunity_radar: pending, red_team: pending, deployment_governor: pending, memory_keeper: pending, eterna: pending } |
+| **created** | 2026-05-24 |
+| **updated** | 2026-05-24 |
+
+### CFG-20260524-004 — Supabase as Approved Infrastructure
+
+| Field | Value |
+|---|---|
+| **conflict_id** | `CFG-20260524-004` |
+| **overlay_id** | `OVL-20260524-003` |
+| **affected_canon** | `canon/SYSTEM_ARCHITECTURE.md` |
+| **conflict_type** | `CS` (Scope Overlap) |
+| **description** | OS Doc Pack §02 lists "Supabase" as approved v0.1 infrastructure alongside GitHub, OpenClaw, Render. SYSTEM_ARCHITECTURE.md defines execution workers as OpenClaw, Render, Twilio, OpenAI Realtime API. Supabase (a Firebase alternative) is not mentioned in any canonical document. |
+| **canonical_claim** | SYSTEM_ARCHITECTURE.md does not list Supabase as infrastructure |
+| **incoming_claim** | "Approved v0.1 infrastructure: ... Supabase" — listed as approved |
+| **precedence_ruling** | Canon (level 1) does not include Supabase. OS Doc Pack (level 3) cannot approve Supabase as infrastructure without DEC entry. |
+| **blocking** | true |
+| **resolution_state** | `pending` |
+| **resolution** | null |
+| **rollback_reference** | `031fb87` |
+| **reviewer_approvals** | { opportunity_radar: pending, red_team: pending, deployment_governor: pending, memory_keeper: pending, eterna: pending } |
+| **created** | 2026-05-24 |
+| **updated** | 2026-05-24 |
+
+### CFG-20260524-005 — Opportunity Analyst vs. Opportunity Radar
+
+| Field | Value |
+|---|---|
+| **conflict_id** | `CFG-20260524-005` |
+| **overlay_id** | `OVL-20260524-003` |
+| **affected_canon** | `agents/OPPORTUNITY_RADAR.md` |
+| **conflict_type** | `CT` (Terminology Collision) |
+| **description** | OS Doc Pack §01 and §06 use "Opportunity Analyst" as the role name. Canon uses "Opportunity Radar". Both refer to the same role concept (identifying profitable operational systems and recurring-revenue opportunities). |
+| **canonical_claim** | agents/OPPORTUNITY_RADAR.md defines "Opportunity Radar — Market and Business Opportunity Detection" |
+| **incoming_claim** | "Opportunity Analyst" in OS Doc Pack §01 core roles and §06 Opportunity Radar Spec |
+| **precedence_ruling** | Terminology normalization recommended. Cross-reference document to map "Opportunity Analyst" to canonical "Opportunity Radar". No DEC entry required — CT classification. |
+| **blocking** | false |
+| **resolution_state** | `pending` |
+| **resolution** | null |
+| **rollback_reference** | null |
+| **reviewer_approvals** | { opportunity_radar: pending, red_team: pending, deployment_governor: pending, memory_keeper: pending, eterna: pending } |
+| **created** | 2026-05-24 |
+| **updated** | 2026-05-24 |
+
+### CFG-20260524-006 — Wolfpack Red Team vs. Red Team
+
+| Field | Value |
+|---|---|
+| **conflict_id** | `CFG-20260524-006` |
+| **overlay_id** | `OVL-20260524-003` |
+| **affected_canon** | `agents/RED_TEAM.md` |
+| **conflict_type** | `CT` (Terminology Collision) |
+| **description** | OS Doc Pack §07 lists "Wolfpack Red Team" as a Core GPT. Canon uses "Red Team" as the role name. "Wolfpack Red Team" is likely a prompt-specific label. Both refer to the same adversarial review role. |
+| **canonical_claim** | agents/RED_TEAM.md defines "Red Team — Adversarial Review Agent" |
+| **incoming_claim** | "Wolfpack Red Team" in OS Doc Pack §07 GPT Role Prompts |
+| **precedence_ruling** | Terminology normalization recommended. Cross-reference to document both names as the same role. No DEC entry required — CT classification. |
+| **blocking** | false |
+| **resolution_state** | `pending` |
+| **resolution** | null |
+| **rollback_reference** | null |
+| **reviewer_approvals** | { opportunity_radar: pending, red_team: pending, deployment_governor: pending, memory_keeper: pending, eterna: pending } |
+| **created** | 2026-05-24 |
+| **updated** | 2026-05-24 |
+
+### CFG-20260524-007 — Red Team Absent from Core Roles
+
+| Field | Value |
+|---|---|
+| **conflict_id** | `CFG-20260524-007` |
+| **overlay_id** | `OVL-20260524-003` |
+| **affected_canon** | `agents/RED_TEAM.md` |
+| **conflict_type** | `CT` (Terminology Collision) |
+| **description** | OS Doc Pack §01 "Core roles" list does not include Red Team. Instead, "Wolfpack Red Team" appears in §07 GPT prompts. This could mean: (1) Red Team was intentionally omitted from Core roles, or (2) "Wolfpack Red Team" is the preferred name going forward, or (3) this is an oversight. |
+| **canonical_claim** | agents/RED_TEAM.md defines Red Team as a canonical Wolfpack role |
+| **incoming_claim** | Red Team not listed as a Core role in OS Doc Pack §01; "Wolfpack Red Team" used in §07 |
+| **precedence_ruling** | Canon defines Red Team as an authoritative role. OS Doc Pack's exclusion or renaming requires clarification. Await human oversight decision. |
+| **blocking** | false |
+| **resolution_state** | `pending` |
+| **resolution** | null |
+| **rollback_reference** | null |
+| **reviewer_approvals** | { opportunity_radar: pending, red_team: pending, deployment_governor: pending, memory_keeper: pending, eterna: pending } |
+| **created** | 2026-05-24 |
+| **updated** | 2026-05-24 |
 
 ---
 

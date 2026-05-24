@@ -92,7 +92,7 @@ Each entry adheres to the following schema:
 | source_id | filename | archive_path | checksum | status | overlay_risk | canonical_targets | batch |
 |---|---|---|---|---|---|---|---|
 | `SRC-GOV-001` | `WOLFPACK_AGENT_GOVERNANCE_v1.pdf` | `governance/WOLFPACK_AGENT_GOVERNANCE_v1.pdf` | `sha256:a42cf500186d6d6796d95c82859c13a6e34a69ba8e97e279ccdcd320b0b47e47` | `active` | MEDIUM | `agents/AGENT_GOVERNANCE.md` | `STAGE_1_BATCH_002B` |
-| `SRC-GOV-002` | `Wolfpack_Operating_System_Doc_Pack_v1.pdf` | `governance/Wolfpack_Operating_System_Doc_Pack_v1.pdf` | `pending_upload` | `pending_upload` | HIGH | `canon/OS_DOCTRINE_OVERVIEW.md` | `Deferred` |
+| `SRC-GOV-002` | `Wolfpack_Operating_System_Doc_Pack_v1.pdf` | `governance/Wolfpack_Operating_System_Doc_Pack_v1.pdf` | `sha256:e1fad94318328f651d263fcb7a2b9464a29bb35c901022e1b4ec307004b8a50e` | `conflict_mapping_complete` | HIGH | `canon/OS_DOCTRINE_OVERVIEW.md` | `STAGE_1_BATCH_002B` |
 
 ---
 
