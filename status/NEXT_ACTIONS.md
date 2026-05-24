@@ -99,9 +99,11 @@ All production deployments require:
 | 2 | Execute Stage 1 Batch 001 — ingest core doctrine specs | Eterna / Wolfpack | ✓ Complete |
 | 3 | Create Batch 002 PDF source inventory | Eterna / Wolfpack | ✓ Complete |
 | 4 | Create governed archival source layer | Eterna / Wolfpack | ✓ Complete |
-| 5 | Execute Stage 1 Batch 002A — ingest core memory + governance specs | Eterna / Wolfpack | Pending |
+| 5 | Execute Stage 1 Batch 002A — ingest core memory + governance specs | Eterna / Wolfpack | ✓ Complete |
 | 6 | Create Batch 002A source registration workflow | Eterna / Wolfpack | ✓ Complete |
+| 7 | Create doctrine overlay reconciliation governance | Eterna / Wolfpack | ✓ Complete |
+| 8 | Review MEDIUM overlay-risk doctrine before Batch 002B ingestion | Eterna / Wolfpack | Pending |
 
-**Active Next Action:** Upload Batch 002A source PDFs and compute SHA-256 checksums — upload both PDFs to archive, compute checksums, update registry entries to `archived`, verify checksum match
+**Active Next Action:** Review OVL-20260524-001 (Strategic Doctrine Expansion) and OVL-20260524-002 (Agent Governance) — both MEDIUM overlay risk, require Wolfpack review before Batch 002B extraction; OVL-20260524-003 blocked on DEC entry
 
 *File maintained in `status/NEXT_ACTIONS.md`*
