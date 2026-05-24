@@ -18,9 +18,11 @@ append_only: false
 ---
 # Next Actions — Wolfpack / voice-ai
 
-**Updated:** 2026-05-23
+**Updated:** 2026-05-24
 
 ---
+
+## Active Milestones
 
 ## Active Milestones
 
@@ -42,6 +44,15 @@ append_only: false
 | # | Action | Owner | Priority | Status |
 |---|---|---|---|---|
 | 1 | Create first real (non-example) wolfpack_review task | Eterna / Wolfpack | high | ✓ Completed (task_002) |
+
+---
+
+## Runtime Governance Layer
+
+| # | Action | Owner | Priority | Status |
+|---|---|---|---|---|
+| 1 | Create runtime state governance layer (runtime/) | Eterna / Wolfpack | high | ✓ Complete (2026-05-24) |
+| 2 | **Create executable runtime state validator after governance approval** | Eterna / Wolfpack | high | Pending |
 
 ---
 
