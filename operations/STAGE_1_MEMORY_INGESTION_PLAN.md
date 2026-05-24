@@ -196,9 +196,9 @@ Tags are lowercase hyphenated. Multiple tags allowed.
 
 | Rule | Example |
 |---|---|
-| **Decision links** | `[DEC-001](./decisions/DEC-001.md)` |
+| **Decision links** | `[DEC-001](../operations/DECISIONS.md)` |
 | **Canon links** | `[System Architecture](../canon/SYSTEM_ARCHITECTURE.md)` |
-| **Task links** | `task_005` → `[task_005](./tasks/inbox/task_005.md)` |
+| **Task links** | `task_005` → `[task_005](../tasks/inbox/task_005.md)` |
 | **Agent links** | `[Memory Keeper](../agents/MEMORY_KEEPER.md)` |
 | **External links** | Use full URL for external references |
 | **No bare URLs** | All URLs must be wrapped in descriptive anchor text |

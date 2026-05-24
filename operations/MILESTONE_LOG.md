@@ -403,3 +403,9 @@ Exercise the wolfpack_review workflow against a real production code change. The
 *Milestone 007 — 2026-05-23*
 
 | 008 | DEC-002 Intake Summary Webhook Implemented | e446828 | e446828 | 2026-05-23 | DEP-002 — Intake summary webhook deployed to main (5s timeout, async fire-and-forget, ADMIN_WEBHOOK_URL) |
+
+---
+
+*Milestone 009 — 2026-05-24*
+
+| 009 | Canonical Memory Normalization Complete | 67b80a1 | 67b80a1 | 2026-05-24 | Stage 1 Batch 001 — 33 files front matter retrofitted, all validated, cross-links corrected |
