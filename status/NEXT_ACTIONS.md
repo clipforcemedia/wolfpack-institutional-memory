@@ -98,8 +98,9 @@ All production deployments require:
 | 1 | Create canonical memory ingestion plan | Eterna / Wolfpack | ✓ Complete |
 | 2 | Execute Stage 1 Batch 001 — ingest core doctrine specs | Eterna / Wolfpack | ✓ Complete |
 | 3 | Create Batch 002 PDF source inventory | Eterna / Wolfpack | ✓ Complete |
-| 4 | Execute Stage 1 Batch 002A — ingest core memory + governance specs | Eterna / Wolfpack | Pending |
+| 4 | Create governed archival source layer | Eterna / Wolfpack | ✓ Complete |
+| 5 | Execute Stage 1 Batch 002A — ingest core memory + governance specs | Eterna / Wolfpack | Pending |
 
-**Active Next Action:** Execute Stage 1 Batch 002A — ingest canonical repository spec, strategic doctrine expansion, memory architecture, and agent governance
+**Active Next Action:** Upload and register Batch 002A source PDFs into governed archive — upload `01_WOLFPACK_CANONICAL_REPOSITORY_SPEC_v1.pdf` and `WOLFPACK_MEMORY_ARCHITECTURE_v1.pdf`, compute SHA-256 checksums, update SOURCE_DOCUMENT_REGISTRY.md entries to `archived`
 
 *File maintained in `status/NEXT_ACTIONS.md`*
