@@ -1,0 +1,3 @@
+{"timestamp": "2026-05-25T05:06:21Z", "workflow_id": "wolfpack_review_runner_v1", "validator_exit_code": 0, "validator_result": "PASS", "issues_count": 1}
+{"timestamp": "2026-05-25T05:06:32Z", "workflow_id": "wolfpack_review_runner_v1", "validator_exit_code": 1, "validator_result": "FAIL", "issues_count": 2}
+{"timestamp": "2026-05-25T05:06:42Z", "workflow_id": "wolfpack_review_runner_v1", "validator_exit_code": 0, "validator_result": "PASS", "issues_count": 1}

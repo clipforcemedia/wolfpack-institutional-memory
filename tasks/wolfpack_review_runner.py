@@ -27,6 +27,7 @@ USES: Python standard library only. No third-party dependencies.
 
 import json
 import os
+import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -40,6 +41,8 @@ TASKS_DIR = REPO_ROOT / "tasks"
 INBOX_DIR = TASKS_DIR / "inbox"
 RESULTS_DIR = TASKS_DIR / "results"
 PROCESSED_REGISTRY = TASKS_DIR / "processed_registry.json"
+VALIDATOR_SCRIPT = TASKS_DIR / "runtime_state_validator.py"
+VALIDATOR_LOG = REPO_ROOT / "runtime" / "VALIDATOR_EXECUTION_LOG.jsonl"
 TEMPLATE_MARKER = "_RESULT_TEMPLATE.md"
 
 # Required fields in task files
@@ -364,6 +367,84 @@ def log_completion(workflow_id: str, task_id: str, result_path: Path | None) -> 
 
 
 # =============================================================================
+# STAGE 8 — POST-WORKFLOW RUNTIME STATE VALIDATION
+# =============================================================================
+
+def append_validator_log_entry(
+    workflow_id: str,
+    validator_exit_code: int,
+    validator_result: str,
+    issues_count: int,
+) -> None:
+    """
+    Append append-only entry to runtime/VALIDATOR_EXECUTION_LOG.jsonl.
+    Each entry is a single-line JSON object (JSONL format).
+    Records execution timestamp, workflow_id, exit code, result, issue count.
+    """
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    entry = {
+        "timestamp": ts,
+        "workflow_id": workflow_id,
+        "validator_exit_code": validator_exit_code,
+        "validator_result": validator_result,
+        "issues_count": issues_count,
+    }
+    VALIDATOR_LOG.parent.mkdir(parents=True, exist_ok=True)
+    with open(VALIDATOR_LOG, "a", encoding="utf-8") as f:
+        f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+
+
+def run_post_workflow_validator(workflow_id: str) -> tuple[bool, int, str]:
+    """
+    Execute runtime_state_validator.py as a subprocess after workflow completion.
+    Returns (validation_passed, exit_code, validator_result_str).
+    Writes entry to VALIDATOR_EXECUTION_LOG.jsonl regardless of outcome.
+    Raises no exceptions — failures are surfaced through return values.
+    """
+    if not VALIDATOR_SCRIPT.exists():
+        msg = f"validator_script_not_found:{VALIDATOR_SCRIPT}"
+        log(workflow_id, "none", "stage8_validator", f"RESULT=SKIP REASON={msg}")
+        append_validator_log_entry(workflow_id, -1, "SKIP", 0)
+        return True, -1, "SKIP"
+
+    log(workflow_id, "none", "stage8_validator_start", f"SCRIPT={VALIDATOR_SCRIPT}")
+
+    try:
+        proc = subprocess.run(
+            [sys.executable, str(VALIDATOR_SCRIPT)],
+            capture_output=True,
+            text=True,
+            timeout=60,
+        )
+    except subprocess.TimeoutExpired:
+        msg = "validator_timeout_60s"
+        log_failure(workflow_id, "none", msg)
+        append_validator_log_entry(workflow_id, -2, "TIMEOUT", 0)
+        return False, -2, "TIMEOUT"
+    except Exception as e:
+        msg = f"validator_subprocess_error:{e}"
+        log_failure(workflow_id, "none", msg)
+        append_validator_log_entry(workflow_id, -3, "ERROR", 0)
+        return False, -3, "ERROR"
+
+    exit_code = proc.returncode
+    validator_result = "UNKNOWN"
+    issues_count = 0
+    for line in (proc.stdout + proc.stderr).splitlines():
+        if line.startswith("Validation: "):
+            validator_result = line.split("Validation: ", 1)[1].strip()
+        if "ISSUE:" in line:
+            issues_count += 1
+
+    append_validator_log_entry(workflow_id, exit_code, validator_result, issues_count)
+    log(workflow_id, "none", "stage8_validator_complete",
+        f"EXIT_CODE={exit_code} RESULT={validator_result} ISSUES={issues_count}")
+
+    passed = exit_code == 0 and validator_result == "PASS"
+    return passed, exit_code, validator_result
+
+
+# =============================================================================
 # MAIN WORKFLOW ORCHESTRATOR
 # =============================================================================
 
@@ -450,6 +531,22 @@ def run_workflow() -> dict:
     log(workflow_id, "summary", "workflow_complete",
         f"DISCOVERED={summary['discovered']} VALIDATED={summary['validated']} GENERATED={summary['generated']} FAILED={summary['failed']}")
 
+    # Stage 8: Post-workflow runtime state validation
+    # Validator MUST pass for workflow to exit cleanly.
+    # Failure here means registry/history state is governance-invalid — do not continue silently.
+    validator_passed, validator_exit_code, validator_result = run_post_workflow_validator(workflow_id)
+    summary["validator_passed"] = validator_passed
+    summary["validator_exit_code"] = validator_exit_code
+    summary["validator_result"] = validator_result
+
+    if not validator_passed:
+        log_failure(workflow_id, "none",
+            f"RUNTIME_STATE_VALIDATION_FAILED RESULT={validator_result} EXIT_CODE={validator_exit_code}")
+        # Do not add to summary[failed] here — task failures already counted.
+        # Exit code 2 signals: tasks succeeded but validator rejected state.
+        sys.exit(2)
+
+    log(workflow_id, "none", "stage8_validation_passed", f"RESULT={validator_result}")
     return summary
 
 
@@ -459,5 +556,15 @@ def run_workflow() -> dict:
 
 if __name__ == "__main__":
     summary = run_workflow()
-    # Exit code: 0 if no failures, 1 if any failures
-    sys.exit(0 if summary["failed"] == 0 else 1)
+    # Exit codes:
+    #   0 — all tasks passed AND runtime state validator returned PASS
+    #   1 — one or more tasks failed during workflow execution
+    #   2 — all tasks succeeded but runtime state validation FAILED (silent continuation prevented)
+    wf_failed = summary.get("failed", 0)
+    validator_failed = not summary.get("validator_passed", True)
+    if wf_failed:
+        sys.exit(1)
+    elif validator_failed:
+        sys.exit(2)
+    else:
+        sys.exit(0)

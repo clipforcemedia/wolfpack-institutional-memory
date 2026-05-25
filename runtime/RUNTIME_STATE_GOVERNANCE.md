@@ -267,6 +267,44 @@ A task is considered **complete** when all of the following are true:
 
 ---
 
+## 13. Automatic Post-Workflow Validation (Stage 8)
+
+**Definition:** Every invocation of `wolfpack_review_runner.py` MUST execute `runtime_state_validator.py` as a mandatory post-processing step before reporting completion.
+
+| Requirement | Specification |
+|---|---|
+| **Trigger** | After ALL task processing stages (1–7) complete, before workflow exits cleanly |
+| **Script location** | `tasks/runtime_state_validator.py` |
+| **Execution method** | Subprocess call via `sys.executable` — no import coupling |
+| **Timeout** | 60 seconds — timeout treated as validation FAIL |
+| **Log output** | Append entry to `runtime/VALIDATOR_EXECUTION_LOG.jsonl` (JSONL, append-only) |
+| **Report output** | `runtime/RUNTIME_STATE_VALIDATION_REPORT.md` updated on each run |
+| **Failure behavior** | Exit code 2 — workflow tasks succeed but validator rejects state; silent continuation PROHIBITED |
+| **Success behavior** | Exit code 0 — both tasks and validator passed |
+
+**Validator execution log schema (VALIDATOR_EXECUTION_LOG.jsonl):**
+
+```json
+{"timestamp":"2026-05-25T05:10:00Z","workflow_id":"wolfpack_review_runner_v1","validator_exit_code":0,"validator_result":"PASS","issues_count":0}
+```
+
+| Field | Type | Description |
+|---|---|---|
+| `timestamp` | ISO-8601 UTC | When validator was invoked |
+| `workflow_id` | string | Source workflow identifier |
+| `validator_exit_code` | int | Exit code from validator script; -1=not found, -2=timeout, -3=error |
+| `validator_result` | string | "PASS", "FAIL", "SKIP", "TIMEOUT", "ERROR", "UNKNOWN" |
+| `issues_count` | int | Number of validation issues detected |
+
+**Governance enforcement:**
+- Exit code 0: workflow complete, validator passed — clean exit
+- Exit code 1: one or more tasks failed during execution — failure exit
+- Exit code 2: all tasks succeeded but validator rejected state — **HALT exit** (silent continuation prevented)
+
+This ensures that a corrupt registry, duplicate task entries, or missing result paths will never pass silently into institutional memory.
+
+---
+
 ## References
 
 | Reference | Description |
@@ -276,6 +314,8 @@ A task is considered **complete** when all of the following are true:
 | [System Architecture — DEC-001](./canon/SYSTEM_ARCHITECTURE.md) | OpenClaw as replaceable worker |
 | [Agent Governance](./agents/AGENT_GOVERNANCE.md) | Agent operational standards |
 | [Execution History](./operations/EXECUTION_HISTORY.jsonl) | Append-only task execution log |
+| [Validator Execution Log](./runtime/VALIDATOR_EXECUTION_LOG.jsonl) | Append-only validator invocation history |
+| [Runtime State Validator](./tasks/runtime_state_validator.py) | Standalone validation script |
 
 ---
 
