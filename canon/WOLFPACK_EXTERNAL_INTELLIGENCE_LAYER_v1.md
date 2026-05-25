@@ -91,6 +91,7 @@ Wolfpack operates in two stages:
 **The intelligence/execution separation is non-negotiable.** EIL is the eyes and ears of Wolfpack. It is not the hands.
 
 > **See also:** [Wolfpack Canon — No uncontrolled autonomy](./WOLFPACK_CANON.md)
+> **See also:** [Wolfpack Hive Mind Learning Doctrine — Governed inter-subsystem learning](./WOLFPACK_HIVE_MIND_LEARNING_DOCTRINE_v1.md)
 > **See also:** [Automation Execution Matrix — Human API doctrine](./operations/AUTOMATION_EXECUTION_MATRIX.md)
 
 ---

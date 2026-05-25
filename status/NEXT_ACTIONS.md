@@ -38,6 +38,8 @@ append_only: false
 | 007 — Architecture Correction Canonized (DEC-001) | ✓ Complete | 2026-05-23 |
 | 011 — Runtime State Governance Layer Created | ✓ Complete | 2026-05-24 |
 | 012 — HIGH-Risk Overlay Escalation Governance Created | ✓ Complete | 2026-05-24 |
+| 013 — External Intelligence Layer (EIL) Canon Specified | ✓ Complete | 2026-05-25 |
+| 014 — Wolfpack Hive Mind Learning Doctrine Canonized | ✓ Complete | 2026-05-25 |
 
 ---
 
@@ -119,8 +121,10 @@ All production deployments require:
 | 5 | Execute Stage 1 Batch 002A — ingest core memory + governance specs | Eterna / Wolfpack | ✓ Complete |
 | 6 | Create Batch 002A source registration workflow | Eterna / Wolfpack | ✓ Complete |
 | 7 | Create doctrine overlay reconciliation governance | Eterna / Wolfpack | ✓ Complete |
-| 8 | Review MEDIUM overlay-risk doctrine before Batch 002B ingestion | Eterna / Wolfpack | Pending |
+| 8 | Review MEDIUM overlay-risk doctrine before Batch 002B ingestion | Eterna / Wolfpack | Pending — OVL-20260524-001 Wolfpack review |
+| 9 | Create Wolfpack Hive Mind Learning Doctrine | Eterna / Wolfpack | ✓ Complete (2026-05-25) |
+| 10 | Create Wolfpack External Intelligence Layer spec | Eterna / Wolfpack | ✓ Complete (2026-05-25) |
 
-**Active Next Action:** Review OVL-20260524-001 (Strategic Doctrine Expansion — MEDIUM risk) via Wolfpack review gate — final Batch 002B overlay. After that: assess EIL canonical adoption path (reference/construction-stage).
+**Active Next Action:** Review OVL-20260524-001 (Strategic Doctrine Expansion — MEDIUM risk) via Wolfpack review gate — final Batch 002B overlay. After that: production readiness assessment for Wolfpack.
 
 *File maintained in `status/NEXT_ACTIONS.md`*
