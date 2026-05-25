@@ -121,6 +121,6 @@ All production deployments require:
 | 7 | Create doctrine overlay reconciliation governance | Eterna / Wolfpack | ✓ Complete |
 | 8 | Review MEDIUM overlay-risk doctrine before Batch 002B ingestion | Eterna / Wolfpack | Pending |
 
-**Active Next Action:** Review OVL-20260524-001 (Strategic Doctrine Expansion — MEDIUM risk) via Wolfpack review gate — final Batch 002B overlay awaiting decision
+**Active Next Action:** Review OVL-20260524-001 (Strategic Doctrine Expansion — MEDIUM risk) via Wolfpack review gate — final Batch 002B overlay. After that: assess EIL canonical adoption path (reference/construction-stage).
 
 *File maintained in `status/NEXT_ACTIONS.md`*
