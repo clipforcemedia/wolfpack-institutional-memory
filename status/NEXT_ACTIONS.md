@@ -105,8 +105,7 @@ All production deployments require:
 |---|---|---|
 | Base44 client-facing web app integration | medium | Planned, not started |
 | Stripe payment integration | medium | Planned, not started |
-| Twilio account provisioning | high | Waiting on account setup |
-| OpenAI account provisioning | high | Waiting on account setup |
+| Controlled spend governance system | high | Deferred — EIL interface defined; full governance system after construction stage |
 
 ---
 
