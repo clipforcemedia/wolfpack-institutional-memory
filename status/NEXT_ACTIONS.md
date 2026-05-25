@@ -57,8 +57,8 @@ append_only: false
 | 2 | **Create executable runtime state validator after governance approval** | Eterna / Wolfpack | high | ✓ Complete (2026-05-24) |
 | 3 | **Integrate runtime state validator into wolfpack_review_runner.py (Stage 8)** | Eterna / Wolfpack | high | ✓ Complete (2026-05-25) |
 | 4 | Run runtime state validator after every workflow execution cycle | Eterna / Wolfpack | high | ✓ Complete (2026-05-25) — automated via Stage 8 |
-| 5 | Batch 002B remaining overlays — OVL-20260524-001 (Strategic Doctrine ✓), OVL-20260524-003 (OS Doc Pack — HIGH, requires DEC entry) | Eterna / Wolfpack | high | Pending |
-| 6 | **Use session recovery protocol to resume OVL-20260524-003** | Eterna / Wolfpack | high | Pending |
+| 5 | Batch 002B remaining overlays — OVL-20260524-001 (MEDIUM, Wolfpack review required) | Eterna / Wolfpack | high | Pending |
+| 6 | ~~Use session recovery protocol to resume OVL-20260524-003~~ | Eterna / Wolfpack | high | ✓ Complete (DEC-002 created 2026-05-25) |
 
 ---
 
@@ -121,6 +121,6 @@ All production deployments require:
 | 7 | Create doctrine overlay reconciliation governance | Eterna / Wolfpack | ✓ Complete |
 | 8 | Review MEDIUM overlay-risk doctrine before Batch 002B ingestion | Eterna / Wolfpack | Pending |
 
-**Active Next Action:** Create DEC-002 entry for OVL-20260524-003 (Operating System Doc Pack — HIGH risk) per HIGH_RISK_OVERLAY_ESCALATION_STANDARD.md — requires DEC entry before any extraction can proceed
+**Active Next Action:** Review OVL-20260524-001 (Strategic Doctrine Expansion — MEDIUM risk) via Wolfpack review gate — final Batch 002B overlay awaiting decision
 
 *File maintained in `status/NEXT_ACTIONS.md`*

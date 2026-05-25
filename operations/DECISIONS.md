@@ -158,3 +158,70 @@ Designate the intake summary webhook as a **future implementation candidate** pe
 ---
 
 *Decision: DEC-002 — 2026-05-23*
+
+---
+
+# DEC-002 — HIGH-Risk Overlay Resolution: OVL-20260524-003 (Operating System Doc Pack)
+
+**Date:** 2026-05-25
+**Decision:** `approved_with_conditions`
+**Overlay:** OVL-20260524-003
+
+## Context
+
+OVL-20260524-003 (Wolfpack_Operating_System_Doc_Pack_v1.pdf) was classified HIGH risk during Batch 002B ingestion. Seven conflicts were identified against existing level-1 canon (CFG-20260524-001 through CFG-20260524-007). Four were blocking: Helm as required infrastructure (CD), Wolfpack redefinition (CS+CT), 6 new roles without canon definitions (CS), Supabase as approved infrastructure (CS).
+
+Per HIGH_RISK_OVERLAY_ESCALATION_STANDARD.md §4 Rule 2 (Supersession requires authority), DEC entry was required before any extraction could proceed.
+
+## Decision
+
+OS Doc Pack authorized for **informational treatment only** (reference/informational — not canonical activation). All blocking conflicts resolved or rejected. No canon file modified.
+
+## Blocking Conflicts Resolved
+
+| Conflict ID | Type | Resolution |
+|---|---|---|
+| CFG-20260524-001 | CD (Helm) | REJECTED — Helm not in canon; informational only |
+| CFG-20260524-002 | CS+CT (Wolfpack layer) | RESOLVED — Wolfpack remains governance process |
+| CFG-20260524-003 | CS (6 new roles) | REJECTED — only 5 canonical roles approved |
+| CFG-20260524-004 | CS (Supabase) | RESOLVED — Supabase not approved; informational only |
+| CFG-20260524-005 | CS (ChatGPT Project) | Non-blocking — informational |
+| CFG-20260524-006 | CT (Opportunity Analyst) | RESOLVED — cross-reference to Opportunity Radar |
+| CFG-20260524-007 | CT (Wolfpack Red Team) | RESOLVED — cross-reference to Red Team |
+
+## Conditions
+
+1. Helm not extracted — not in canon
+2. Wolfpack remains governance process — not a technical layer
+3. Only 5 canonical roles govern — 6 new roles not in canon
+4. Supabase not approved as infrastructure
+5. OS Doc Pack treated as reference/informational only
+
+## Wolfpack Review
+
+| Role | Decision |
+|---|---|---|
+| Opportunity Radar | ✅ Approve |
+| Red Team | ✅ Approve |
+| Deployment Governor | ✅ Approve |
+| Memory Keeper | ✅ Approve |
+| Eterna | ✅ Approve |
+
+## Status
+
+`approved_with_conditions` — informational treatment authorized; no canonical activation
+
+## Rollback
+
+Revert `governance/DEC-002.md` — pre-DEC state: commit `031fb87`. No canon restoration needed.
+
+## References
+
+- Decision: `governance/DEC-002.md`
+- Conflict mapping: `governance/reviews/OVL-20260524-003_CONFLICT_MAPPING.md`
+- Conflict registry: `governance/HIGH_RISK_CONFLICT_REGISTRY.md`
+- Overlay decision log: `governance/OVERLAY_DECISION_LOG.md`
+
+---
+
+*Decision: DEC-002 — 2026-05-25*

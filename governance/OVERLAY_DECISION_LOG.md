@@ -4,7 +4,7 @@ document_type: "overlay-registry"
 status: "active"
 version: "1.0"
 created: "2026-05-24"
-updated: "2026-05-24"
+updated: "2026-05-25"
 source_type: "internal"
 provenance: "wolfpack-institutional-memory"
 tags:
@@ -88,8 +88,6 @@ Each entry contains:
 | overlay_id | Risk | Status | Decision Pending |
 |---|---|---|---|
 | `OVL-20260524-001` | MEDIUM | queued | Wolfpack review required |
-| `OVL-20260524-002` | MEDIUM | queued | Wolfpack review required |
-| `OVL-20260524-003` | HIGH | queued | DEC entry required |
 
 ---
 

@@ -4,7 +4,7 @@ document_type: "overlay-registry"
 status: "active"
 version: "1.0"
 created: "2026-05-24"
-updated: "2026-05-24"
+updated: "2026-05-25"
 source_type: "internal"
 provenance: "wolfpack-institutional-memory"
 tags:
@@ -65,8 +65,8 @@ Each queue entry contains:
 | overlay_id | Risk | Current Status | Blocker |
 |---|---|---|---|
 | `OVL-20260524-001` | MEDIUM | queued | Requires Wolfpack review before extraction |
-| `OVL-20260524-002` | MEDIUM | queued | Requires Wolfpack review before extraction |
-| `OVL-20260524-003` | HIGH | queued | Requires DEC-00x entry before any extraction |
+| `OVL-20260524-002` | LOW | approved | ✓ Complete — no blocking conflicts |
+| `OVL-20260524-003` | HIGH | approved_with_conditions | ✓ DEC-002 created — informational treatment approved |
 
 ---
 
@@ -120,11 +120,13 @@ Each queue entry contains:
 | **overlay_type** | `contradiction` |
 | **affected_canon** | `canon/SYSTEM_ARCHITECTURE.md`, `canon/WOLFPACK_CANON.md` |
 | **overlay_risk** | `HIGH` |
-| **status** | `completed` |
+| **status** | `approved_with_conditions` |
 | **reviewer** | Human Operator + DEC |
-| **escalation_required** | true — DEC entry required |
+| **escalation_required** | true — DEC-002 created |
 | **created** | 2026-05-24 |
-| **concern** | Broad architectural overview likely overlaps with SYSTEM_ARCHITECTURE.md and WOLFPACK_CANON.md — blocking extraction until DEC approved |
+| **completed** | 2026-05-25 |
+| **decision_doc** | `governance/DEC-002.md` |
+| **concern** | RESOLVED — Helm prohibited (CD conflict rejected), Wolfpack redefinition prohibited, 6 new roles rejected, Supabase not approved. OS Doc Pack treated as reference/informational only. No canon contamination. |
 
 ---
 
