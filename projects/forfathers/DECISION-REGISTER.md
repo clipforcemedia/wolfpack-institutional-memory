@@ -6,7 +6,7 @@
 **Business entity:** Ohio LLC preferred, not yet formed; Delaware LLC resolution separate.  
 **Domain:** ForFathers.com owned; DNS not configured.
 
-**Legend:** LOCKED = previously decided; PROPOSED = not approved; OPEN = needs decision. Do not interpret proposed items as final.
+**Legend:** LOCKED = recorded decision; LOCKED — CONDITIONAL / PROVISIONAL = recorded direction requiring validation before implementation or public commitment; amendments are documented in the decision log. All 60 canonical decisions have recorded positions; this is not production approval.
 
 ## Business Model & Positioning
 
@@ -105,13 +105,16 @@
 
 ## v0.1 Scope Guardrails
 
-- One $5/month Brotherhood tier; annual plan remains undecided.
-- Resource Library for paying members, subject to final access rules.
-- Digital Store: digital-only downloads, products $5 or less; no shipping or manual fulfillment.
-- The Cohort: coming-soon explanation and interest signup only. **No marketplace transactions, provider onboarding, payouts or disputes in v0.1.**
-- $1 from each successful $5 membership payment reserved for verified charitable giving; recipient, timing, refund adjustments and compliant disclosures remain undecided. Do not claim customer tax deductibility.
-- Do not accept payments until legal entity, processor, tax treatment, policies and end-to-end flows are verified.
-- Avoid feature additions without explicit decision-log entry covering rationale, risk, cost and impact on v0.1.
+- One Brotherhood tier at $5/month, billed monthly only; no annual plan, trial or introductory discount in v0.1 (D005, D009, D048).
+- Resource Library: 20 written resources across five categories, including three free public samples, plus two simple interactive tools; remaining library content available to active paying members (D011–D018).
+- Members-only asynchronous discussion community; no live chat, private messaging or advanced social features (D007).
+- Digital Store: 20 digital-only products at $3/$5, personal-use licensing, no member discounts, guest checkout, secure delivery and five downloads per purchase using the D027 amendment; no shipping or manual fulfillment (D019–D027, D046).
+- Stripe handles payments; Lovable is the web frontend; Supabase manages authenticated data, entitlements and secure digital delivery. Architecture is conditional on integration, provider and compliance verification (D046–D049).
+- Giving Fund: reserve $1 per qualifying successful $5 membership payment, adjust for refunds/chargebacks, transfer quarterly to a verified U.S. 501(c)(3), and report quarterly; specific recipient not yet selected, and public wording requires legal review (D028–D034). Do not claim customer tax deductibility.
+- The Cohort: Coming Soon description and consented interest signup only. **No marketplace transactions, provider onboarding, payouts or disputes in v0.1.** Future 5% fee remains provisional (D055–D060).
+- Support via dedicated domain email, internal target to respond within 24 calendar hours (D050–D051).
+- Do not accept payments until legal entity, Stripe onboarding, tax treatment, consumer/charity policies and end-to-end flows are verified (D054).
+- Avoid feature additions without an explicit decision-log/ADR entry covering rationale, risks, cost and v0.1 impact.
 
 ## Decision Sessions
 
@@ -126,17 +129,22 @@
 ## Execution Checklist
 
 - [x] Inventory 60 decisions and record known positions
-- [ ] Resolve open decisions in sessions 1–7
-- [ ] Red-team specifications and legal/operational claims
-- [ ] Lock v0.1 scope and acceptance criteria
+- [x] Resolve all 60 canonical decisions in sessions 1–7
+- [x] Red-team decision register and record findings in V0.1-ARCHITECTURE-AUDIT.md (implementation/legal verification still outstanding)
+- [x] Lock v0.1 scope and controlled-launch acceptance criteria (D054; validation still outstanding)
 - [ ] Verify payment provider, taxes, charity partner, and integrations externally
 - [ ] Resolve Ohio/Delaware entity matters separately
 - [ ] Build and test Lovable v0.1
 - [ ] Launch only after checkout, access, cancellation, digital delivery and support checks pass
 
-## Current Decision Queue
+## Current Execution Queue
 
-**Decision 1 — Primary target audience: LOCKED (2026-11-07).** C) Fathers first, all men welcome. Fathers are the initial marketing focus; membership is open to men regardless of parental status. Next: Decision 3 — Mission statement.
+**Decision phase complete:** All 60 canonical decisions recorded. Some choices remain conditional on verification; no production launch approval.
+
+1. Correct documentation drift and reconcile D027 with D046 (completed 2026-11-07).
+2. Define implementation specification and testable acceptance criteria without expanding scope.
+3. Verify entity, Stripe onboarding, taxes, charitable-giving disclosures, product rights and consumer policies.
+4. Build and test controlled v0.1; activate real payments only after D054 gates pass.
 
 ## Decision Log
 
@@ -257,3 +265,5 @@
 - **2026-11-07 — D060: Cohort marketplace development trigger.** Approved option C: founder discretion determines when to initiate development of the future Cohort marketplace; no mandatory member-count or interest-signup threshold. Rationale: preserves strategic flexibility. Risks: premature investment, scope creep, insufficient supply/demand, and distraction from core subscriptions and Digital Store. Mitigation: Cohort stays Coming Soon and outside v0.1; before development, document a separate go/no-go ADR with rationale, budget, capacity, demand evidence and risks, confirm v0.1 operational stability, and verify marketplace legal, payment/payout, safety and unit economics requirements. This approval is not authorization to build or launch Cohort now.
 
 - **2026-11-07 — ADR-D027-01: Download limit implementation amendment.** User approved option A following v0.1 architecture audit. Keep the existing five-download-per-purchase policy, but replace the former provider-native-only/no-custom-tracking restriction with minimal custom Supabase-backed enforcement compatible with D046 Stripe + Lovable + Supabase. Rationale: consistent fulfillment without adding a second commerce provider. Risks: concurrent requests bypassing caps, premature counting on failed transfers, shared/expired links, duplicate webhooks, support burden. Mitigation: private file storage, server-verified paid order, atomic per-purchase download reservation/counter, short-lived authorized grants, idempotent purchase fulfillment, concurrency and mobile testing, and support-assisted reset after verification. Implementation must define what counts as a download and failure recovery; no public file URLs. This is an amendment to canonical D027, not a 61st decision.
+
+- **2026-11-07 — Administrative register cleanup.** Updated stale scope guardrails, execution checklist, decision queue and legend to match D009, D027 amendment, D029–D034, D046–D054 and D055–D060. No product decisions changed by this documentation correction.
