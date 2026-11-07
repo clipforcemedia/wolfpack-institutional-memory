@@ -18,7 +18,7 @@
 | 4 | Brand positioning and tone | LOCKED | Strong brotherhood + genuine support: confident, purposeful, welcoming, nonjudgmental |
 | 5 | Membership price | LOCKED | $5/month |
 | 6 | Membership name | LOCKED | The Brotherhood |
-| 7 | Membership benefits | OPEN | — |
+| 7 | Membership benefits | LOCKED | Resource Library plus members-only discussion community; simple asynchronous format, no live chat |
 | 8 | Free visitor benefits | OPEN | — |
 | 9 | Annual membership option | OPEN | — |
 | 10 | Cancellation and refund policy | OPEN | — |
@@ -147,3 +147,5 @@
 - **2026-11-07 — D003: Mission statement.** Approved option C verbatim: “To bring men together through brotherhood, providing the support, resources, and opportunities to help one another build better lives.” Rationale: aligns with D001 inclusive audience and D002 support plus opportunity. Risk: broad promise; mitigation: define specific v0.1 benefits and measurable launch criteria. No feature expansion authorized.
 
 - **2026-11-07 — D004: Brand positioning and tone.** Approved option C: strong brotherhood plus genuine support. Principles: strength without arrogance; accountability without humiliation; support without judgment; brotherhood without exclusion; action over empty motivation. Risk: masculine branding may be perceived as exclusionary; mitigation: welcoming copy and clear eligibility. No feature expansion authorized.
+
+- **2026-11-07 — D007: Membership benefits.** Approved option B: access to Resource Library plus members-only discussion community. Rationale: recurring member value beyond static downloads. Risk: moderation workload, spam, harassment, and empty-community experience; mitigation: simple asynchronous discussions, clear rules, reporting and moderation controls before launch. No live chat or advanced social features in v0.1. Community implementation and staffing remain subject to feasibility and launch criteria.
