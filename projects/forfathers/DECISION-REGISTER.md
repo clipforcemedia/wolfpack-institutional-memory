@@ -56,7 +56,7 @@
 |---:|---|---|---|
 | 28 | Amount reserved per membership payment | LOCKED | $1 per successful $5 membership payment |
 | 29 | Type of charitable organization | LOCKED | Verified U.S. IRS-recognized 501(c)(3) charities only; partner not yet selected |
-| 30 | Charity selection criteria | OPEN | — |
+| 30 | Charity selection criteria | LOCKED | Verified 501(c)(3); aligned with fathers, men, families or community needs; financial transparency; verifiable operating history; legitimate donation channel |
 | 31 | Donation transfer frequency | OPEN | — |
 | 32 | Public donation reporting | OPEN | — |
 | 33 | Refund and chargeback adjustments | OPEN | — |
@@ -195,3 +195,5 @@
 - **2026-11-07 — D027: Digital Store download limits.** Approved option B: five downloads per purchase. Rationale: balances customer convenience and link-sharing exposure. Risks: legitimate customers exhaust allowance, download links forwarded, and delivery-provider feature gaps. Mitigation: offer support-assisted recovery, use secure provider-managed links, verify provider support before checkout; do not build custom download tracking for v0.1. If provider cannot enforce the cap natively, revisit this decision before launch.
 
 - **2026-11-07 — D029: Giving Fund recipient organization type.** Approved option A: disburse Giving Fund reserves only to verified U.S. IRS-recognized 501(c)(3) charities. Rationale: simpler eligibility verification and clearer accountability. Risks: excludes informal community efforts; charity status can lapse; and reserving membership revenue does not create a tax-deductible customer donation. Mitigation: check IRS Tax Exempt Organization Search and recipient standing before disbursement; separately decide charity-selection criteria, payout cadence, disclosures and bookkeeping. No direct individual grants in v0.1.
+
+- **2026-11-07 — D030: Charity selection criteria.** Approved option B: require verified 501(c)(3) status, mission alignment with fathers/men/families or related community needs, financial transparency, verifiable operating history, and legitimate donation channel. Rationale: defensible recipient selection without extensive audit overhead. Risks: small/new organizations excluded and published financial information may be incomplete; mitigation: document evidence and review status and donation details before disbursement. No charity selected by this decision.
