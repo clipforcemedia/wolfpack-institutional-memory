@@ -46,7 +46,7 @@
 | 22 | Individual product pricing | LOCKED | Two price points: $3 standard individual products; $5 premium products and bundles; subject to payment fee verification |
 | 23 | Product file formats | LOCKED | PDF for planners/printables; PNG/JPG for artwork and wallpapers; ZIP for multi-file bundles; no editable source templates in v0.1 |
 | 24 | Product licensing | LOCKED | Personal-use license only; personal downloads, prints and device wallpapers allowed; resale, redistribution, attribution claims and commercial use prohibited; clear pre-purchase disclosure |
-| 25 | Member discounts | OPEN | — |
+| 25 | Brotherhood member discounts | LOCKED | Active Brotherhood members receive 20% off Digital Store purchases ($3→$2.40; $5→$4.00), subject to reliable membership-aware checkout |
 | 26 | Refund policy | OPEN | — |
 | 27 | Download limits | OPEN | — |
 
@@ -181,3 +181,5 @@
 - **2026-11-07 — D023: Digital product file formats.** Approved option B: PDF, PNG/JPG, and ZIP bundles. Rationale: covers printables and image products with simple download delivery. Risks: large files, incompatible dimensions, and ZIP extraction friction; mitigation: publish file type and size before purchase, test downloads on mobile/desktop, and use appropriate export dimensions. Editable DOCX/XLSX/Canva source templates are out of scope for v0.1.
 
 - **2026-11-07 — D024: Digital product licensing.** Approved option A: personal-use-only license for digital products. Buyers may download and personally use files, print personal copies, and apply wallpapers to their own devices. Resale, redistribution, false authorship claims and commercial use are not permitted. Rationale: clear, minimal license for v0.1. Risks: unclear terms and third-party asset rights; mitigation: disclose license before checkout, verify rights to all included assets, and obtain legal review of final terms. This license does not override mandatory consumer rights.
+
+- **2026-11-07 — D025: Brotherhood member discounts.** Approved option B: active Brotherhood members receive a 20% discount on all Digital Store purchases ($3 standard → $2.40; $5 premium → $4.00). Rationale: tangible membership benefit while preserving most revenue. Risks: checkout complexity, discount abuse, and transaction fees; mitigation: require verified active membership, automatic application, server-side enforcement, and payment-fee validation before launch. If chosen provider cannot support this reliably, return for explicit scope/decision revision rather than silently shipping an insecure workaround.
