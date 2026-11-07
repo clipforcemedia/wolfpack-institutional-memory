@@ -88,7 +88,7 @@
 | 49 | Accepted payment methods | LOCKED | Major credit/debit cards plus Apple Pay and Google Pay where supported by Stripe Checkout, device, region and subscription/payment type |
 | 50 | Customer support channel | LOCKED | Dedicated ForFathers support email only for v0.1; no live chat or contact form |
 | 51 | Support response target | LOCKED | Aim to respond to support emails within 24 calendar hours; internal operational target, not guaranteed SLA |
-| 52 | Member account deletion process | OPEN | — |
+| 52 | Member account deletion process | LOCKED | Self-service deletion request in account settings, identity re-verification, coordinated Stripe subscription cancellation, access revocation and eligible data deletion/anonymization; legally required records retained |
 | 53 | Basic analytics and success metrics | OPEN | — |
 | 54 | Launch criteria | OPEN | — |
 
@@ -239,3 +239,5 @@
 - **2026-11-07 — D050: Customer support channel.** Approved option A: a dedicated ForFathers support email address is the sole support channel for v0.1. Rationale: low operational overhead and clear ownership. Risks: delayed responses, missed messages, phishing/spam and customer frustration. Mitigation: monitor inbox, use an address on the owned domain, establish a response target in D051, and publish support contact on purchase receipts and relevant pages. No live chat or contact form in v0.1.
 
 - **2026-11-07 — D051: Support response target.** Approved option A: aim to provide an initial human response to support emails within 24 calendar hours, including weekends. Rationale: faster resolution of digital-download, billing, and access issues. Risks: founder availability, missed messages, and unrealistic public guarantees. Mitigation: daily inbox monitoring, notifications and a fallback coverage plan; track actual response time and treat as an internal target, not a contractual SLA. Escalate urgent payment/access incidents when possible.
+
+- **2026-11-07 — D052: Member account deletion.** Approved option B: members can initiate account deletion through authenticated account settings. Require identity re-verification and explicit confirmation; coordinate cancellation of any active Stripe subscription before deleting account credentials; revoke entitlements and sessions; delete or anonymize eligible personal data and preserve legally required transactional/accounting records under documented retention rules. Risks: accidental/unauthorized deletion, orphaned recurring charges, irreversible loss of purchases, and privacy-law noncompliance. Mitigation: test cancellation-before-deletion, retries/error handling, audit logs without unnecessary PII, and clear disclosure of consequences; failed cancellation must block final deletion and trigger support escalation. Provide a support-based fallback for users unable to access accounts without making it a second primary UI pathway.
