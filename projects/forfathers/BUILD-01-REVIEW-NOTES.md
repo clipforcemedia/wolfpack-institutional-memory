@@ -33,10 +33,17 @@ Status: partial visual review; do not generate a correction prompt until all fiv
 - Test filters, disabled purchase buttons, mobile layout, and sticky navigation. Screenshot alone cannot verify behavior.
 - Preserve visual styling; consolidate corrections after Cohort and interaction audits.
 
+## The Cohort page
+- Visual direction APPROVED provisionally: clear 'Men helping men' hero, Coming Soon status, five future service categories, consented interest form preview with email/intent/category, disabled-looking submission, consistent styling.
+- Potential glyph/encoding issue: odd symbols appear after several category headings (Career, Business, Technology, etc.); verify in browser and remove if real.
+- Confirm the preview-only form truly cannot submit, persist, or send user data; screenshot cannot establish this.
+- Mobile layout not yet tested; five-column category layout must adapt without overflow.
+- No marketplace accounts, provider onboarding, listings, payouts or transactions visible; continue scope lock.
+
 ## Pending inspection
 - Resource Library full-page screenshot and static search/filter behavior.
 - Digital Store functional filter/disabled purchase verification (visual screenshot reviewed).
-- Cohort full-page screenshot; interest form disabled, no data collection.
+- Cohort form submission prevention and data collection verification (visual screenshot reviewed).
 - Desktop navigation, 375/768/1440 responsive tests, keyboard, contrast, focus, no horizontal overflow.
 - Confirm no backend, auth, Stripe, Supabase or external data collection introduced.
 
