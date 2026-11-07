@@ -12,7 +12,7 @@
 
 | # | Decision | Status | Current position |
 |---:|---|---|---|
-| 1 | Primary target audience | OPEN | — |
+| 1 | Primary target audience | LOCKED | Fathers first, all men welcome |
 | 2 | Core problem ForFathers solves | OPEN | — |
 | 3 | Mission statement | OPEN | — |
 | 4 | Brand positioning and tone | OPEN | — |
@@ -136,4 +136,8 @@
 
 ## Current Decision Queue
 
-**Decision 1 — Primary target audience:** A) Fathers only; B) All men; C) Fathers first, all men welcome (**recommended, not yet approved**).
+**Decision 1 — Primary target audience: LOCKED (2026-11-07).** C) Fathers first, all men welcome. Fathers are the initial marketing focus; membership is open to men regardless of parental status. Next: Decision 2 — Core problem ForFathers solves.
+
+## Decision Log
+
+- **2026-11-07 — D001: Audience.** Approved option C: *Fathers first, all men welcome*. Rationale: focus initial outreach without excluding men who are not fathers. Risk: brand name could imply father-only eligibility; countermeasure: explicitly communicate inclusive membership eligibility in homepage copy. No change to v0.1 feature scope.
