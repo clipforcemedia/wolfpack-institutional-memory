@@ -86,7 +86,7 @@
 | 47 | Merchant-of-record preference | LOCKED | ForFathers is seller of record using Stripe; responsible for applicable tax registrations, collection, filings, refunds and compliance; validate before launch |
 | 48 | Subscription billing rules | LOCKED | $5 charged at signup, automatic monthly renewal, no trial/intro discount, cancel anytime with access through paid period; verified billing state governs access |
 | 49 | Accepted payment methods | LOCKED | Major credit/debit cards plus Apple Pay and Google Pay where supported by Stripe Checkout, device, region and subscription/payment type |
-| 50 | Customer support channel | OPEN | — |
+| 50 | Customer support channel | LOCKED | Dedicated ForFathers support email only for v0.1; no live chat or contact form |
 | 51 | Support response target | OPEN | — |
 | 52 | Member account deletion process | OPEN | — |
 | 53 | Basic analytics and success metrics | OPEN | — |
@@ -235,3 +235,5 @@
 - **2026-11-07 — D048: Brotherhood subscription billing.** Approved option A: charge $5 at signup, renew automatically each month, no free trial or first-month promotion; allow cancellation anytime with access until the current paid period ends. Rationale: predictable billing and minimal subscription states. Risks: failed renewals, duplicate billing, webhook delays and misleading renewal disclosures. Mitigation: hosted Stripe subscription checkout, explicit recurring-charge and cancellation disclosures, idempotent webhook processing, defined failed-payment/grace policy before launch, and server-verified entitlements. No live checkout before compliance/integration gates.
 
 - **2026-11-07 — D049: Accepted payment methods.** Approved option B: major credit/debit cards, Apple Pay and Google Pay through Stripe-hosted checkout, where available and compatible with one-time purchases and recurring subscriptions. Rationale: mobile-friendly checkout without an additional processor. Risks: wallets may not appear on all browsers/devices or for all billing scenarios; mitigation: use Stripe-supported configuration, test mobile and desktop payment paths, and always retain card checkout fallback. Do not promise universal wallet availability.
+
+- **2026-11-07 — D050: Customer support channel.** Approved option A: a dedicated ForFathers support email address is the sole support channel for v0.1. Rationale: low operational overhead and clear ownership. Risks: delayed responses, missed messages, phishing/spam and customer frustration. Mitigation: monitor inbox, use an address on the owned domain, establish a response target in D051, and publish support contact on purchase receipts and relevant pages. No live chat or contact form in v0.1.
