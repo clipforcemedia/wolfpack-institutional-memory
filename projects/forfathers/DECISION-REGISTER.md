@@ -43,7 +43,7 @@
 | 19 | Maximum product price | LOCKED | $5 maximum |
 | 20 | Initial product categories | LOCKED | Practical digital products plus inspirational and creative products: planners, templates, printable art, wallpapers, cards |
 | 21 | Initial product quantity | LOCKED | 20 products at launch: 10 practical digital products and 10 inspirational/creative products |
-| 22 | Individual product pricing | OPEN | — |
+| 22 | Individual product pricing | LOCKED | Two price points: $3 standard individual products; $5 premium products and bundles; subject to payment fee verification |
 | 23 | Product file formats | OPEN | — |
 | 24 | Commercial versus personal-use licenses | OPEN | — |
 | 25 | Member discounts | OPEN | — |
@@ -175,3 +175,5 @@
 - **2026-11-07 — D020: Digital Store categories.** Approved option C: both practical digital products (planners, organizers, budgeting, parenting and productivity templates) and inspirational/creative products (wall art, wallpapers, printable posters and digital greeting cards). Rationale: broader range of low-cost standalone purchases. Risks: duplicate value with paid Resource Library and excessive SKU sprawl; mitigation: differentiate store products from included member resources and cap launch inventory in D021. All products digital-only and $5 or less; no physical fulfillment.
 
 - **2026-11-07 — D021: Initial Digital Store inventory.** Approved option B: 20 launch products, split evenly between 10 practical products and 10 inspirational/creative products. Rationale: credible range without extensive catalog. Risk: production delays and low-value filler; mitigation: enforce quality gates and validate checkout and delivery before launch. Any inventory reduction requires explicit scope revision.
+
+- **2026-11-07 — D022: Digital Store pricing.** Approved option C: two price points, $3 for standard individual products and $5 for premium products/bundles. Rationale: simpler pricing and potentially healthier per-order economics than $1 downloads. Risks: processor fixed fees and taxes may still make low-value transactions unprofitable; mitigation: verify provider fees and tax treatment before checkout activation. Maximum price remains $5.
