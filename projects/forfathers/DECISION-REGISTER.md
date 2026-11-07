@@ -69,7 +69,7 @@
 | 35 | Website builder | LOCKED | Lovable |
 | 36 | Main navigation | LOCKED | Five core pages: Home, Brotherhood, Resource Library, Digital Store, The Cohort |
 | 37 | Homepage layout | LOCKED | Complete platform overview: mission hero, Brotherhood, Resource Library, Digital Store, Cohort coming soon, Giving Fund, final signup; membership primary CTA |
-| 38 | Visual identity | OPEN | — |
+| 38 | Visual identity | LOCKED | Warm Brotherhood: deep navy and charcoal, warm cream, muted copper/bronze accents, strong approachable typography, authentic father/family/brotherhood imagery |
 | 39 | Primary call to action | OPEN | — |
 | 40 | Membership signup flow | OPEN | — |
 | 41 | Member dashboard requirements | OPEN | — |
@@ -211,3 +211,5 @@
 - **2026-11-07 — Register numbering correction:** The email/password choice approved during the session is preserved as **supplemental authentication decision** (not counted in original 60). Canonical D037 is homepage layout and remains OPEN. Authentication implementation: managed email/password provider with verification, resets and abuse controls; no custom password storage.
 
 - **2026-11-07 — D037: Homepage layout.** Approved option B: full platform overview with mission hero, Brotherhood membership, Resource Library preview, Digital Store preview, Cohort coming-soon teaser, Giving Fund explanation and final membership signup section. Primary conversion goal is Join The Brotherhood — $5/month. Rationale: show the complete ForFathers offering without hiding adjacent value. Risks: excessive homepage length, competing CTAs and misleading prelaunch claims; mitigation: concise sections, one dominant CTA, explicit coming-soon label, and charity copy gated on legal/operational readiness.
+
+- **2026-11-07 — D038: Visual identity.** Approved option B, Warm Brotherhood: deep navy/charcoal, warm cream backgrounds, muted copper/bronze accents, strong approachable typography and authentic imagery of fathers, families and men supporting one another. Rationale: conveys strength, trust and belonging without aggression. Risks: generic stock-photo aesthetic, poor contrast and inconsistent design. Mitigation: accessible contrast checks, a small tokenized palette/type scale and imagery standards; avoid expanding into a complex design system before v0.1.
