@@ -33,7 +33,7 @@
 | 14 | Resource quality standards | LOCKED | Practical Value Standard: specific problem, actionable guidance, fact-checking, examples where useful, clarity and limitations review |
 | 15 | Content creation process | LOCKED | AI-assisted research and drafting, human verification, AI formatting, owner approval before publication |
 | 16 | Content update frequency | LOCKED | Four new resources per month (target one per week); internal target, not a public guarantee |
-| 17 | Member content requests | OPEN | — |
+| 17 | Member content requests | LOCKED | Members submit resource suggestions through simple form; editorial team selects what to create; no fulfillment guarantee |
 | 18 | Free versus paid resource access | OPEN | — |
 
 ## Digital Store
@@ -167,3 +167,5 @@
 - **2026-11-07 — D015: Content production.** Approved option B: select a real problem; use AI for research/drafting; verify consequential claims and practical utility; use AI to format; owner approves before publication. Rationale: low-cost production with human editorial accountability. Risks: hallucinated sources and approval bottlenecks; mitigation: source verification and documented approval checklist. No content auto-publishing in v0.1.
 
 - **2026-11-07 — D016: Resource update cadence.** Approved option B: target four new resources monthly, approximately one per week. Rationale: consistent library growth. Risks: production capacity and quality erosion; mitigation: maintain an editorial backlog, enforce D014 quality checks, and avoid public guarantees until the cadence is demonstrated. This is an internal operational target, not a subscriber entitlement.
+
+- **2026-11-07 — D017: Member content requests.** Approved option B: members may submit resource ideas through a simple form; the project reviews and selects ideas at its discretion. No guaranteed fulfillment, voting system, or new moderation-heavy features. Rationale: demand signals with minimal implementation. Risk: unrealistic member expectations; mitigation: state clearly that suggestions are not requests with guaranteed delivery.
