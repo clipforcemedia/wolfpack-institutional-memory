@@ -42,7 +42,7 @@
 |---:|---|---|---|
 | 19 | Maximum product price | LOCKED | $5 maximum |
 | 20 | Initial product categories | LOCKED | Practical digital products plus inspirational and creative products: planners, templates, printable art, wallpapers, cards |
-| 21 | Initial product quantity | OPEN | — |
+| 21 | Initial product quantity | LOCKED | 20 products at launch: 10 practical digital products and 10 inspirational/creative products |
 | 22 | Individual product pricing | OPEN | — |
 | 23 | Product file formats | OPEN | — |
 | 24 | Commercial versus personal-use licenses | OPEN | — |
@@ -173,3 +173,5 @@
 - **2026-11-07 — D018: Resource access.** Approved option A: three free public samples; remaining Resource Library restricted to active Brotherhood members, with no extra download charge. Cancellation leaves access through the paid billing period, then gated access ends. Digital Store remains separate. Risk: previously downloaded files cannot realistically be revoked; mitigate by describing the expiration as access to the online library, not deletion of previously downloaded copies. No per-resource purchases in v0.1.
 
 - **2026-11-07 — D020: Digital Store categories.** Approved option C: both practical digital products (planners, organizers, budgeting, parenting and productivity templates) and inspirational/creative products (wall art, wallpapers, printable posters and digital greeting cards). Rationale: broader range of low-cost standalone purchases. Risks: duplicate value with paid Resource Library and excessive SKU sprawl; mitigation: differentiate store products from included member resources and cap launch inventory in D021. All products digital-only and $5 or less; no physical fulfillment.
+
+- **2026-11-07 — D021: Initial Digital Store inventory.** Approved option B: 20 launch products, split evenly between 10 practical products and 10 inspirational/creative products. Rationale: credible range without extensive catalog. Risk: production delays and low-value filler; mitigation: enforce quality gates and validate checkout and delivery before launch. Any inventory reduction requires explicit scope revision.
