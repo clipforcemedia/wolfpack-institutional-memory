@@ -71,7 +71,7 @@
 | 37 | Homepage layout | LOCKED | Complete platform overview: mission hero, Brotherhood, Resource Library, Digital Store, Cohort coming soon, Giving Fund, final signup; membership primary CTA |
 | 38 | Visual identity | LOCKED | Warm Brotherhood: deep navy and charcoal, warm cream, muted copper/bronze accents, strong approachable typography, authentic father/family/brotherhood imagery |
 | 39 | Primary call to action | LOCKED | Join The Brotherhood — $5/Month; dominant homepage CTA directs to membership signup; browsing remains accessible |
-| 40 | Membership signup flow | OPEN | — |
+| 40 | Membership signup flow | LOCKED | Combined account signup and hosted $5/month subscription checkout; email verification; membership access only after verified successful payment |
 | 41 | Member dashboard requirements | OPEN | — |
 | 42 | Resource Library navigation | OPEN | — |
 | 43 | Store browsing experience | OPEN | — |
@@ -215,3 +215,5 @@
 - **2026-11-07 — D038: Visual identity.** Approved option B, Warm Brotherhood: deep navy/charcoal, warm cream backgrounds, muted copper/bronze accents, strong approachable typography and authentic imagery of fathers, families and men supporting one another. Rationale: conveys strength, trust and belonging without aggression. Risks: generic stock-photo aesthetic, poor contrast and inconsistent design. Mitigation: accessible contrast checks, a small tokenized palette/type scale and imagery standards; avoid expanding into a complex design system before v0.1.
 
 - **2026-11-07 — D039: Primary homepage call to action.** Approved option A: “Join The Brotherhood — $5/Month” is the dominant homepage CTA, directing visitors toward membership registration. Rationale: clear value proposition and subscription conversion path. Risks: first-time visitors may hesitate; mitigate with concise benefits, transparent pricing, and public browsing of free samples and Digital Store. No live payment activation before legal, processor, tax, policy and integration checks are complete.
+
+- **2026-11-07 — D040: Membership signup flow.** Approved option C: enter email and create password, complete hosted $5/month subscription checkout, verify email, then access Brotherhood. Rationale: streamlined registration while maintaining account identity. Risks: abandoned checkouts, orphan accounts, duplicate subscriptions, missed webhook events, and unauthorized access. Mitigation: managed authentication, hosted payment checkout, idempotent payment-event handling, recovery for incomplete registrations, and entitlement only after server-verified successful subscription payment and required verification. No custom card collection; payment activation remains blocked pending legal, tax, provider and policy checks.
