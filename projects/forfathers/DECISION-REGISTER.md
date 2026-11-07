@@ -34,7 +34,7 @@
 | 15 | Content creation process | LOCKED | AI-assisted research and drafting, human verification, AI formatting, owner approval before publication |
 | 16 | Content update frequency | LOCKED | Four new resources per month (target one per week); internal target, not a public guarantee |
 | 17 | Member content requests | LOCKED | Members submit resource suggestions through simple form; editorial team selects what to create; no fulfillment guarantee |
-| 18 | Free versus paid resource access | OPEN | — |
+| 18 | Free versus paid resource access | LOCKED | Three public sample resources; remaining library members-only; active members download at no extra charge; access ends after paid period |
 
 ## Digital Store
 
@@ -169,3 +169,5 @@
 - **2026-11-07 — D016: Resource update cadence.** Approved option B: target four new resources monthly, approximately one per week. Rationale: consistent library growth. Risks: production capacity and quality erosion; mitigation: maintain an editorial backlog, enforce D014 quality checks, and avoid public guarantees until the cadence is demonstrated. This is an internal operational target, not a subscriber entitlement.
 
 - **2026-11-07 — D017: Member content requests.** Approved option B: members may submit resource ideas through a simple form; the project reviews and selects ideas at its discretion. No guaranteed fulfillment, voting system, or new moderation-heavy features. Rationale: demand signals with minimal implementation. Risk: unrealistic member expectations; mitigation: state clearly that suggestions are not requests with guaranteed delivery.
+
+- **2026-11-07 — D018: Resource access.** Approved option A: three free public samples; remaining Resource Library restricted to active Brotherhood members, with no extra download charge. Cancellation leaves access through the paid billing period, then gated access ends. Digital Store remains separate. Risk: previously downloaded files cannot realistically be revoked; mitigate by describing the expiration as access to the online library, not deletion of previously downloaded copies. No per-resource purchases in v0.1.
