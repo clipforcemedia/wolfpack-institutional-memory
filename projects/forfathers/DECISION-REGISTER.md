@@ -32,7 +32,7 @@
 | 13 | Minimum launch inventory | LOCKED | 20 written resources (4 per category, including 3 free samples) plus 2 interactive tools = 22 total |
 | 14 | Resource quality standards | LOCKED | Practical Value Standard: specific problem, actionable guidance, fact-checking, examples where useful, clarity and limitations review |
 | 15 | Content creation process | LOCKED | AI-assisted research and drafting, human verification, AI formatting, owner approval before publication |
-| 16 | Content update frequency | OPEN | — |
+| 16 | Content update frequency | LOCKED | Four new resources per month (target one per week); internal target, not a public guarantee |
 | 17 | Member content requests | OPEN | — |
 | 18 | Free versus paid resource access | OPEN | — |
 
@@ -165,3 +165,5 @@
 - **2026-11-07 — D014: Resource quality.** Approved option B: each resource addresses a specific real-world problem, provides actionable steps or tools, checks consequential factual claims against reliable sources, includes examples/templates where appropriate, receives clarity/accuracy/usefulness review, and identifies limitations. Medical, legal, or individualized financial advice must not be presented as professionally validated; high-risk topics require qualified review or exclusion. Rationale: useful, credible assets without universal expert-review costs. Risk: unverified AI content; mitigation: documented source and review checklist before publication.
 
 - **2026-11-07 — D015: Content production.** Approved option B: select a real problem; use AI for research/drafting; verify consequential claims and practical utility; use AI to format; owner approves before publication. Rationale: low-cost production with human editorial accountability. Risks: hallucinated sources and approval bottlenecks; mitigation: source verification and documented approval checklist. No content auto-publishing in v0.1.
+
+- **2026-11-07 — D016: Resource update cadence.** Approved option B: target four new resources monthly, approximately one per week. Rationale: consistent library growth. Risks: production capacity and quality erosion; mitigation: maintain an editorial backlog, enforce D014 quality checks, and avoid public guarantees until the cadence is demonstrated. This is an internal operational target, not a subscriber entitlement.
