@@ -27,7 +27,7 @@
 
 | # | Decision | Status | Current position |
 |---:|---|---|---|
-| 11 | Resource categories | PROPOSED | Proposed categories: fatherhood/parenting, career, personal finance, well-being, practical skills |
+| 11 | Resource categories | LOCKED | Five: Fatherhood & Family; Career & Income; Financial Stability; Mental & Physical Wellness; Life Skills & Personal Growth |
 | 12 | Types of resources | OPEN | — |
 | 13 | Minimum launch inventory | OPEN | — |
 | 14 | Resource quality standards | OPEN | — |
@@ -155,3 +155,5 @@
 - **2026-11-07 — D009: Annual membership.** Approved option A: monthly billing only at $5/month for v0.1. Rationale: minimize billing complexity and validate retention before considering annual pricing. Tradeoff: no annual prepayment or long-term commitment. Annual plans are explicitly out of scope for v0.1.
 
 - **2026-11-07 — D010: Membership cancellation/refunds.** Approved option A: cancel anytime; membership access continues through the paid billing period; payments generally nonrefundable. Mandatory exceptions apply where law or payment-provider rules require refunds. Must verify cancellation UX, disclosures, applicable automatic-renewal rules, and refund terms before checkout goes live. Rationale: minimal operating complexity. Risk: disputes and dissatisfaction; mitigation: conspicuous pre-purchase terms and easy self-service cancellation. No launch authorization until compliance review.
+
+- **2026-11-07 — D011: Resource Library categories.** Approved option A: five categories — Fatherhood & Family, Career & Income, Financial Stability, Mental & Physical Wellness, Life Skills & Personal Growth. Rationale: broad enough for the inclusive audience with manageable navigation. Risk: thin launch inventory across five categories; mitigation: set a minimum content inventory and quality standard before launch. No additional categories authorized for v0.1.
