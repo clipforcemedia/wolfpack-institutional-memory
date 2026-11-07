@@ -76,7 +76,7 @@
 | 42 | Resource Library navigation | LOCKED | Five-category browsing, basic title/keyword search, category filtering, and resource descriptions; no AI discovery in v0.1 |
 | 43 | Store browsing experience | LOCKED | Simple 20-product grid with thumbnail, name, $3/$5 price and purchase button; defer categories, dedicated product pages and advanced commerce until post-v0.1 |
 | 44 | Mobile design priorities | LOCKED | Mobile-first responsive website adapted for tablet and desktop; one codebase, no separate mobile app in v0.1 |
-| 45 | Accessibility requirements | OPEN | — |
+| 45 | Accessibility requirements | LOCKED | Target WCAG 2.2 Level AA; accessible components, keyboard navigation, contrast, focus, forms, screen-reader semantics and touch targets; test before any conformance claim |
 
 ## Payments & Operations
 
@@ -225,3 +225,5 @@
 - **2026-11-07 — D043: Digital Store browsing.** Approved option A with explicit upgrade-later constraint: a simple grid of 20 products displaying thumbnail, product name, $3/$5 price and purchase button. Rationale: quickest usable storefront with minimum implementation complexity. Risks: insufficient pre-purchase details (license, format, product contents), accessibility and conversion. Mitigation: show concise descriptions and required license/file-format disclosures via lightweight product detail panel or checkout disclosure, without building dedicated product pages; test guest checkout and digital fulfillment. Category browsing, individual PDPs, reviews, cart and advanced filtering are deferred until validated demand and a new decision.
 
 - **2026-11-07 — D044: Mobile design priorities.** Approved option A: design mobile-first, then adapt one responsive site for tablet and desktop. Rationale: prioritize essential content, navigation and checkout while limiting implementation complexity. Risks: desktop layout neglect, cramped mobile controls and slow loading; mitigation: responsive breakpoint testing, accessible tap targets, mobile checkout and download tests, and desktop QA. No native mobile app or separate mobile codebase in v0.1.
+
+- **2026-11-07 — D045: Accessibility requirements.** Approved option B: target WCAG 2.2 Level AA for the responsive ForFathers website. Rationale: measurable accessibility baseline and broader usability. Risks: untested third-party checkout/widgets, design contrast failures, keyboard traps, and misleading compliance claims. Mitigation: select accessible components, test keyboard and screen-reader flows, forms, focus states, touch targets, mobile checkout, and remediate failures; do not claim conformance without evaluation. No blanket AAA requirement in v0.1.
