@@ -75,7 +75,7 @@
 | 41 | Member dashboard requirements | LOCKED | Functional dashboard: welcome, membership status, Resource Library shortcuts, recent discussions, Digital Store shortcut, account/billing settings |
 | 42 | Resource Library navigation | LOCKED | Five-category browsing, basic title/keyword search, category filtering, and resource descriptions; no AI discovery in v0.1 |
 | 43 | Store browsing experience | LOCKED | Simple 20-product grid with thumbnail, name, $3/$5 price and purchase button; defer categories, dedicated product pages and advanced commerce until post-v0.1 |
-| 44 | Mobile design priorities | OPEN | — |
+| 44 | Mobile design priorities | LOCKED | Mobile-first responsive website adapted for tablet and desktop; one codebase, no separate mobile app in v0.1 |
 | 45 | Accessibility requirements | OPEN | — |
 
 ## Payments & Operations
@@ -223,3 +223,5 @@
 - **2026-11-07 — D042: Resource Library navigation.** Approved option B: browse the five categories, search by resource title/keywords, filter by category, and read descriptions before accessing resources. Rationale: straightforward discovery for 22 launch assets. Risks: search quality and inadvertent exposure of members-only content; mitigation: simple indexed/metadata search with permission-enforced downloads, mobile testing, and no personalized recommendations, favorites, popularity rankings or AI search in v0.1.
 
 - **2026-11-07 — D043: Digital Store browsing.** Approved option A with explicit upgrade-later constraint: a simple grid of 20 products displaying thumbnail, product name, $3/$5 price and purchase button. Rationale: quickest usable storefront with minimum implementation complexity. Risks: insufficient pre-purchase details (license, format, product contents), accessibility and conversion. Mitigation: show concise descriptions and required license/file-format disclosures via lightweight product detail panel or checkout disclosure, without building dedicated product pages; test guest checkout and digital fulfillment. Category browsing, individual PDPs, reviews, cart and advanced filtering are deferred until validated demand and a new decision.
+
+- **2026-11-07 — D044: Mobile design priorities.** Approved option A: design mobile-first, then adapt one responsive site for tablet and desktop. Rationale: prioritize essential content, navigation and checkout while limiting implementation complexity. Risks: desktop layout neglect, cramped mobile controls and slow loading; mitigation: responsive breakpoint testing, accessible tap targets, mobile checkout and download tests, and desktop QA. No native mobile app or separate mobile codebase in v0.1.
