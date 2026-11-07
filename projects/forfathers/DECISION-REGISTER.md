@@ -47,7 +47,7 @@
 | 23 | Product file formats | LOCKED | PDF for planners/printables; PNG/JPG for artwork and wallpapers; ZIP for multi-file bundles; no editable source templates in v0.1 |
 | 24 | Product licensing | LOCKED | Personal-use license only; personal downloads, prints and device wallpapers allowed; resale, redistribution, attribution claims and commercial use prohibited; clear pre-purchase disclosure |
 | 25 | Brotherhood member discounts | LOCKED | No member discounts in v0.1; everyone pays the same $3 or $5 store price |
-| 26 | Refund policy | OPEN | — |
+| 26 | Digital product delivery | LOCKED | Immediate post-payment download plus emailed secure download link; no account required for one-time purchases; provider capability must be verified |
 | 27 | Download limits | OPEN | — |
 
 ## Charitable Commitment
@@ -185,3 +185,5 @@
 - **2026-11-07 — D025: Brotherhood member discounts.** Approved option B: active Brotherhood members receive a 20% discount on all Digital Store purchases ($3 standard → $2.40; $5 premium → $4.00). Rationale: tangible membership benefit while preserving most revenue. Risks: checkout complexity, discount abuse, and transaction fees; mitigation: require verified active membership, automatic application, server-side enforcement, and payment-fee validation before launch. If chosen provider cannot support this reliably, return for explicit scope/decision revision rather than silently shipping an insecure workaround.
 
 - **2026-11-07 — D025: Brotherhood member discounts.** Approved option A: no Digital Store discounts for Brotherhood members in v0.1. Members and nonmembers pay identical $3/$5 product prices. Rationale: simplest checkout, avoids subscription-status pricing integration and preserves per-sale economics. Risk: weaker incremental membership incentive; mitigation: differentiate membership through the gated Resource Library and community. Discount experiments require a later decision.
+
+- **2026-11-07 — D026: Digital product delivery.** Approved option A: show immediate download access after confirmed successful payment and email a secure download link; guest checkout without a required account for one-time purchases. Rationale: lower checkout friction and two access paths. Risks: forged payment-success redirects, link sharing, expired links, and email delivery failures. Mitigation: fulfillment only after server-verified payment event, provider-managed expiring download links, delivery testing, and support recovery path. Confirm actual provider features before implementation; no custom delivery infrastructure unless required by a separate decision.
