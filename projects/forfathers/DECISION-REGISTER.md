@@ -29,7 +29,7 @@
 |---:|---|---|---|
 | 11 | Resource categories | LOCKED | Five: Fatherhood & Family; Career & Income; Financial Stability; Mental & Physical Wellness; Life Skills & Personal Growth |
 | 12 | Types of resources | LOCKED | Written guides, checklists, worksheets, templates plus 1–2 simple interactive tools; no AI apps or video production in v0.1 |
-| 13 | Minimum launch inventory | OPEN | — |
+| 13 | Minimum launch inventory | LOCKED | 20 written resources (4 per category, including 3 free samples) plus 2 interactive tools = 22 total |
 | 14 | Resource quality standards | OPEN | — |
 | 15 | Content creation process | OPEN | — |
 | 16 | Content update frequency | OPEN | — |
@@ -159,3 +159,5 @@
 - **2026-11-07 — D011: Resource Library categories.** Approved option A: five categories — Fatherhood & Family, Career & Income, Financial Stability, Mental & Physical Wellness, Life Skills & Personal Growth. Rationale: broad enough for the inclusive audience with manageable navigation. Risk: thin launch inventory across five categories; mitigation: set a minimum content inventory and quality standard before launch. No additional categories authorized for v0.1.
 
 - **2026-11-07 — D012: Resource formats.** Approved option B: written resources (guides, checklists, worksheets, templates) plus simple interactive tools. Limit v0.1 to one or two tools; no complex AI apps or video lesson production. Rationale: actionable member value. Risk: implementation/testing overhead; mitigation: prioritize calculators or planners that require no external API or persistent sensitive data. Tool selection remains open under inventory planning.
+
+- **2026-11-07 — D013: Minimum launch inventory.** Approved option B: 20 written resources (four per each of five categories), plus two simple interactive tools, for 22 total assets; three free samples are included in the 20 written resources, not additional. Rationale: substantial starting value at $5/month. Risk: content production delays launch; mitigation: reusable templates and explicit quality gates. This is the approved minimum; any reduction requires a new decision.
