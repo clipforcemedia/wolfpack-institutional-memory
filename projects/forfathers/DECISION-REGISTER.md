@@ -55,7 +55,7 @@
 | # | Decision | Status | Current position |
 |---:|---|---|---|
 | 28 | Amount reserved per membership payment | LOCKED | $1 per successful $5 membership payment |
-| 29 | Type of charitable organization | PROPOSED | Verified 501(c)(3) preferred; partner not selected |
+| 29 | Type of charitable organization | LOCKED | Verified U.S. IRS-recognized 501(c)(3) charities only; partner not yet selected |
 | 30 | Charity selection criteria | OPEN | — |
 | 31 | Donation transfer frequency | OPEN | — |
 | 32 | Public donation reporting | OPEN | — |
@@ -193,3 +193,5 @@
 - **2026-11-07 — D026: Digital Store refunds.** Approved option A: generally no discretionary refunds after a digital product has been downloaded, subject to applicable consumer law and payment-provider rules. Rationale: discourages download-then-refund abuse on low-priced files. Risks: customer dissatisfaction, chargebacks, and unenforceable blanket exclusions. Mitigation: disclose policy before purchase; provide working-file replacement and appropriate remedies for defective, misdescribed, duplicate-charged or undelivered purchases; legal/provider review before launch. Do not imply statutory rights are waived.
 
 - **2026-11-07 — D027: Digital Store download limits.** Approved option B: five downloads per purchase. Rationale: balances customer convenience and link-sharing exposure. Risks: legitimate customers exhaust allowance, download links forwarded, and delivery-provider feature gaps. Mitigation: offer support-assisted recovery, use secure provider-managed links, verify provider support before checkout; do not build custom download tracking for v0.1. If provider cannot enforce the cap natively, revisit this decision before launch.
+
+- **2026-11-07 — D029: Giving Fund recipient organization type.** Approved option A: disburse Giving Fund reserves only to verified U.S. IRS-recognized 501(c)(3) charities. Rationale: simpler eligibility verification and clearer accountability. Risks: excludes informal community efforts; charity status can lapse; and reserving membership revenue does not create a tax-deductible customer donation. Mitigation: check IRS Tax Exempt Organization Search and recipient standing before disbursement; separately decide charity-selection criteria, payout cadence, disclosures and bookkeeping. No direct individual grants in v0.1.
