@@ -47,7 +47,7 @@
 | 23 | Product file formats | LOCKED | PDF for planners/printables; PNG/JPG for artwork and wallpapers; ZIP for multi-file bundles; no editable source templates in v0.1 |
 | 24 | Product licensing | LOCKED | Personal-use license only; personal downloads, prints and device wallpapers allowed; resale, redistribution, attribution claims and commercial use prohibited; clear pre-purchase disclosure |
 | 25 | Brotherhood member discounts | LOCKED | No member discounts in v0.1; everyone pays the same $3 or $5 store price |
-| 26 | Refund policy | OPEN | — |
+| 26 | Refund policy | LOCKED | No discretionary refunds after successful download, except where required by law or payment-provider rules; remedy defective/non-delivered products |
 | 27 | Download limits | OPEN | — |
 
 ## Charitable Commitment
@@ -189,3 +189,5 @@
 - **2026-11-07 — D026: Digital product delivery.** Approved option A: show immediate download access after confirmed successful payment and email a secure download link; guest checkout without a required account for one-time purchases. Rationale: lower checkout friction and two access paths. Risks: forged payment-success redirects, link sharing, expired links, and email delivery failures. Mitigation: fulfillment only after server-verified payment event, provider-managed expiring download links, delivery testing, and support recovery path. Confirm actual provider features before implementation; no custom delivery infrastructure unless required by a separate decision.
 
 - **2026-11-07 — Register correction: D026 was mislabeled in conversation.** Original canonical #26 is Digital Store refund policy, not delivery. The approved immediate-download-plus-email delivery choice is retained as **D025a (supplemental implementation constraint)**, not counted as one of the 60 decisions. #26 remains OPEN pending explicit user selection. Secure delivery must be verified against provider capabilities.
+
+- **2026-11-07 — D026: Digital Store refunds.** Approved option A: generally no discretionary refunds after a digital product has been downloaded, subject to applicable consumer law and payment-provider rules. Rationale: discourages download-then-refund abuse on low-priced files. Risks: customer dissatisfaction, chargebacks, and unenforceable blanket exclusions. Mitigation: disclose policy before purchase; provide working-file replacement and appropriate remedies for defective, misdescribed, duplicate-charged or undelivered purchases; legal/provider review before launch. Do not imply statutory rights are waived.
