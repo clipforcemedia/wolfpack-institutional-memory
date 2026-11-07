@@ -21,7 +21,7 @@
 | 7 | Membership benefits | LOCKED | Resource Library plus members-only discussion community; simple asynchronous format, no live chat |
 | 8 | Free visitor benefits | LOCKED | Public website and Digital Store browsing plus three free sample resources; community private |
 | 9 | Annual membership option | LOCKED | Monthly only at $5/month; no annual subscription for v0.1 |
-| 10 | Cancellation and refund policy | OPEN | — |
+| 10 | Cancellation and refund policy | LOCKED — subject to legal/provider review | Cancel anytime; access through paid period; generally no refunds except where required by law or payment-provider rules |
 
 ## Resource Library
 
@@ -153,3 +153,5 @@
 - **2026-11-07 — D008: Free visitor benefits.** Approved option B: public website, Digital Store browsing, and three free sample resources demonstrating membership value. Community discussions remain members-only. Risk: samples may not demonstrate value; mitigation: select representative, high-quality resources and track visitor-to-member conversion. No free community access authorized.
 
 - **2026-11-07 — D009: Annual membership.** Approved option A: monthly billing only at $5/month for v0.1. Rationale: minimize billing complexity and validate retention before considering annual pricing. Tradeoff: no annual prepayment or long-term commitment. Annual plans are explicitly out of scope for v0.1.
+
+- **2026-11-07 — D010: Membership cancellation/refunds.** Approved option A: cancel anytime; membership access continues through the paid billing period; payments generally nonrefundable. Mandatory exceptions apply where law or payment-provider rules require refunds. Must verify cancellation UX, disclosures, applicable automatic-renewal rules, and refund terms before checkout goes live. Rationale: minimal operating complexity. Risk: disputes and dissatisfaction; mitigation: conspicuous pre-purchase terms and easy self-service cancellation. No launch authorization until compliance review.
