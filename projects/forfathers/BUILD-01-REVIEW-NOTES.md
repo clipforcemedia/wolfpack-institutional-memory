@@ -2,7 +2,7 @@
 Date: 2026-11-07
 Builder currently used: Emergent (original D035 says Lovable; **platform switch not yet formally approved**).
 Preview URL: https://fathers-together--4eon0tur.preview.emergentagent.com/
-Status: partial visual review; do not generate a correction prompt until all five pages and interactions are audited.
+Status: all five pages visually reviewed; user reports mobile functionality and appearance satisfactory (not independently verified). Targeted correction prompt can now be prepared; no backend authorization.
 
 ## Homepage
 - Visual direction APPROVED provisionally: navy/cream/copper palette, serif editorial typography, father-focused hero image, clear $5/month CTA, five navigation links, Resource Library/Store/Cohort previews, cautious Giving Fund language.
@@ -52,3 +52,8 @@ Status: partial visual review; do not generate a correction prompt until all fiv
 - Compile confirmed defects into **one** narrowly scoped correction prompt; preserve approved aesthetics.
 - Update D035 through explicit user approval if Emergent replaces Lovable as canonical builder.
 - Source of truth: DECISION-REGISTER.md, V0.1-IMPLEMENTATION-SPEC.md and LOVABLE-BUILD-PROMPT-01.md (prompt content was used/adapted for Emergent).
+
+## 2026-11-07 User mobile validation
+- User reports everything works and looks good on mobile. Record as **user-reported pass**, not independently verified at 375px/768px/1440px or with accessibility tooling.
+- All five visual page reviews completed. Confirmed/potential corrections: add five mock Library resources (20 total, four/category); remove unsupported DOCX/XLSX product formats; verify/remediate Cohort stray glyphs. Do not redesign.
+- Before final acceptance, verify static search/filter, FAQ, preview links, no active payments, no data persistence, and disabled Cohort form; screenshots alone do not prove functionality.
