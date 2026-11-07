@@ -48,7 +48,7 @@
 | 24 | Product licensing | LOCKED | Personal-use license only; personal downloads, prints and device wallpapers allowed; resale, redistribution, attribution claims and commercial use prohibited; clear pre-purchase disclosure |
 | 25 | Brotherhood member discounts | LOCKED | No member discounts in v0.1; everyone pays the same $3 or $5 store price |
 | 26 | Refund policy | LOCKED | No discretionary refunds after successful download, except where required by law or payment-provider rules; remedy defective/non-delivered products |
-| 27 | Download limits | OPEN | — |
+| 27 | Download limits | LOCKED | Five downloads per purchase; recovery through support; only if supported by chosen delivery provider without custom infrastructure |
 
 ## Charitable Commitment
 
@@ -191,3 +191,5 @@
 - **2026-11-07 — Register correction: D026 was mislabeled in conversation.** Original canonical #26 is Digital Store refund policy, not delivery. The approved immediate-download-plus-email delivery choice is retained as **D025a (supplemental implementation constraint)**, not counted as one of the 60 decisions. #26 remains OPEN pending explicit user selection. Secure delivery must be verified against provider capabilities.
 
 - **2026-11-07 — D026: Digital Store refunds.** Approved option A: generally no discretionary refunds after a digital product has been downloaded, subject to applicable consumer law and payment-provider rules. Rationale: discourages download-then-refund abuse on low-priced files. Risks: customer dissatisfaction, chargebacks, and unenforceable blanket exclusions. Mitigation: disclose policy before purchase; provide working-file replacement and appropriate remedies for defective, misdescribed, duplicate-charged or undelivered purchases; legal/provider review before launch. Do not imply statutory rights are waived.
+
+- **2026-11-07 — D027: Digital Store download limits.** Approved option B: five downloads per purchase. Rationale: balances customer convenience and link-sharing exposure. Risks: legitimate customers exhaust allowance, download links forwarded, and delivery-provider feature gaps. Mitigation: offer support-assisted recovery, use secure provider-managed links, verify provider support before checkout; do not build custom download tracking for v0.1. If provider cannot enforce the cap natively, revisit this decision before launch.
