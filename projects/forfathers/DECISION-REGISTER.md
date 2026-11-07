@@ -97,7 +97,7 @@
 | # | Decision | Status | Current position |
 |---:|---|---|---|
 | 55 | Marketplace purpose | LOCKED | Men helping men |
-| 56 | Commission | PROPOSED | 5% provisional |
+| 56 | Commission | LOCKED — PROVISIONAL RATE | Plan for 5% platform commission on completed Cohort transactions; not public or operational until payment economics and compliance validated |
 | 57 | Initial service categories | OPEN | — |
 | 58 | Geographic scope | OPEN | — |
 | 59 | Interest signup questions | OPEN | — |
@@ -245,3 +245,5 @@
 - **2026-11-07 — D053: Basic analytics and success metrics.** Approved option A: measure website visitors, membership signups and cancellations, active paying members, monthly recurring revenue (MRR), digital product sales, and payment failures. Rationale: enough visibility to judge acquisition, revenue and checkout reliability without extensive instrumentation. Risks: inconsistent metric definitions, duplicate events, privacy exposure, and false revenue attribution. Mitigation: use verified Stripe payment/subscription records as financial source of truth, define MRR as recurring subscription revenue excluding one-off product sales, use aggregate/minimal visitor tracking with applicable privacy disclosures, and reconcile metrics. No complex attribution, behavioral tracking or cohort analytics in v0.1.
 
 - **2026-11-07 — D054: Controlled production launch gate.** Approved option B. No real-customer checkout until: functioning site, Stripe subscription and one-time payment tests; verified business entity/payment account; applicable tax obligations addressed; published privacy/terms/refund disclosures; tested authentication, authorization and private storage; tested cancellation, failed payments and account deletion; tested digital fulfillment and five-download limit; operational email support; tested mobile checkout; basic monitoring and backups; and accessibility checks. Rationale: reduce payment, security, legal and customer-harm risks while avoiding extended beta scope. Risks: delayed launch or superficial sign-offs; mitigation: maintain evidence-based pass/fail checklist and block launch on any critical failure. Decision lock does not mean requirements have passed.
+
+- **2026-11-07 — D056: Cohort marketplace commission.** Approved option A: use a 5% commission on completed Cohort marketplace transactions as the provisional business-model rate. Rationale: lower fee friction and simple positioning. Risks: processing fees, refunds, disputes, payout costs, tax and marketplace compliance may eliminate margins; Stripe's ordinary payment checkout does not by itself implement marketplace split payments/payouts. Mitigation: defer marketplace implementation beyond v0.1, validate marketplace payment provider capabilities, legal obligations and unit economics before publicly promising or activating the fee; revisit via ADR if not viable. Example: $100 gross transaction yields $5 gross platform fee before all costs.
