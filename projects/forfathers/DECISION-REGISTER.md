@@ -68,7 +68,7 @@
 |---:|---|---|---|
 | 35 | Website builder | LOCKED | Lovable |
 | 36 | Main navigation | LOCKED | Five core pages: Home, Brotherhood, Resource Library, Digital Store, The Cohort |
-| 37 | Homepage layout | OPEN | — |
+| 37 | Homepage layout | LOCKED | Complete platform overview: mission hero, Brotherhood, Resource Library, Digital Store, Cohort coming soon, Giving Fund, final signup; membership primary CTA |
 | 38 | Visual identity | OPEN | — |
 | 39 | Primary call to action | OPEN | — |
 | 40 | Membership signup flow | OPEN | — |
@@ -209,3 +209,5 @@
 - **2026-11-07 — D037: Member authentication.** Approved option A: email-and-password sign-up and sign-in using a managed authentication provider. Rationale: familiar account access without depending on email for every login. Risks: credential stuffing, password-reset abuse, account takeover and password support. Mitigation: provider-managed salted password hashing, email verification, secure reset flows, rate limiting and session management; never build custom password storage. Verify provider capabilities and production email delivery before launch. Social login and magic-link-only access excluded from v0.1.
 
 - **2026-11-07 — Register numbering correction:** The email/password choice approved during the session is preserved as **supplemental authentication decision** (not counted in original 60). Canonical D037 is homepage layout and remains OPEN. Authentication implementation: managed email/password provider with verification, resets and abuse controls; no custom password storage.
+
+- **2026-11-07 — D037: Homepage layout.** Approved option B: full platform overview with mission hero, Brotherhood membership, Resource Library preview, Digital Store preview, Cohort coming-soon teaser, Giving Fund explanation and final membership signup section. Primary conversion goal is Join The Brotherhood — $5/month. Rationale: show the complete ForFathers offering without hiding adjacent value. Risks: excessive homepage length, competing CTAs and misleading prelaunch claims; mitigation: concise sections, one dominant CTA, explicit coming-soon label, and charity copy gated on legal/operational readiness.
