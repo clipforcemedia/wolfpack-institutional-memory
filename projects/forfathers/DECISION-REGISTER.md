@@ -83,7 +83,7 @@
 | # | Decision | Status | Current position |
 |---:|---|---|---|
 | 46 | Payment processor | LOCKED — CONDITIONAL | Stripe for subscriptions and digital purchases; Lovable front end and Supabase secure fulfillment; production gated on integration, legal and tax verification |
-| 47 | Merchant-of-record preference | OPEN | — |
+| 47 | Merchant-of-record preference | LOCKED | ForFathers is seller of record using Stripe; responsible for applicable tax registrations, collection, filings, refunds and compliance; validate before launch |
 | 48 | Subscription billing rules | OPEN | — |
 | 49 | Accepted payment methods | OPEN | — |
 | 50 | Customer support channel | OPEN | — |
@@ -229,3 +229,5 @@
 - **2026-11-07 — D045: Accessibility requirements.** Approved option B: target WCAG 2.2 Level AA for the responsive ForFathers website. Rationale: measurable accessibility baseline and broader usability. Risks: untested third-party checkout/widgets, design contrast failures, keyboard traps, and misleading compliance claims. Mitigation: select accessible components, test keyboard and screen-reader flows, forms, focus states, touch targets, mobile checkout, and remediate failures; do not claim conformance without evaluation. No blanket AAA requirement in v0.1.
 
 - **2026-11-07 — D046: Payment processor and fulfillment architecture.** Approved Stripe for $5/month Brotherhood subscriptions and $3/$5 Digital Store purchases, with Lovable as the website and Supabase as the purchase/entitlement and secure-file-delivery backend. **Conditional architecture lock, not production approval.** Rationale: unified payment provider and direct on-site digital fulfillment. Risks: custom secure download handling and five-download enforcement, webhook reliability, tax obligations, and provider/account eligibility. Mitigation: server-verified Stripe webhook events with idempotent fulfillment, private storage and expiring signed URLs, purchase-level download counters, email link recovery, subscription cancellation testing, and legal/tax/processor verification. Do not activate live checkout until all tests and compliance gates pass. Do not assume Stripe provides file hosting or delivery natively.
+
+- **2026-11-07 — D047: Seller/merchant-of-record arrangement.** Approved option A: ForFathers acts as seller of record for Brotherhood subscriptions and Digital Store transactions processed by Stripe. Rationale: one provider and direct customer/payment control consistent with D046. Risks: sales tax and other indirect-tax nexus/registration, collection and remittance obligations, product taxability, and chargeback/refund compliance. Mitigation: determine jurisdictions and product classifications, verify business entity and Stripe eligibility, configure appropriate tax tooling where needed, obtain professional tax/legal review, and prohibit live checkout until compliance gates pass. Stripe Tax tooling does not make Stripe the merchant of record.
