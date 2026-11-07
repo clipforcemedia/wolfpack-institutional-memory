@@ -68,7 +68,7 @@
 |---:|---|---|---|
 | 35 | Website builder | LOCKED | Lovable |
 | 36 | Main navigation | LOCKED | Five core pages: Home, Brotherhood, Resource Library, Digital Store, The Cohort |
-| 37 | Homepage layout | OPEN | — |
+| 37 | User authentication | LOCKED | Managed email-and-password authentication; verified email, secure password reset, session management and abuse protections; no custom password storage |
 | 38 | Visual identity | OPEN | — |
 | 39 | Primary call to action | OPEN | — |
 | 40 | Membership signup flow | OPEN | — |
@@ -205,3 +205,5 @@
 - **2026-11-07 — D033: Giving Fund reversals.** Approved option A: if a membership payment is refunded or charged back before the quarterly charity transfer, reverse its $1 Giving Fund allocation. For reversals after funds have been donated, do not claw money back from the charity; record the adjustment in the next reconciliation, with no negative disbursement. Rationale: prevents unfunded obligations and aligns public reports to net qualifying payments. Risks: accounting errors and misleading reported totals; mitigation: transaction-level ledger, reconciliations and clear disclosure of post-transfer adjustments.
 
 - **2026-11-07 — D034: Public charitable commitment wording.** Approved option B: “For every qualifying $5 Brotherhood membership payment, ForFathers reserves $1 for charitable giving. Funds are donated quarterly to verified 501(c)(3) organizations, with public reports showing where the money goes.” Rationale: explicit amount, cadence, recipient eligibility and transparency. Risks: charitable sales-promotion/commercial co-venture regulations may apply by jurisdiction; promises can be misleading before a charity is selected or transfers are operational. Mitigation: legal/compliance review before publication, confirm partner and procedures, clarify qualifying payments and reversals, do not imply tax deductibility or that ForFathers is a charity. Treat as approved draft copy, not authorization to publish immediately.
+
+- **2026-11-07 — D037: Member authentication.** Approved option A: email-and-password sign-up and sign-in using a managed authentication provider. Rationale: familiar account access without depending on email for every login. Risks: credential stuffing, password-reset abuse, account takeover and password support. Mitigation: provider-managed salted password hashing, email verification, secure reset flows, rate limiting and session management; never build custom password storage. Verify provider capabilities and production email delivery before launch. Social login and magic-link-only access excluded from v0.1.
