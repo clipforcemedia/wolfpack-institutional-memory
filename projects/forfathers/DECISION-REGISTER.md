@@ -13,7 +13,7 @@
 | # | Decision | Status | Current position |
 |---:|---|---|---|
 | 1 | Primary target audience | LOCKED | Fathers first, all men welcome |
-| 2 | Core problem ForFathers solves | OPEN | — |
+| 2 | Core problem ForFathers solves | LOCKED | Lack of support and opportunity; brotherhood, practical resources, mutual assistance |
 | 3 | Mission statement | OPEN | — |
 | 4 | Brand positioning and tone | OPEN | — |
 | 5 | Membership price | LOCKED | $5/month |
@@ -136,8 +136,10 @@
 
 ## Current Decision Queue
 
-**Decision 1 — Primary target audience: LOCKED (2026-11-07).** C) Fathers first, all men welcome. Fathers are the initial marketing focus; membership is open to men regardless of parental status. Next: Decision 2 — Core problem ForFathers solves.
+**Decision 1 — Primary target audience: LOCKED (2026-11-07).** C) Fathers first, all men welcome. Fathers are the initial marketing focus; membership is open to men regardless of parental status. Next: Decision 3 — Mission statement.
 
 ## Decision Log
 
 - **2026-11-07 — D001: Audience.** Approved option C: *Fathers first, all men welcome*. Rationale: focus initial outreach without excluding men who are not fathers. Risk: brand name could imply father-only eligibility; countermeasure: explicitly communicate inclusive membership eligibility in homepage copy. No change to v0.1 feature scope.
+
+- **2026-11-07 — D002: Core problem.** Approved option C: men face gaps in both support and opportunity. ForFathers will address these through brotherhood, practical resources and opportunities for mutual assistance. Risk: too broad for a credible v0.1 promise; mitigation: lead with one concrete benefit and defer transactional marketplace features to post-v0.1. No feature expansion authorized.
