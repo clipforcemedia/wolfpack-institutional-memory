@@ -45,7 +45,7 @@
 | 21 | Initial product quantity | LOCKED | 20 products at launch: 10 practical digital products and 10 inspirational/creative products |
 | 22 | Individual product pricing | LOCKED | Two price points: $3 standard individual products; $5 premium products and bundles; subject to payment fee verification |
 | 23 | Product file formats | LOCKED | PDF for planners/printables; PNG/JPG for artwork and wallpapers; ZIP for multi-file bundles; no editable source templates in v0.1 |
-| 24 | Commercial versus personal-use licenses | OPEN | — |
+| 24 | Product licensing | LOCKED | Personal-use license only; personal downloads, prints and device wallpapers allowed; resale, redistribution, attribution claims and commercial use prohibited; clear pre-purchase disclosure |
 | 25 | Member discounts | OPEN | — |
 | 26 | Refund policy | OPEN | — |
 | 27 | Download limits | OPEN | — |
@@ -179,3 +179,5 @@
 - **2026-11-07 — D022: Digital Store pricing.** Approved option C: two price points, $3 for standard individual products and $5 for premium products/bundles. Rationale: simpler pricing and potentially healthier per-order economics than $1 downloads. Risks: processor fixed fees and taxes may still make low-value transactions unprofitable; mitigation: verify provider fees and tax treatment before checkout activation. Maximum price remains $5.
 
 - **2026-11-07 — D023: Digital product file formats.** Approved option B: PDF, PNG/JPG, and ZIP bundles. Rationale: covers printables and image products with simple download delivery. Risks: large files, incompatible dimensions, and ZIP extraction friction; mitigation: publish file type and size before purchase, test downloads on mobile/desktop, and use appropriate export dimensions. Editable DOCX/XLSX/Canva source templates are out of scope for v0.1.
+
+- **2026-11-07 — D024: Digital product licensing.** Approved option A: personal-use-only license for digital products. Buyers may download and personally use files, print personal copies, and apply wallpapers to their own devices. Resale, redistribution, false authorship claims and commercial use are not permitted. Rationale: clear, minimal license for v0.1. Risks: unclear terms and third-party asset rights; mitigation: disclose license before checkout, verify rights to all included assets, and obtain legal review of final terms. This license does not override mandatory consumer rights.
