@@ -58,7 +58,7 @@
 | 29 | Type of charitable organization | LOCKED | Verified U.S. IRS-recognized 501(c)(3) charities only; partner not yet selected |
 | 30 | Charity selection criteria | LOCKED | Verified 501(c)(3); aligned with fathers, men, families or community needs; financial transparency; verifiable operating history; legitimate donation channel |
 | 31 | Donation transfer frequency | LOCKED | Quarterly transfers of accumulated Giving Fund reserves to verified selected charity; reconcile before disbursement |
-| 32 | Public donation reporting | OPEN | — |
+| 32 | Public donation reporting | LOCKED | Publish quarterly giving reports after each transfer: eligible membership payments, amount transferred, charity/mission, transfer date and confirmation; distinguish reserved from donated |
 | 33 | Refund and chargeback adjustments | OPEN | — |
 | 34 | Public charitable commitment wording | OPEN | — |
 
@@ -199,3 +199,5 @@
 - **2026-11-07 — D030: Charity selection criteria.** Approved option B: require verified 501(c)(3) status, mission alignment with fathers/men/families or related community needs, financial transparency, verifiable operating history, and legitimate donation channel. Rationale: defensible recipient selection without extensive audit overhead. Risks: small/new organizations excluded and published financial information may be incomplete; mitigation: document evidence and review status and donation details before disbursement. No charity selected by this decision.
 
 - **2026-11-07 — D031: Giving Fund transfer cadence.** Approved option B: quarterly disbursement of accumulated $1-per-successful-$5-membership-payment reserves to a verified selected 501(c)(3). Rationale: fewer transactions and straightforward reconciliation. Risks: delayed impact, unremitted balances, refunds/chargebacks and cash shortfalls; mitigation: track a dedicated giving liability/reserve ledger, reconcile successful net-eligible payments and reversals, publish timing accurately, and confirm recipient eligibility and transfer records before disbursement. No claim that funds are donated until transferred.
+
+- **2026-11-07 — D032: Public Giving Fund reporting.** Approved option B: publish a quarterly report after each disbursement stating the count of qualifying membership payments, total amount actually transferred, recipient charity and mission, transfer date and confirmation. Explicitly distinguish funds reserved from funds disbursed. Rationale: transparent reporting aligned to quarterly giving cadence without a live dashboard. Risks: erroneous totals, privacy leakage, and claims unsupported by receipts; mitigation: reconcile the ledger against payment and transfer records, avoid member-identifying data, retain receipts, and publish only verified figures.
