@@ -18,6 +18,14 @@ Status: partial visual review; do not generate a correction prompt until all fiv
 - When enabling live checkout in later phase, add conspicuous recurring-payment and cancellation disclosures; do not activate checkout in Build #01.
 - No redesign or correction prompt warranted on screenshot evidence.
 
+## Resource Library page
+- Visual direction APPROVED provisionally: consistent cream/navy/copper, clear hero, category chips, search, card grid, three free preview labels, members-only badges and $5/month membership CTA.
+- **Confirmed mock-inventory discrepancy:** page says 15 resources and shows three cards per category, while D013 locks 20 written resources (four per category), plus two interactive tools for eventual launch. For Build #01, add five more mock cards (one per category) without pretending they are published content; tools can remain future-stage placeholders.
+- Search and category filter behavior not tested; verify interaction and empty states.
+- Verify three Read Preview controls open actual static sample content or explicitly state previews are unavailable; no false functionality.
+- Mobile layout, resource access protection and download behavior not tested; no backend should exist yet.
+- Preserve current visual styling; consolidate corrections after remaining pages audited.
+
 ## Pending inspection
 - Resource Library full-page screenshot and static search/filter behavior.
 - Digital Store full-page screenshot; verify exactly 20 mock cards, correct $3/$5 and disabled purchases.
