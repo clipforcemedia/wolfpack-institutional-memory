@@ -26,9 +26,16 @@ Status: partial visual review; do not generate a correction prompt until all fiv
 - Mobile layout, resource access protection and download behavior not tested; no backend should exist yet.
 - Preserve current visual styling; consolidate corrections after remaining pages audited.
 
+## Digital Store page
+- Visual direction APPROVED provisionally: cohesive grid, mock product covers, $3/$5 pricing, 20 cards split 10 practical / 10 creative, descriptions, license notices, and Coming Soon controls.
+- **Confirmed specification conflict:** some product metadata displays DOCX/XLSX editable formats, contrary to D023 PDF/PNG/JPG/ZIP only. Correct mock format labels and later actual files; do not introduce editable templates.
+- Extra client-side All/Practical/Creative filters appear despite D043 minimal grid. Retain only if already functional with zero backend/dependency overhead; otherwise remove. Do not expand functionality.
+- Test filters, disabled purchase buttons, mobile layout, and sticky navigation. Screenshot alone cannot verify behavior.
+- Preserve visual styling; consolidate corrections after Cohort and interaction audits.
+
 ## Pending inspection
 - Resource Library full-page screenshot and static search/filter behavior.
-- Digital Store full-page screenshot; verify exactly 20 mock cards, correct $3/$5 and disabled purchases.
+- Digital Store functional filter/disabled purchase verification (visual screenshot reviewed).
 - Cohort full-page screenshot; interest form disabled, no data collection.
 - Desktop navigation, 375/768/1440 responsive tests, keyboard, contrast, focus, no horizontal overflow.
 - Confirm no backend, auth, Stripe, Supabase or external data collection introduced.
