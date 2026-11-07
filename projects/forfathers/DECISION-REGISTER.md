@@ -14,7 +14,7 @@
 |---:|---|---|---|
 | 1 | Primary target audience | LOCKED | Fathers first, all men welcome |
 | 2 | Core problem ForFathers solves | LOCKED | Lack of support and opportunity; brotherhood, practical resources, mutual assistance |
-| 3 | Mission statement | OPEN | — |
+| 3 | Mission statement | LOCKED | To bring men together through brotherhood, providing the support, resources, and opportunities to help one another build better lives. |
 | 4 | Brand positioning and tone | OPEN | — |
 | 5 | Membership price | LOCKED | $5/month |
 | 6 | Membership name | LOCKED | The Brotherhood |
@@ -143,3 +143,5 @@
 - **2026-11-07 — D001: Audience.** Approved option C: *Fathers first, all men welcome*. Rationale: focus initial outreach without excluding men who are not fathers. Risk: brand name could imply father-only eligibility; countermeasure: explicitly communicate inclusive membership eligibility in homepage copy. No change to v0.1 feature scope.
 
 - **2026-11-07 — D002: Core problem.** Approved option C: men face gaps in both support and opportunity. ForFathers will address these through brotherhood, practical resources and opportunities for mutual assistance. Risk: too broad for a credible v0.1 promise; mitigation: lead with one concrete benefit and defer transactional marketplace features to post-v0.1. No feature expansion authorized.
+
+- **2026-11-07 — D003: Mission statement.** Approved option C verbatim: “To bring men together through brotherhood, providing the support, resources, and opportunities to help one another build better lives.” Rationale: aligns with D001 inclusive audience and D002 support plus opportunity. Risk: broad promise; mitigation: define specific v0.1 benefits and measurable launch criteria. No feature expansion authorized.
