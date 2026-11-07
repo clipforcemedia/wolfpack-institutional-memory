@@ -82,7 +82,7 @@
 
 | # | Decision | Status | Current position |
 |---:|---|---|---|
-| 46 | Payment processor | OPEN | — |
+| 46 | Payment processor | LOCKED — CONDITIONAL | Stripe for subscriptions and digital purchases; Lovable front end and Supabase secure fulfillment; production gated on integration, legal and tax verification |
 | 47 | Merchant-of-record preference | OPEN | — |
 | 48 | Subscription billing rules | OPEN | — |
 | 49 | Accepted payment methods | OPEN | — |
@@ -227,3 +227,5 @@
 - **2026-11-07 — D044: Mobile design priorities.** Approved option A: design mobile-first, then adapt one responsive site for tablet and desktop. Rationale: prioritize essential content, navigation and checkout while limiting implementation complexity. Risks: desktop layout neglect, cramped mobile controls and slow loading; mitigation: responsive breakpoint testing, accessible tap targets, mobile checkout and download tests, and desktop QA. No native mobile app or separate mobile codebase in v0.1.
 
 - **2026-11-07 — D045: Accessibility requirements.** Approved option B: target WCAG 2.2 Level AA for the responsive ForFathers website. Rationale: measurable accessibility baseline and broader usability. Risks: untested third-party checkout/widgets, design contrast failures, keyboard traps, and misleading compliance claims. Mitigation: select accessible components, test keyboard and screen-reader flows, forms, focus states, touch targets, mobile checkout, and remediate failures; do not claim conformance without evaluation. No blanket AAA requirement in v0.1.
+
+- **2026-11-07 — D046: Payment processor and fulfillment architecture.** Approved Stripe for $5/month Brotherhood subscriptions and $3/$5 Digital Store purchases, with Lovable as the website and Supabase as the purchase/entitlement and secure-file-delivery backend. **Conditional architecture lock, not production approval.** Rationale: unified payment provider and direct on-site digital fulfillment. Risks: custom secure download handling and five-download enforcement, webhook reliability, tax obligations, and provider/account eligibility. Mitigation: server-verified Stripe webhook events with idempotent fulfillment, private storage and expiring signed URLs, purchase-level download counters, email link recovery, subscription cancellation testing, and legal/tax/processor verification. Do not activate live checkout until all tests and compliance gates pass. Do not assume Stripe provides file hosting or delivery natively.
