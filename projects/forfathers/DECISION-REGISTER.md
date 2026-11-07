@@ -19,7 +19,7 @@
 | 5 | Membership price | LOCKED | $5/month |
 | 6 | Membership name | LOCKED | The Brotherhood |
 | 7 | Membership benefits | LOCKED | Resource Library plus members-only discussion community; simple asynchronous format, no live chat |
-| 8 | Free visitor benefits | OPEN | — |
+| 8 | Free visitor benefits | LOCKED | Public website and Digital Store browsing plus three free sample resources; community private |
 | 9 | Annual membership option | OPEN | — |
 | 10 | Cancellation and refund policy | OPEN | — |
 
@@ -149,3 +149,5 @@
 - **2026-11-07 — D004: Brand positioning and tone.** Approved option C: strong brotherhood plus genuine support. Principles: strength without arrogance; accountability without humiliation; support without judgment; brotherhood without exclusion; action over empty motivation. Risk: masculine branding may be perceived as exclusionary; mitigation: welcoming copy and clear eligibility. No feature expansion authorized.
 
 - **2026-11-07 — D007: Membership benefits.** Approved option B: access to Resource Library plus members-only discussion community. Rationale: recurring member value beyond static downloads. Risk: moderation workload, spam, harassment, and empty-community experience; mitigation: simple asynchronous discussions, clear rules, reporting and moderation controls before launch. No live chat or advanced social features in v0.1. Community implementation and staffing remain subject to feasibility and launch criteria.
+
+- **2026-11-07 — D008: Free visitor benefits.** Approved option B: public website, Digital Store browsing, and three free sample resources demonstrating membership value. Community discussions remain members-only. Risk: samples may not demonstrate value; mitigation: select representative, high-quality resources and track visitor-to-member conversion. No free community access authorized.
