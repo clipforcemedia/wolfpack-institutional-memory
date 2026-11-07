@@ -72,7 +72,7 @@
 | 38 | Visual identity | LOCKED | Warm Brotherhood: deep navy and charcoal, warm cream, muted copper/bronze accents, strong approachable typography, authentic father/family/brotherhood imagery |
 | 39 | Primary call to action | LOCKED | Join The Brotherhood — $5/Month; dominant homepage CTA directs to membership signup; browsing remains accessible |
 | 40 | Membership signup flow | LOCKED | Combined account signup and hosted $5/month subscription checkout; email verification; membership access only after verified successful payment |
-| 41 | Member dashboard requirements | OPEN | — |
+| 41 | Member dashboard requirements | LOCKED | Functional dashboard: welcome, membership status, Resource Library shortcuts, recent discussions, Digital Store shortcut, account/billing settings |
 | 42 | Resource Library navigation | OPEN | — |
 | 43 | Store browsing experience | OPEN | — |
 | 44 | Mobile design priorities | OPEN | — |
@@ -217,3 +217,5 @@
 - **2026-11-07 — D039: Primary homepage call to action.** Approved option A: “Join The Brotherhood — $5/Month” is the dominant homepage CTA, directing visitors toward membership registration. Rationale: clear value proposition and subscription conversion path. Risks: first-time visitors may hesitate; mitigate with concise benefits, transparent pricing, and public browsing of free samples and Digital Store. No live payment activation before legal, processor, tax, policy and integration checks are complete.
 
 - **2026-11-07 — D040: Membership signup flow.** Approved option C: enter email and create password, complete hosted $5/month subscription checkout, verify email, then access Brotherhood. Rationale: streamlined registration while maintaining account identity. Risks: abandoned checkouts, orphan accounts, duplicate subscriptions, missed webhook events, and unauthorized access. Mitigation: managed authentication, hosted payment checkout, idempotent payment-event handling, recovery for incomplete registrations, and entitlement only after server-verified successful subscription payment and required verification. No custom card collection; payment activation remains blocked pending legal, tax, provider and policy checks.
+
+- **2026-11-07 — D041: Member dashboard.** Approved option B: functional member dashboard with welcome message, membership status, Resource Library shortcuts, recent community discussions, Digital Store shortcut, and account/billing settings. Rationale: useful navigation hub without gamification. Risks: extra cross-component integration, stale subscription status and privacy leakage. Mitigation: reuse existing membership entitlements and discussion queries, use provider-hosted billing portal where supported, show only authorized data, and omit personalization, badges and reputation scores in v0.1.
