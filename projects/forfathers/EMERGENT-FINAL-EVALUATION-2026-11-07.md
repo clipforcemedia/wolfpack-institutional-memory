@@ -105,3 +105,24 @@ Emergent wins current project on user-perceived visual quality, existing working
 - https://docs.lovable.dev/features/payments
 
 **Owner action required:** approve D035 amendment; do not auto-write locked decisions without explicit consent.
+
+## Red-team addendum — 2026-11-10: Lovable capability parity and correction of selection bias
+
+**New question:** Can Lovable itself deliver required subscription/member/file features? Was Emergent selected only because first prompt looked better?
+
+**Answer:** Lovable's *current* primary documentation explicitly supports connection to the user's own Supabase project with Auth, Postgres/RLS, private Storage, migrations and direct Edge Function deployment; its own Stripe integration builds one-time Checkout, subscriptions and customer portal and supports guest one-time purchases. Built-in payments explicitly lists digital downloads and memberships; eligibility depends on app type/plan and whether payments use built-in vs own Stripe account. These **platform capabilities have parity and in some areas better direct integration** than Emergent's confirmed FastAPI+Supabase approach. Neither product has built and independently tested the *custom* five-download-per-purchase counter, signed grant control, paid content gating, guest recovery, webhook idempotence, giving ledger or moderation. Lovable is not out-of-box finished either.
+
+**Differentiators:**
+- Emergent strengths: user preferred its initial page design; no-cost five-page frontend already built; support verified existing project's backend and feasibility.
+- Lovable strengths: first-class Supabase integration and Edge Function deployment via chat, documented automatic two-way Git sync and direct code ownership/iteration; potentially fewer moving parts if all server logic uses Supabase functions rather than Emergent's always-on FastAPI hosting. Lovable's paid/backend/hosting economics must still be measured.
+- Key correction: A single attractive first generation is a **weak architectural selection criterion**. Frontend is mock-only and easy to improve; security/fulfillment maintainability dominates. The cost already incurred in Emergent was $0, so avoid sunk-cost reasoning. The previous 'select Emergent' recommendation was overweighted toward visual quality/current momentum; should be **provisional** rather than final.
+- A materially stronger decision method: evaluate **one identical narrow backend test** with each platform (Supabase Auth with protected record + Stripe test-mode payment event in chosen stack, if budget permits), plus comparable total-cost and portability assumptions. Do NOT build full product twice. If Lovable can reuse its existing comparison app, no need to rebuild from scratch; any cosmetic fixes are scoped. If limited credits permit only one live implementation, prefer the path offering fewer backend runtimes and simpler data security, unless switching cost dominates.
+- D035 remains Lovable until user explicitly changes it; no silent decision amendment.
+
+**Official sources:**
+https://docs.lovable.dev/integrations/supabase
+https://docs.lovable.dev/integrations/stripe
+https://docs.lovable.dev/features/payments
+https://docs.lovable.dev/integrations/git-sync-overview
+https://help.emergent.sh/stripe
+https://help.emergent.sh/faqs
